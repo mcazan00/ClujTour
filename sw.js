@@ -1,4 +1,4 @@
-const CACHE_NAME = "cluj-tour-v6";
+const CACHE_NAME = "cluj-tour-v7";
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",

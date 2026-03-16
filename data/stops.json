@@ -3,22 +3,25 @@
     "id": "avram-iancu-universitatii",
     "title": "Avram Iancu × Universității",
     "chapterTitle": "1. Intrarea în orașul vechi",
-    "coords": { "lat": 46.76952, "lng": 23.59253 },
+    "coords": {
+      "lat": 46.76952,
+      "lng": 23.59253
+    },
     "image": {
       "src": "assets/stops/01-avram-iancu-universitatii.svg",
       "alt": "Ilustrație stilizată Avram Iancu și intrarea spre centrul vechi",
       "caption": "Pragul dintre Clujul medieval și extinderea modernă"
     },
-    "contextIstoric": "Intersecția marchează trecerea dintre nucleul medieval și extinderea urbană din secolul al XIX-lea. După desființarea treptată a rolului defensiv al zidurilor, Clujul s-a extins spre est prin bulevarde și clădiri publice inspirate de urbanismul central-european.",
+    "contextIstoric": "Denisa, intersecția aceasta marchează pragul dintre Clujul medieval și extinderea modernă din secolul al XIX-lea. După ce zidurile și-au pierdut rolul militar, orașul s-a deschis spre bulevarde și clădiri publice monumentale.",
     "repereCheie": [
-      "Secolul XIX: orașul iese din limitele cetății medievale.",
-      "Axa Avram Iancu devine coridor al instituțiilor moderne.",
-      "Zona leagă fronturile istorice de noile piețe reprezentative.",
-      "Aici se vede clar schimbarea de scară: de la străzi înguste la bulevarde." 
+      "Denisa, aici vezi clar schimbarea de scară dintre orașul vechi și orașul modern.",
+      "Secolul al XIX-lea aduce extinderea Clujului dincolo de limitele cetății.",
+      "Axa Avram Iancu devine un coridor al instituțiilor moderne.",
+      "Zona leagă nucleul istoric de piețele administrative noi."
     ],
-    "scriptGhid": "Aici explici trecerea de la orașul fortificat la orașul modern. În secolul al XIX-lea, Clujul iese din limitele cetății și apare axa instituțiilor monumentale spre Avram Iancu.",
-    "observatieArhitecturala": "Privește diferența dintre proporțiile străzilor: spre nucleul vechi fronturile sunt mai compacte, iar spre Avram Iancu spațiul se deschide și clădirile devin mai monumentale.",
-    "tranzitieUrmatorulPunct": "Continuăm spre Strada Potaissa, unde vedem direct zidul cetății medievale și discutăm cum era apărat orașul.",
+    "scriptGhid": "Denisa, acesta este locul ideal ca să citești începutul modernizării Clujului: de la oraș compact, apărat de ziduri, la oraș deschis, cu axe largi și instituții publice reprezentative.",
+    "observatieArhitecturala": "Denisa, compară fronturile mai compacte spre centrul vechi cu deschiderea urbană mai amplă spre Avram Iancu.",
+    "tranzitieUrmatorulPunct": "Denisa, mergem spre Strada Potaissa ca să vezi direct zidul cetății medievale.",
     "intro": "Începem turul din pragul orașului vechi.",
     "historyShort": "Zonă de tranziție între cetatea medievală și extinderea modernă din secolul XIX.",
     "historyExtra": "Aici se observă schimbarea de la oraș defensiv la oraș administrativ și cultural.",
@@ -51,22 +54,25 @@
     "id": "zidul-cetatii-potaissa",
     "title": "Zidul cetății - Strada Potaissa",
     "chapterTitle": "2. Orașul medieval fortificat",
-    "coords": { "lat": 46.76852, "lng": 23.58934 },
+    "coords": {
+      "lat": 46.76852,
+      "lng": 23.58934
+    },
     "image": {
       "src": "assets/stops/02-zidul-cetatii-potaissa.svg",
       "alt": "Ilustrație zid medieval pe Strada Potaissa",
       "caption": "Fragment autentic din sistemul defensiv medieval"
     },
-    "contextIstoric": "Fragmentul de pe Potaissa aparține fortificațiilor ridicate în secolele XIV-XV, când Clujul era un oraș-cetate prosper. Sistemul defensiv includea aproximativ 2 km de ziduri, peste 20 de turnuri și porți controlate de bresle.",
+    "contextIstoric": "Denisa, aici ai una dintre urmele cele mai clare ale cetății medievale, consolidată în secolele XIV-XV. Fortificațiile controlau atât apărarea, cât și accesul economic în oraș.",
     "repereCheie": [
-      "Secolele XIV-XV: consolidarea cetății medievale.",
-      "Peste 20 de turnuri apărate de bresle meșteșugărești.",
-      "Zidurile delimitau strict orașul și taxarea accesului.",
-      "În unele porțiuni s-au reutilizat materiale din epoci mai vechi." 
+      "Denisa, acest zid făcea parte dintr-un sistem defensiv de aproximativ 2 km.",
+      "Turnurile cetății erau apărate de breslele meșteșugărești.",
+      "Porțile controlau circulația și taxarea mărfurilor.",
+      "Zidăria păstrează urme de etape diferite de construcție și reparație."
     ],
-    "scriptGhid": "Aici explici mecanismul orașului medieval: zidurile ofereau apărare, dar și control economic prin porți. Breslele apărau turnurile, iar viața urbană era concentrată în interiorul cetății.",
-    "observatieArhitecturala": "Analizează textura pietrei: zonele cu blocuri neregulate și rosturi diferite indică faze distincte de construcție și reparații.",
-    "tranzitieUrmatorulPunct": "De aici mergem spre Strada Universității, ca să vedem trecerea de la orașul defensiv la orașul ideilor.",
+    "scriptGhid": "Denisa, acest punct explică foarte bine logica orașului medieval: zidurile însemnau securitate, dar și administrare economică. Cetatea delimita strict spațiul urban și relația lui cu exteriorul.",
+    "observatieArhitecturala": "Denisa, urmărește diferențele de textură în piatră; ele indică faze distincte de intervenție asupra zidului.",
+    "tranzitieUrmatorulPunct": "Denisa, de aici mergem spre Strada Universității, unde vedem tranziția de la orașul defensiv la cel academic.",
     "intro": "Aici vedem armura medievală a Clujului.",
     "historyShort": "Fragment al fortificațiilor medievale din secolele XIV-XV.",
     "historyExtra": "Cetatea medievală avea ziduri ample, turnuri și porți apărate de bresle.",
@@ -99,22 +105,25 @@
     "id": "strada-universitatii",
     "title": "Strada Universității",
     "chapterTitle": "3. Clujul universitar",
-    "coords": { "lat": 46.76959, "lng": 23.58988 },
+    "coords": {
+      "lat": 46.76959,
+      "lng": 23.58988
+    },
     "image": {
       "src": "assets/stops/03-strada-universitatii.svg",
       "alt": "Ilustrație cu front academic pe Strada Universității",
       "caption": "Axa tradiției academice clujene"
     },
-    "contextIstoric": "Tradiția universitară locală începe în 1581, în contextul fundației academice asociate epocii lui Ștefan Báthory. În secolele următoare, zona devine nucleu intelectual, iar universitatea modernă transformă Clujul într-un centru regional major.",
+    "contextIstoric": "Denisa, pe această stradă se citește tradiția academică începută în 1581, când Clujul intră într-o etapă intelectuală de durată. În timp, funcția universitară a devenit una dintre identitățile centrale ale orașului.",
     "repereCheie": [
-      "1581: începutul tradiției academice locale.",
-      "Secolele XIX-XX: consolidarea funcției universitare a orașului.",
-      "Strada Universității organizează instituții, biblioteci și săli de curs.",
-      "Clujul contemporan rămâne unul dintre cele mai puternice centre universitare din România."
+      "Denisa, anul-cheie al tradiției universitare locale este 1581.",
+      "Zona a atras instituții, profesori, studenți și infrastructură culturală.",
+      "Secolele XIX-XX consolidează Clujul ca centru universitar regional.",
+      "Astăzi, această axă păstrează profilul academic al centrului."
     ],
-    "scriptGhid": "Aici explici că tradiția universitară a Clujului începe în 1581 și continuă neîntrerupt până azi. Funcția academică a transformat centrul dintr-un spațiu comercial medieval într-unul dominat de educație și servicii.",
-    "observatieArhitecturala": "Uită-te la ritmul fațadelor și la sobrietatea detaliilor: multe clădiri comunică ordine, disciplină și funcțiune instituțională.",
-    "tranzitieUrmatorulPunct": "Coborâm spre Piața Unirii, unde legăm perioada universitară de straturile roman, medieval și baroc ale orașului.",
+    "scriptGhid": "Denisa, aici poți vedea cum educația a schimbat profilul orașului: centrul nu a rămas doar comercial, ci a devenit un spațiu al ideilor, al bibliotecilor și al instituțiilor universitare.",
+    "observatieArhitecturala": "Denisa, observă sobrietatea fațadelor și ritmul regulat al clădirilor cu funcțiune instituțională.",
+    "tranzitieUrmatorulPunct": "Denisa, coborâm spre Piața Unirii, unde se suprapun cel mai clar straturile istorice ale Clujului.",
     "intro": "Aici se simte cel mai clar identitatea universitară a Clujului.",
     "historyShort": "Stradă legată de tradiția academică începută în 1581.",
     "historyExtra": "Zona a devenit un centru intelectual major în Europa Centrală.",
@@ -147,23 +156,26 @@
     "id": "piata-unirii",
     "title": "Piața Unirii - centru urban și urme romane",
     "chapterTitle": "4. De la Napoca la orașul modern",
-    "coords": { "lat": 46.77022, "lng": 23.58962 },
+    "coords": {
+      "lat": 46.77022,
+      "lng": 23.58962
+    },
     "image": {
       "src": "assets/stops/04-piata-unirii.svg",
       "alt": "Ilustrație Piața Unirii cu repere istorice",
       "caption": "Piață centrală activă de peste șapte secole"
     },
-    "contextIstoric": "Piața Unirii este centrul civic al Clujului medieval și modern, activă ca spațiu comercial și ceremonial de peste 700 de ani. Sub nivelul actual există vestigii romane ale Napoca, iar fronturile vizibile astăzi reunesc gotic, baroc și eclectism de secol XIX-XX.",
+    "contextIstoric": "Denisa, Piața Unirii este nucleul civic al Clujului de peste șapte secole. Aici se întâlnesc stratul roman Napoca, piața medievală și dezvoltarea barocă și modernă a orașului.",
     "repereCheie": [
-      "Biserica Sfântul Mihail (1316-1487), reper gotic major.",
-      "Palatul Bánffy (1774-1785), palat baroc al elitei transilvane.",
-      "Casa Rhédey și Casa Hintz, straturi aristocratice și comerciale.",
-      "Vestigii romane Napoca sub zona centrală.",
-      "Piața funcționează continuu ca nod urban istoric."
+      "Denisa, sub piața actuală există vestigii ale Napoca romane.",
+      "Biserica Sfântul Mihail este unul dintre reperele gotice majore din Transilvania.",
+      "Palatul Bánffy exprimă etapa barocă a elitei locale.",
+      "Casa Rhédey și Casa Hintz completează stratul aristocratic și comercial.",
+      "Piața funcționează continuu ca centru urban principal."
     ],
-    "scriptGhid": "În Piața Unirii faci rezumatul cronologic al orașului: Napoca romană, piață medievală, clădiri baroce și modernizare de secol XIX-XX. Este punctul unde toate straturile istorice se citesc cel mai clar.",
-    "observatieArhitecturala": "Compară verticalitatea gotică a Bisericii Sfântul Mihail cu liniile orizontale și ornamentația barocă de la Palatul Bánffy.",
-    "tranzitieUrmatorulPunct": "Următorul punct este Strada Iuliu Maniu, unde discutăm urbanismul simetric de început de secol XX.",
+    "scriptGhid": "Denisa, aici poți urmări cronologia orașului într-un singur cadru: epoca romană, etapa medievală, reprezentarea barocă și modernizarea de secol XIX-XX.",
+    "observatieArhitecturala": "Denisa, compară verticalitatea gotică a bisericii cu liniile mai ample și ornamentația barocă a palatelor din jur.",
+    "tranzitieUrmatorulPunct": "Denisa, următorul punct este Strada Iuliu Maniu, unde vedem urbanismul simetric al începutului de secol XX.",
     "intro": "Piața principală concentrează toate epocile Clujului.",
     "historyShort": "Centru urban istoric, cu vestigii romane și fronturi medieval-baroce.",
     "historyExtra": "Aici se văd simultan straturi romane, medievale și moderne.",
@@ -214,22 +226,25 @@
     "id": "strada-iuliu-maniu",
     "title": "Strada Iuliu Maniu - strada în oglindă",
     "chapterTitle": "5. Urbanism simetric de început de secol XX",
-    "coords": { "lat": 46.77016, "lng": 23.59069 },
+    "coords": {
+      "lat": 46.77016,
+      "lng": 23.59069
+    },
     "image": {
       "src": "assets/stops/05-strada-iuliu-maniu.svg",
       "alt": "Ilustrație cu fronturi simetrice pe Strada Iuliu Maniu",
       "caption": "Una dintre cele mai recognoscibile perspective urbane din Cluj"
     },
-    "contextIstoric": "Strada este proiectată la începutul secolului XX ca intervenție urbană ordonată și reprezentativă. Simetria fronturilor a făcut-o celebră drept „strada în oglindă”, un exemplu rar de compoziție axială păstrată coerent în centrul Clujului.",
+    "contextIstoric": "Denisa, această stradă este un exemplu clar de intervenție urbană de început de secol XX, construită pe principiul simetriei. De aici și numele local de „strada în oglindă”.",
     "repereCheie": [
-      "Începutul secolului XX: etapă de modernizare a centrului.",
-      "Fronturi construite în logică de perechi simetrice.",
-      "Ax vizual scurt, foarte fotogenic și ușor de citit urbanistic.",
-      "Strada este cunoscută local și pentru curenții de aer reci."
+      "Denisa, fronturile sunt compuse în perechi simetrice pe ambele părți.",
+      "Axa străzii creează o perspectivă urbană controlată.",
+      "Intervenția marchează etapa de modernizare planificată a centrului.",
+      "Este una dintre cele mai recognoscibile secvențe urbane din Cluj."
     ],
-    "scriptGhid": "Aici explici urbanismul de început de secol XX: stradă proiectată simetric, cu perspectivă controlată. Simetria transmite ideea de modernitate ordonată, nu doar efect estetic.",
-    "observatieArhitecturala": "Stai pe axul străzii și compară balcon cu balcon, cornișă cu cornișă: efectul de „oglindă” devine imediat vizibil.",
-    "tranzitieUrmatorulPunct": "Mergem spre Piața Muzeului, cea mai veche piață medievală a orașului, pentru un contrast clar față de această geometrie modernă.",
+    "scriptGhid": "Denisa, aici vezi cum modernizarea nu înseamnă rupere de trecut, ci ordine nouă aplicată într-un țesut istoric: simetria organizează spațiul și transmite ideea de oraș administrat modern.",
+    "observatieArhitecturala": "Denisa, stai pe axul străzii și compară elementele-pereche: balcoane, cornișe și ritmul ferestrelor.",
+    "tranzitieUrmatorulPunct": "Denisa, mergem spre Piața Muzeului, unde revii la scara medievală mai intimă a orașului.",
     "intro": "Aici se vede Clujul desenat cu rigoare.",
     "historyShort": "Stradă simetrică proiectată la început de secol XX.",
     "historyExtra": "Este unul dintre cele mai clare exemple locale de compoziție urbană în oglindă.",
@@ -256,22 +271,25 @@
     "id": "piata-muzeului",
     "title": "Piața Muzeului",
     "chapterTitle": "6. Nucleul medieval comercial",
-    "coords": { "lat": 46.77172, "lng": 23.58778 },
+    "coords": {
+      "lat": 46.77172,
+      "lng": 23.58778
+    },
     "image": {
       "src": "assets/stops/06-piata-muzeului.svg",
       "alt": "Ilustrație Piața Muzeului și clădiri istorice",
       "caption": "Țesut istoric compact, diferit de monumentalitatea Pieței Unirii"
     },
-    "contextIstoric": "Piața Muzeului este una dintre cele mai vechi piețe ale orașului medieval, cu rol comercial și rezidențial. În zonă se află Casa Matia Corvin, asociată nașterii sale în 1443, iar fronturile păstrează scara intimă a Clujului premodern.",
+    "contextIstoric": "Denisa, Piața Muzeului păstrează una dintre cele mai vechi structuri urbane ale Clujului medieval. Zona are rol istoric comercial și rezidențial, diferit de monumentalitatea Pieței Unirii.",
     "repereCheie": [
-      "Spațiu comercial medieval important pentru oraș.",
-      "Casa Matia Corvin (sec. XV) ca reper istoric major.",
-      "Obeliscul Carolina, monument al epocii habsburgice.",
-      "Piață cu scară urbană mai domestică decât Piața Unirii."
+      "Denisa, aici se simte mai bine scara cotidiană a orașului premodern.",
+      "Casa Matia Corvin leagă piața de un reper major al secolului al XV-lea.",
+      "Obeliscul Carolina marchează etapa habsburgică a orașului.",
+      "Fronturile compacte păstrează caracterul istoric al pieței."
     ],
-    "scriptGhid": "Aici explici diferența de rol față de Piața Unirii: Piața Muzeului arată mai mult viața cotidiană a orașului medieval. Fronturile compacte și scara mai intimă păstrează caracterul premodern al centrului.",
-    "observatieArhitecturala": "Uită-te la înălțimea clădirilor și la ritmul gol-plin al fațadelor: proporțiile sunt mai apropiate de mersul pietonal și de scara umană.",
-    "tranzitieUrmatorulPunct": "Ieșim spre Parcul I. L. Caragiale, unde discutăm ce s-a întâmplat după demolarea zidurilor în secolul XIX.",
+    "scriptGhid": "Denisa, acest punct arată cel mai bine cum arăta viața urbană zilnică în orașul vechi: tranzacții, locuire și funcțiuni locale într-un spațiu mai dens și mai apropiat de pieton.",
+    "observatieArhitecturala": "Denisa, observă proporțiile clădirilor și distanțele mai scurte dintre fronturi, specifice unei piețe medievale active.",
+    "tranzitieUrmatorulPunct": "Denisa, de aici ieșim spre Parcul I. L. Caragiale, ca să vezi conversia fostelor margini defensive în spațiu public.",
     "intro": "Piață medievală cu atmosferă compactă.",
     "historyShort": "Cea mai veche piață a orașului medieval, legată de Casa Matia Corvin.",
     "historyExtra": "Păstrează o țesătură istorică intimă și coerentă.",
@@ -310,22 +328,25 @@
     "id": "parcul-caragiale",
     "title": "Parcul I. L. Caragiale",
     "chapterTitle": "7. De la fortificații la spațiu public",
-    "coords": { "lat": 46.77326, "lng": 23.58776 },
+    "coords": {
+      "lat": 46.77326,
+      "lng": 23.58776
+    },
     "image": {
       "src": "assets/stops/07-parcul-caragiale.svg",
       "alt": "Ilustrație Parcul I. L. Caragiale",
       "caption": "Transformarea zonei defensive în parc urban"
     },
-    "contextIstoric": "Zona de azi făcea parte din marginea sistemului defensiv medieval. În secolul al XIX-lea, odată cu pierderea rolului militar al zidurilor, spațiul este reinterpretat ca parc și loc de promenadă, marcând trecerea la orașul modern orientat spre viață publică.",
+    "contextIstoric": "Denisa, zona aceasta era legată de vechiul sistem defensiv, dar în secolul al XIX-lea a fost reinterpretată ca parc urban. Este un exemplu clar de trecere de la funcție militară la funcție civică.",
     "repereCheie": [
-      "Secolul XIX: demolări și reconfigurări ale limitelor medievale.",
-      "Apariția parcurilor urbane ca simbol al modernității.",
-      "Conversie de la funcțiune militară la funcțiune civică.",
-      "Legătura cu zona Canalului Morii și noile trasee pietonale."
+      "Denisa, dispariția rolului militar al zidurilor a schimbat structura orașului.",
+      "Secolul al XIX-lea aduce parcuri și promenade pe foste margini defensive.",
+      "Zona devine spațiu de circulație și relaxare urbană.",
+      "Transformarea urmează un model european de modernizare urbană."
     ],
-    "scriptGhid": "Aici explici conversia urbană clasică din secolul al XIX-lea: spațiile defensive devin parcuri și promenade. Clujul trece astfel de la logica militară la logica spațiului public modern.",
-    "observatieArhitecturala": "Privește deschiderea spațiului și traseele pietonale: se simte clar că locul a fost regândit pentru circulație și relaxare, nu pentru control militar.",
-    "tranzitieUrmatorulPunct": "La câteva minute ajungem la Palatul Telefoanelor, unde intrăm în capitolul infrastructurii moderne de comunicații.",
+    "scriptGhid": "Denisa, aici se vede clar ideea de oraș modern: infrastructura veche este adaptată pentru viață publică. Clujul integrează fostele limite defensive în țesutul cotidian al centrului.",
+    "observatieArhitecturala": "Denisa, urmărește deschiderea spațiului și traseele pietonale, semne ale unei organizări orientate spre promenadă.",
+    "tranzitieUrmatorulPunct": "Denisa, continuăm la Palatul Telefoanelor, unde intrăm în capitolul infrastructurilor moderne.",
     "intro": "Aici vedem orașul care respiră după epoca zidurilor.",
     "historyShort": "Zonă defensivă medievală convertită în parc în secolul XIX.",
     "historyExtra": "Un exemplu clasic de transformare urbană spre spațiu public.",
@@ -358,22 +379,25 @@
     "id": "palatul-telefoanelor",
     "title": "Palatul Telefoanelor",
     "chapterTitle": "8. Clujul comunicațiilor moderne",
-    "coords": { "lat": 46.77302, "lng": 23.58879 },
+    "coords": {
+      "lat": 46.77302,
+      "lng": 23.58879
+    },
     "image": {
       "src": "assets/stops/08-palatul-telefoanelor.svg",
       "alt": "Ilustrație Palatul Telefoanelor",
       "caption": "Etapa infrastructurilor tehnice urbane"
     },
-    "contextIstoric": "Clădirea este legată de modernizarea comunicațiilor urbane în prima jumătate a secolului XX. În epoca centralelor manuale, astfel de sedii erau infrastructură critică, pentru că gestionau conectarea apelurilor locale și interurbane.",
+    "contextIstoric": "Denisa, Palatul Telefoanelor marchează etapa în care Clujul intră în modernitatea tehnică a secolului XX. Clădirea era legată de rețeaua de comunicații esențială pentru administrație și economie.",
     "repereCheie": [
-      "Prima jumătate a secolului XX: extinderea telefoniei urbane.",
-      "Centralistele conectau manual apelurile în rețea.",
-      "Infrastructura de comunicații devine componentă strategică a orașului.",
-      "Zona marchează trecerea spre Clujul tehnic-administrativ modern."
+      "Denisa, în prima jumătate a secolului XX telefonia devine infrastructură strategică.",
+      "Apelurile erau conectate manual în centrale urbane dedicate.",
+      "Comerțul și instituțiile depindeau de această rețea de comunicații.",
+      "Clădirea exprimă profilul tehnic-administrativ al epocii."
     ],
-    "scriptGhid": "Aici explici că modernizarea orașului depinde și de infrastructuri invizibile, nu doar de arhitectură. Palatul Telefoanelor a susținut comunicațiile administrative și comerciale ale Clujului secolului XX.",
-    "observatieArhitecturala": "Privește expresia fațadei: volumetrie sobră și ritm regulat al golurilor, tipic pentru clădiri cu funcțiune tehnică-administrativă.",
-    "tranzitieUrmatorulPunct": "Următorul punct este intersecția Horea × Mihai Viteazu, unde vedem palatele comerciale de început de secol XX.",
+    "scriptGhid": "Denisa, acest punct arată că modernizarea orașului nu ține doar de fațade istorice, ci și de infrastructuri invizibile. Comunicațiile au susținut ritmul administrativ și economic al Clujului modern.",
+    "observatieArhitecturala": "Denisa, observă volumul sobru și ritmul regulat al golurilor, tipice pentru o clădire cu funcție tehnică.",
+    "tranzitieUrmatorulPunct": "Denisa, următorul punct este intersecția Horea × Mihai Viteazu, unde analizăm palatele comerciale de început de secol XX.",
     "intro": "Aici intrăm în etapa infrastructurilor moderne.",
     "historyShort": "Reper al dezvoltării comunicațiilor în Clujul secolului XX.",
     "historyExtra": "Conectarea apelurilor se făcea manual în etapa timpurie a telefoniei.",
@@ -400,23 +424,26 @@
     "id": "horea-mihai-viteazu-palate",
     "title": "Horea × Mihai Viteazu - zona palatelor",
     "chapterTitle": "9. Palate, comerț și extindere urbană",
-    "coords": { "lat": 46.77468, "lng": 23.59055 },
+    "coords": {
+      "lat": 46.77468,
+      "lng": 23.59055
+    },
     "image": {
       "src": "assets/stops/09-horea-mihai-viteazu-palate.svg",
       "alt": "Ilustrație zona palatelor Horea Mihai Viteazu",
       "caption": "Fronturi eclectice și Secession la început de secol XX"
     },
-    "contextIstoric": "După deschiderea orașului dincolo de vechile limite, zona Horea - Mihai Viteazu devine un front comercial și rezidențial de mare vizibilitate. În jurul anilor 1900-1914 apar palate eclectice și Secession, ridicate de elite economice locale.",
+    "contextIstoric": "Denisa, în această zonă vezi extinderea comercială a Clujului de la începutul secolului XX, cu fronturi eclectice și Secession. Aici noua burghezie urbană își afirmă statutul prin arhitectură.",
     "repereCheie": [
-      "Început de secol XX: dezvoltare comercială accelerată.",
-      "Palatul Széki, Palatul Elian, Palatul Babos - repere ale noii burghezii.",
-      "Piața Mihai Viteazu funcționează ca nod de circulație urbană extinsă.",
-      "În zona H33 apare și stratul artistic contemporan (muralul Omul Micro Macro Cosmic).",
-      "Arhitectura combină ornamentație florală, feronerie și volumetrii eclectice."
+      "Denisa, Palatul Széki, Palatul Elian și Palatul Babos sunt reperele-cheie ale zonei.",
+      "Anii 1900-1914 aduc investiții comerciale și rezidențiale majore.",
+      "Fațadele combină ornamentație florală, feronerie și volumetrii eclectice.",
+      "Piața Mihai Viteazu devine un nod urban al orașului extins.",
+      "În proximitate apare și stratul contemporan, prin muralul de pe Horea."
     ],
-    "scriptGhid": "Aici explici extinderea comercială de început de secol XX: apar palate eclectice și Secession ca semn al noii burghezii urbane. Zona arată cum Clujul combină locuire, birouri și comerț într-un front modern.",
-    "observatieArhitecturala": "Caută detalii de feronerie, stucaturi florale și cornișe pronunțate; acestea sunt semnele cele mai ușor de recunoscut ale repertoriului Secession/eclectic.",
-    "tranzitieUrmatorulPunct": "Ultima oprire este Turnul Pompierilor, unde închidem turul cu perspectiva de ansamblu asupra centrului.",
+    "scriptGhid": "Denisa, acest punct explică ambiția metropolitană a Clujului la începutul secolului XX: clădirile sunt simultan spații de locuire, birouri și comerț, într-un front urban reprezentativ.",
+    "observatieArhitecturala": "Denisa, caută stucaturile florale, cornișele pronunțate și detaliile de feronerie specifice repertoriului Secession.",
+    "tranzitieUrmatorulPunct": "Denisa, încheiem traseul la Turnul Pompierilor, unde vedem perspectiva de ansamblu asupra centrului.",
     "intro": "Aici se vede cel mai bine energia urbană de început de secol XX.",
     "historyShort": "Zonă de palate eclectice și Secession, legată de extinderea modernă.",
     "historyExtra": "Fronturile comerciale au consolidat rolul Pieței Mihai Viteazu în orașul modern.",
@@ -485,22 +512,25 @@
     "id": "turnul-pompierilor",
     "title": "Turnul Pompierilor",
     "chapterTitle": "10. Finalul: supraveghere și panoramă",
-    "coords": { "lat": 46.77342, "lng": 23.59096 },
+    "coords": {
+      "lat": 46.77342,
+      "lng": 23.59096
+    },
     "image": {
       "src": "assets/stops/10-turnul-pompierilor.svg",
       "alt": "Ilustrație Turnul Pompierilor",
       "caption": "Punct strategic, azi punct de observație urbană"
     },
-    "contextIstoric": "Turnul Pompierilor a avut rol de observație și avertizare a incendiilor în secolul al XIX-lea, pe locul unei structuri urbane mai vechi. Funcția sa era strategică într-un oraș cu fronturi dense și risc ridicat de incendiu în epoca premodernă târzie.",
+    "contextIstoric": "Denisa, Turnul Pompierilor a avut în secolul al XIX-lea rol de observație și avertizare la incendii, într-un oraș cu fronturi dense și risc ridicat. Astăzi funcționează ca reper cultural și punct de panoramă.",
     "repereCheie": [
-      "Secolul XIX: rol clar de supraveghere anti-incendiu.",
-      "Punct de control vizual asupra centrului istoric.",
-      "Astăzi: reper cultural și punct panoramic urban.",
-      "Închide cronologic traseul de la cetate la oraș modern."
+      "Denisa, funcția inițială era supravegherea continuă a centrului istoric.",
+      "Turnul făcea parte din sistemul urban de control al riscurilor.",
+      "Poziția dominantă explică rolul strategic al clădirii.",
+      "Punctul închide logic traseul: de la cetate medievală la oraș modern organizat."
     ],
-    "scriptGhid": "La final explici rolul turnului în sistemul urban al secolului XIX: observație permanentă și avertizare rapidă la incendii. Este închiderea logică a turului, de la cetatea medievală la infrastructura modernă de control urban.",
-    "observatieArhitecturala": "Privește relația dintre înălțimea turnului și țesutul din jur: poziția dominantă explică perfect funcția inițială de observator.",
-    "tranzitieUrmatorulPunct": "Turul se închide aici. Dacă mai aveți timp, puteți relua pe hartă palatele preferate din centru pentru o a doua rundă tematică.",
+    "scriptGhid": "Denisa, aici se închide cronologic turul: de la ziduri și porți medievale la mecanisme moderne de observație urbană. Turnul sintetizează ideea de oraș care își gestionează riscurile și infrastructurile.",
+    "observatieArhitecturala": "Denisa, privește relația dintre înălțimea turnului și țesutul din jur; poziția lui explică imediat funcția de observator.",
+    "tranzitieUrmatorulPunct": "Denisa, turul se încheie aici; dacă vrei, putem relua din Hartă punctele care ți-au plăcut cel mai mult.",
     "intro": "Închidem turul într-un punct de observație urbană.",
     "historyShort": "Turn de supraveghere a incendiilor, activ în secolul XIX.",
     "historyExtra": "Astăzi oferă una dintre cele mai bune perspective asupra centrului.",
