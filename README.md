@@ -105,11 +105,11 @@ https://<user>.github.io/<repo>/
 
 ## Story / Admin
 
-- În interfață ai un meniu hamburger cu 4 secțiuni: `Story`, `Hartă`, `Setări`, `Admin`.
+- În interfață ai un meniu hamburger cu 3 secțiuni: `Story`, `Hartă`, `Setări`.
 - `Story` = experiența principală, cu pașii turului și secțiuni informative fixe.
 - `Hartă` = OpenStreetMap cu markere numerotate pentru toate opririle.
-- `Setări` = Date mode, Istorie+, Test mode, fullscreen, reset.
-- `Admin` = listare read-only date locale, fără editare din UI.
+- `Setări` = Date mode, Istorie+, Test mode, fullscreen, reset + secțiune internă `Date tehnice (Admin)`.
+- `Date tehnice (Admin)` = listare read-only date locale, fără editare din UI.
 
 ## Test mode
 
@@ -122,9 +122,9 @@ https://<user>.github.io/<repo>/
 - Ghid istoric pe capitole (fără quiz/provocări)
 - Deblocare stop după proximitate GPS
 - Fallback complet manual
-- Butoane Story: `Reveal story`, `I found it`, `Next stop`
+- Butoane Story: `Reveal story`, `I found it`, `Navighează la următorul punct`, `Next stop`
 - Mod `Date` + mod `Istorie+`
-- View `Admin` read-only (setări, locații, palate/clădiri deduplicate)
+- View `Date tehnice (Admin)` read-only (setări, locații, palate/clădiri deduplicate)
 - Progres salvat local
 - Ecran final la Turnul Pompierilor
 - Service worker pentru funcționare offline după prima încărcare

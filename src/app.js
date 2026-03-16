@@ -67,6 +67,7 @@ const els = {
 
   revealBtn: byId("revealBtn"),
   foundBtn: byId("foundBtn"),
+  navigateBtn: byId("navigateBtn"),
   nextBtn: byId("nextBtn"),
 
   endingPanel: byId("endingPanel"),
@@ -81,12 +82,10 @@ const els = {
   menuStoryBtn: byId("menuStoryBtn"),
   menuMapBtn: byId("menuMapBtn"),
   menuSettingsBtn: byId("menuSettingsBtn"),
-  menuAdminBtn: byId("menuAdminBtn"),
 
   drawerStoryPanel: byId("drawerStoryPanel"),
   drawerMapPanel: byId("drawerMapPanel"),
   drawerSettingsPanel: byId("drawerSettingsPanel"),
-  drawerAdminPanel: byId("drawerAdminPanel"),
   continueStoryBtn: byId("continueStoryBtn"),
 
   mapContainer: byId("mapContainer"),
@@ -278,25 +277,54 @@ function renderAdmin() {
 }
 
 function setDrawerPanel(panel) {
-  const valid = ["story", "map", "settings", "admin"];
+  const valid = ["story", "map", "settings"];
   const safe = valid.includes(panel) ? panel : "story";
   runtime.ui.activePanel = safe;
 
   setVisible(els.drawerStoryPanel, safe === "story");
   setVisible(els.drawerMapPanel, safe === "map");
   setVisible(els.drawerSettingsPanel, safe === "settings");
-  setVisible(els.drawerAdminPanel, safe === "admin");
 
   els.menuStoryBtn.classList.toggle("active", safe === "story");
   els.menuMapBtn.classList.toggle("active", safe === "map");
   els.menuSettingsBtn.classList.toggle("active", safe === "settings");
-  els.menuAdminBtn.classList.toggle("active", safe === "admin");
 
   if (safe === "map") {
     renderMapPanel();
   }
-  if (safe === "admin") {
+  if (safe === "settings") {
     renderAdmin();
+  }
+}
+
+function getNextStop() {
+  return runtime.stops[runtime.state.currentIndex + 1] || null;
+}
+
+function buildNavigationLinks(stop) {
+  if (!stop) return null;
+  const lat = Number(stop.coords?.lat);
+  const lng = Number(stop.coords?.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+
+  return {
+    apple: `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=w`,
+    google: `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`,
+  };
+}
+
+function openExternalRoute() {
+  const nextStop = getNextStop();
+  const links = buildNavigationLinks(nextStop);
+  if (!links) return;
+
+  const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent || "");
+  const primary = isiOS ? links.apple : links.google;
+  const fallback = isiOS ? links.google : links.apple;
+
+  const openedWindow = window.open(primary, "_blank", "noopener,noreferrer");
+  if (!openedWindow) {
+    window.location.href = fallback;
   }
 }
 
@@ -529,6 +557,13 @@ function renderStop(stop) {
   els.foundBtn.disabled = !revealed || found;
   els.nextBtn.disabled = !found;
 
+  const nextStop = getNextStop();
+  const hasNext = Boolean(nextStop);
+  setVisible(els.navigateBtn, hasNext);
+  if (hasNext) {
+    els.navigateBtn.disabled = !found;
+  }
+
   if (runtime.state.settings.testMode) {
     els.distanceText.textContent = "Test mode activ: distanța este ignorată.";
   } else if (Number.isFinite(distance)) {
@@ -567,7 +602,7 @@ function render() {
     renderStop(getCurrentStop());
   }
 
-  if (runtime.ui.activePanel === "admin") {
+  if (runtime.ui.activePanel === "settings") {
     renderAdmin();
   }
   if (runtime.ui.activePanel === "map") {
@@ -654,11 +689,6 @@ function bindEvents() {
     setDrawerPanel("settings");
   });
 
-  els.menuAdminBtn.addEventListener("click", () => {
-    if (!runtime.ui.menuOpen) openDrawer("admin");
-    setDrawerPanel("admin");
-  });
-
   els.revealBtn.addEventListener("click", () => {
     const stop = getCurrentStop();
     if (!stop) return;
@@ -680,6 +710,12 @@ function bindEvents() {
     if (!stop || !isFound(stop.id)) return;
     moveNext();
     render();
+  });
+
+  els.navigateBtn.addEventListener("click", () => {
+    const stop = getCurrentStop();
+    if (!stop || !isFound(stop.id)) return;
+    openExternalRoute();
   });
 
   els.dateModeToggle.addEventListener("change", (event) => {

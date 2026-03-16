@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#d6c9b2" />
-    <title>Cluj cu Noi Doi</title>
+    <title>Tur istoric Cluj</title>
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -16,9 +16,9 @@
 
     <main class="app-shell">
       <header class="top">
-        <p class="eyebrow">Plimbare privată în Cluj-Napoca</p>
+        <p class="eyebrow">Ghid de teren în Cluj-Napoca</p>
         <div class="top-row">
-          <h1 id="tourTitle">Cluj cu Noi Doi</h1>
+          <h1 id="tourTitle">Tur istoric Cluj</h1>
           <button id="menuToggleBtn" class="menu-btn" type="button" aria-label="Deschide meniul">
             <span></span>
             <span></span>
@@ -78,6 +78,9 @@
             <button id="foundBtn" type="button" class="secondary">I found it</button>
           </div>
           <div class="button-row">
+            <button id="navigateBtn" type="button" class="secondary hidden">
+              Navighează la următorul punct
+            </button>
             <button id="nextBtn" type="button" class="next-btn" disabled>Next stop</button>
           </div>
         </section>
@@ -106,7 +109,6 @@
         <button id="menuStoryBtn" class="drawer-tab active" type="button">Story</button>
         <button id="menuMapBtn" class="drawer-tab" type="button">Hartă</button>
         <button id="menuSettingsBtn" class="drawer-tab" type="button">Setări</button>
-        <button id="menuAdminBtn" class="drawer-tab" type="button">Admin</button>
       </nav>
 
       <div class="drawer-content">
@@ -147,29 +149,31 @@
               <button id="resetBtn" class="ghost-btn danger" type="button">Reset traseu</button>
             </div>
           </div>
-        </section>
+          <details class="admin-inline" id="adminSection">
+            <summary>Date tehnice (Admin)</summary>
+            <div class="admin-inline-content">
+              <p class="eyebrow">Panou intern</p>
+              <h2 id="adminTitle">Admin local (read-only)</h2>
+              <p id="adminSubtitle" class="subtitle">
+                Aici vezi setările și datele traseului, fără editare din interfață.
+              </p>
 
-        <section id="drawerAdminPanel" class="drawer-panel admin hidden">
-          <p class="eyebrow">Panou intern</p>
-          <h2 id="adminTitle">Admin local (read-only)</h2>
-          <p id="adminSubtitle" class="subtitle">
-            Aici vezi setările și datele traseului, fără editare din interfață.
-          </p>
+              <article class="admin-block">
+                <h3 id="adminSettingsTitle">Setări tur</h3>
+                <ul id="adminSettingsList" class="admin-list"></ul>
+              </article>
 
-          <article class="admin-block">
-            <h3 id="adminSettingsTitle">Setări tur</h3>
-            <ul id="adminSettingsList" class="admin-list"></ul>
-          </article>
+              <article class="admin-block">
+                <h3 id="adminStopsTitle">Locații</h3>
+                <ul id="adminStopsList" class="admin-list"></ul>
+              </article>
 
-          <article class="admin-block">
-            <h3 id="adminStopsTitle">Locații</h3>
-            <ul id="adminStopsList" class="admin-list"></ul>
-          </article>
-
-          <article class="admin-block">
-            <h3 id="adminLandmarksTitle">Palate / Clădiri indexate</h3>
-            <ul id="adminLandmarksList" class="admin-list"></ul>
-          </article>
+              <article class="admin-block">
+                <h3 id="adminLandmarksTitle">Palate / Clădiri indexate</h3>
+                <ul id="adminLandmarksList" class="admin-list"></ul>
+              </article>
+            </div>
+          </details>
         </section>
       </div>
     </aside>

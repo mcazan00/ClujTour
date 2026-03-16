@@ -379,7 +379,7 @@ button:disabled {
 .drawer-nav {
   margin-top: 12px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -401,6 +401,30 @@ button:disabled {
 
 .drawer-panel h3 {
   margin-bottom: 8px;
+}
+
+.admin-inline {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  overflow: hidden;
+}
+
+.admin-inline summary {
+  cursor: pointer;
+  padding: 12px;
+  font-weight: 700;
+  list-style: none;
+}
+
+.admin-inline summary::-webkit-details-marker {
+  display: none;
+}
+
+.admin-inline-content {
+  border-top: 1px solid var(--line);
+  padding: 12px;
 }
 
 .map-container {

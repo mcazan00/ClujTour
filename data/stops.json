@@ -16,7 +16,7 @@
       "Zona leagă fronturile istorice de noile piețe reprezentative.",
       "Aici se vede clar schimbarea de scară: de la străzi înguste la bulevarde." 
     ],
-    "scriptGhid": "Aici poți explica pe scurt că orașul vechi era compact și apărat de ziduri, iar secolul al XIX-lea schimbă complet logica urbană: Clujul începe să se extindă, apar bulevarde mai largi și instituții publice monumentale. Practic, acesta este pragul dintre Clujul fortificat și Clujul modern.",
+    "scriptGhid": "Aici explici trecerea de la orașul fortificat la orașul modern. În secolul al XIX-lea, Clujul iese din limitele cetății și apare axa instituțiilor monumentale spre Avram Iancu.",
     "observatieArhitecturala": "Privește diferența dintre proporțiile străzilor: spre nucleul vechi fronturile sunt mai compacte, iar spre Avram Iancu spațiul se deschide și clădirile devin mai monumentale.",
     "tranzitieUrmatorulPunct": "Continuăm spre Strada Potaissa, unde vedem direct zidul cetății medievale și discutăm cum era apărat orașul.",
     "intro": "Începem turul din pragul orașului vechi.",
@@ -64,7 +64,7 @@
       "Zidurile delimitau strict orașul și taxarea accesului.",
       "În unele porțiuni s-au reutilizat materiale din epoci mai vechi." 
     ],
-    "scriptGhid": "Aici explici cel mai simplu cum funcționa un oraș medieval: zidurile nu erau doar apărare, ci și instrument economic și administrativ. Intrările se controlau, breslele finanțau și apărau turnurile, iar spațiul din interior era mult mai dens decât centrul de azi.",
+    "scriptGhid": "Aici explici mecanismul orașului medieval: zidurile ofereau apărare, dar și control economic prin porți. Breslele apărau turnurile, iar viața urbană era concentrată în interiorul cetății.",
     "observatieArhitecturala": "Analizează textura pietrei: zonele cu blocuri neregulate și rosturi diferite indică faze distincte de construcție și reparații.",
     "tranzitieUrmatorulPunct": "De aici mergem spre Strada Universității, ca să vedem trecerea de la orașul defensiv la orașul ideilor.",
     "intro": "Aici vedem armura medievală a Clujului.",
@@ -112,7 +112,7 @@
       "Strada Universității organizează instituții, biblioteci și săli de curs.",
       "Clujul contemporan rămâne unul dintre cele mai puternice centre universitare din România."
     ],
-    "scriptGhid": "Pe această stradă poți explica simplu că statutul de oraș universitar nu e recent, ci are rădăcini de peste patru secole. Instituțiile academice au atras tipografii, profesori, studenți și au schimbat profilul economic al centrului istoric, de la comerț medieval la economie urbană bazată pe educație și servicii.",
+    "scriptGhid": "Aici explici că tradiția universitară a Clujului începe în 1581 și continuă neîntrerupt până azi. Funcția academică a transformat centrul dintr-un spațiu comercial medieval într-unul dominat de educație și servicii.",
     "observatieArhitecturala": "Uită-te la ritmul fațadelor și la sobrietatea detaliilor: multe clădiri comunică ordine, disciplină și funcțiune instituțională.",
     "tranzitieUrmatorulPunct": "Coborâm spre Piața Unirii, unde legăm perioada universitară de straturile roman, medieval și baroc ale orașului.",
     "intro": "Aici se simte cel mai clar identitatea universitară a Clujului.",
@@ -161,7 +161,7 @@
       "Vestigii romane Napoca sub zona centrală.",
       "Piața funcționează continuu ca nod urban istoric."
     ],
-    "scriptGhid": "Aici poți face cel mai clar rezumat cronologic al orașului: întâi stratul roman Napoca, apoi piața medievală, apoi reprezentarea puterii nobiliare în epoca barocă și, în final, modernizarea de secol XIX-XX. În câteva minute, locul acesta îți arată toată evoluția urbană a Clujului.",
+    "scriptGhid": "În Piața Unirii faci rezumatul cronologic al orașului: Napoca romană, piață medievală, clădiri baroce și modernizare de secol XIX-XX. Este punctul unde toate straturile istorice se citesc cel mai clar.",
     "observatieArhitecturala": "Compară verticalitatea gotică a Bisericii Sfântul Mihail cu liniile orizontale și ornamentația barocă de la Palatul Bánffy.",
     "tranzitieUrmatorulPunct": "Următorul punct este Strada Iuliu Maniu, unde discutăm urbanismul simetric de început de secol XX.",
     "intro": "Piața principală concentrează toate epocile Clujului.",
@@ -227,7 +227,7 @@
       "Ax vizual scurt, foarte fotogenic și ușor de citit urbanistic.",
       "Strada este cunoscută local și pentru curenții de aer reci."
     ],
-    "scriptGhid": "Aici poți explica faptul că nu toate intervențiile moderne au rupt țesutul vechi: unele, ca această stradă, au introdus ordine și perspectivă. Simetria nu e doar estetică, ci și un mesaj de modernitate administrată, specific începutului de secol XX în orașele din imperiu.",
+    "scriptGhid": "Aici explici urbanismul de început de secol XX: stradă proiectată simetric, cu perspectivă controlată. Simetria transmite ideea de modernitate ordonată, nu doar efect estetic.",
     "observatieArhitecturala": "Stai pe axul străzii și compară balcon cu balcon, cornișă cu cornișă: efectul de „oglindă” devine imediat vizibil.",
     "tranzitieUrmatorulPunct": "Mergem spre Piața Muzeului, cea mai veche piață medievală a orașului, pentru un contrast clar față de această geometrie modernă.",
     "intro": "Aici se vede Clujul desenat cu rigoare.",
@@ -269,7 +269,7 @@
       "Obeliscul Carolina, monument al epocii habsburgice.",
       "Piață cu scară urbană mai domestică decât Piața Unirii."
     ],
-    "scriptGhid": "La acest punct poți spune că Piața Muzeului arată mai bine viața cotidiană a orașului vechi, nu doar reprezentarea oficială. Dacă Piața Unirii era scena mare, Piața Muzeului era spațiul tranzacțiilor de zi cu zi, al caselor nobiliare mai mici și al continuității rezidențiale.",
+    "scriptGhid": "Aici explici diferența de rol față de Piața Unirii: Piața Muzeului arată mai mult viața cotidiană a orașului medieval. Fronturile compacte și scara mai intimă păstrează caracterul premodern al centrului.",
     "observatieArhitecturala": "Uită-te la înălțimea clădirilor și la ritmul gol-plin al fațadelor: proporțiile sunt mai apropiate de mersul pietonal și de scara umană.",
     "tranzitieUrmatorulPunct": "Ieșim spre Parcul I. L. Caragiale, unde discutăm ce s-a întâmplat după demolarea zidurilor în secolul XIX.",
     "intro": "Piață medievală cu atmosferă compactă.",
@@ -323,7 +323,7 @@
       "Conversie de la funcțiune militară la funcțiune civică.",
       "Legătura cu zona Canalului Morii și noile trasee pietonale."
     ],
-    "scriptGhid": "Aici explici un proces urban important: când orașele nu mai au nevoie de fortificații, aceste spații devin bulevarde, parcuri și promenade. Clujul urmează aceeași logică europeană din secolul al XIX-lea, în care vechile margini defensive sunt absorbite în viața cotidiană.",
+    "scriptGhid": "Aici explici conversia urbană clasică din secolul al XIX-lea: spațiile defensive devin parcuri și promenade. Clujul trece astfel de la logica militară la logica spațiului public modern.",
     "observatieArhitecturala": "Privește deschiderea spațiului și traseele pietonale: se simte clar că locul a fost regândit pentru circulație și relaxare, nu pentru control militar.",
     "tranzitieUrmatorulPunct": "La câteva minute ajungem la Palatul Telefoanelor, unde intrăm în capitolul infrastructurii moderne de comunicații.",
     "intro": "Aici vedem orașul care respiră după epoca zidurilor.",
@@ -371,7 +371,7 @@
       "Infrastructura de comunicații devine componentă strategică a orașului.",
       "Zona marchează trecerea spre Clujul tehnic-administrativ modern."
     ],
-    "scriptGhid": "Aici poți explica simplu că modernizarea unui oraș nu înseamnă doar clădiri frumoase, ci și infrastructuri invizibile: telecomunicații, rețele tehnice, servicii. Palatul Telefoanelor e un bun exemplu de instituție care a susținut ritmul economic și administrativ al Clujului modern.",
+    "scriptGhid": "Aici explici că modernizarea orașului depinde și de infrastructuri invizibile, nu doar de arhitectură. Palatul Telefoanelor a susținut comunicațiile administrative și comerciale ale Clujului secolului XX.",
     "observatieArhitecturala": "Privește expresia fațadei: volumetrie sobră și ritm regulat al golurilor, tipic pentru clădiri cu funcțiune tehnică-administrativă.",
     "tranzitieUrmatorulPunct": "Următorul punct este intersecția Horea × Mihai Viteazu, unde vedem palatele comerciale de început de secol XX.",
     "intro": "Aici intrăm în etapa infrastructurilor moderne.",
@@ -414,7 +414,7 @@
       "În zona H33 apare și stratul artistic contemporan (muralul Omul Micro Macro Cosmic).",
       "Arhitectura combină ornamentație florală, feronerie și volumetrii eclectice."
     ],
-    "scriptGhid": "Aici explici că orașul modern nu crește uniform: apar axe comerciale puternice, iar palatele devin instrumente de prestigiu economic. Aceste clădiri arată cum Clujul intră în secolul XX cu ambiție metropolitană, combinând funcțiuni de locuire, birouri și comerț în același front urban.",
+    "scriptGhid": "Aici explici extinderea comercială de început de secol XX: apar palate eclectice și Secession ca semn al noii burghezii urbane. Zona arată cum Clujul combină locuire, birouri și comerț într-un front modern.",
     "observatieArhitecturala": "Caută detalii de feronerie, stucaturi florale și cornișe pronunțate; acestea sunt semnele cele mai ușor de recunoscut ale repertoriului Secession/eclectic.",
     "tranzitieUrmatorulPunct": "Ultima oprire este Turnul Pompierilor, unde închidem turul cu perspectiva de ansamblu asupra centrului.",
     "intro": "Aici se vede cel mai bine energia urbană de început de secol XX.",
@@ -498,7 +498,7 @@
       "Astăzi: reper cultural și punct panoramic urban.",
       "Închide cronologic traseul de la cetate la oraș modern."
     ],
-    "scriptGhid": "La final poți spune că turnul sintetizează ideea de oraș organizat: observare, reacție rapidă și control al riscurilor urbane. Dacă la început am vorbit despre ziduri și porți, aici vedem o altă formă de securitate urbană, specifică secolului al XIX-lea, urmată azi de funcția culturală și turistică.",
+    "scriptGhid": "La final explici rolul turnului în sistemul urban al secolului XIX: observație permanentă și avertizare rapidă la incendii. Este închiderea logică a turului, de la cetatea medievală la infrastructura modernă de control urban.",
     "observatieArhitecturala": "Privește relația dintre înălțimea turnului și țesutul din jur: poziția dominantă explică perfect funcția inițială de observator.",
     "tranzitieUrmatorulPunct": "Turul se închide aici. Dacă mai aveți timp, puteți relua pe hartă palatele preferate din centru pentru o a doua rundă tematică.",
     "intro": "Închidem turul într-un punct de observație urbană.",
