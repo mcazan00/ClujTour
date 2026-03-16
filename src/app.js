@@ -59,11 +59,9 @@ const els = {
   stopFigure: byId("stopFigure"),
   stopImage: byId("stopImage"),
   stopImageCaption: byId("stopImageCaption"),
-  contextIstoricText: byId("contextIstoricText"),
-  repereCheieList: byId("repereCheieList"),
-  scriptGhidText: byId("scriptGhidText"),
-  observatieText: byId("observatieText"),
-  tranzitieText: byId("tranzitieText"),
+  povesteText: byId("povesteText"),
+  ceVeziText: byId("ceVeziText"),
+  firCronologicText: byId("firCronologicText"),
 
   revealBtn: byId("revealBtn"),
   foundBtn: byId("foundBtn"),
@@ -255,11 +253,17 @@ function renderAdmin() {
     const radius = stop.unlockRadiusMeters || runtime.config.defaultUnlockRadiusMeters || 85;
     const coordsText = `${stop.coords.lat.toFixed(5)}, ${stop.coords.lng.toFixed(5)}`;
     const hint = stop.hintToFind || "-";
-    const contextPreview = shortText(stop.contextIstoric || stop.historyShort || "", 130);
-    const scriptPreview = shortText(stop.scriptGhid || stop.intro || "", 130);
+    const povestePreview = shortText(
+      stop.povesteScurta || stop.contextIstoric || stop.historyShort || "",
+      130
+    );
+    const firPreview = shortText(
+      stop.firCronologic || stop.tranzitieUrmatorulPunct || stop.nextStopHint || "",
+      130
+    );
     return {
       label: `${index + 1}. ${stop.title} (${stop.id})`,
-      value: `Coordonate: ${coordsText} | Rază: ${radius} m | Capitol: ${stop.chapterTitle} | Hint: ${hint} | Context: ${contextPreview} | Script: ${scriptPreview}`,
+      value: `Coordonate: ${coordsText} | Rază: ${radius} m | Capitol: ${stop.chapterTitle} | Hint: ${hint} | Poveste: ${povestePreview} | Fir: ${firPreview}`,
     };
   });
   renderAdminRows(els.adminStopsList, stopRows);
@@ -488,25 +492,6 @@ function buildLockedNotice({ unlocked, revealed, distance }) {
   return "Căutăm locația actuală...";
 }
 
-function renderRepereCheie(stop) {
-  els.repereCheieList.innerHTML = "";
-  const allItems = Array.isArray(stop.repereCheie) ? stop.repereCheie : [];
-  const items = runtime.state.settings.dateMode ? allItems.slice(0, 3) : allItems;
-
-  if (!items.length) {
-    const li = document.createElement("li");
-    li.textContent = "Nu sunt repere setate pentru acest punct.";
-    els.repereCheieList.appendChild(li);
-    return;
-  }
-
-  items.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    els.repereCheieList.appendChild(li);
-  });
-}
-
 function renderStop(stop) {
   const revealed = isRevealed(stop.id);
   const found = isFound(stop.id);
@@ -530,21 +515,20 @@ function renderStop(stop) {
     setVisible(els.stopFigure, false);
   }
 
-  const contextBase = stop.contextIstoric || stop.historyShort || "";
-  const historyExtra = runtime.state.settings.historyMode ? stop.historyExtra || "" : "";
-  els.contextIstoricText.textContent = historyExtra
-    ? `${contextBase} ${historyExtra}`
-    : contextBase;
+  const legacyStory = [stop.contextIstoric, stop.scriptGhid, stop.historyShort]
+    .filter(Boolean)
+    .join(" ");
+  const povesteBase = stop.povesteScurta || legacyStory || stop.intro || "";
+  const storyExtra = runtime.state.settings.historyMode ? stop.historyExtra || "" : "";
+  const fullPoveste = storyExtra ? `${povesteBase} ${storyExtra}` : povesteBase;
 
-  renderRepereCheie(stop);
-  const fullScript = stop.scriptGhid || stop.intro || "";
-  els.scriptGhidText.textContent = runtime.state.settings.dateMode
-    ? shortText(fullScript, 260)
-    : fullScript;
-  els.observatieText.textContent =
-    stop.observatieArhitecturala || stop.observationPrompt || "";
-  els.tranzitieText.textContent =
-    stop.tranzitieUrmatorulPunct || stop.nextStopHint || "";
+  els.povesteText.textContent = runtime.state.settings.dateMode
+    ? shortText(fullPoveste, 430)
+    : fullPoveste;
+  els.ceVeziText.textContent =
+    stop.ceVeziAici || stop.observatieArhitecturala || stop.observationPrompt || "";
+  els.firCronologicText.textContent =
+    stop.firCronologic || stop.tranzitieUrmatorulPunct || stop.nextStopHint || "";
 
   setVisible(els.storyBlock, revealed);
   if (revealed) {

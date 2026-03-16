@@ -91,12 +91,12 @@ https://<user>.github.io/<repo>/
 ## Cum editezi traseul fără cod
 
 - Modifică doar `data/stops.json`:
-- textul fiecărui capitol informativ
-- imaginea fiecărei opriri (`image.src`, `image.alt`, `image.caption`)
-- coordonate
-- secțiunile informative (`contextIstoric`, `repereCheie`, `scriptGhid`, `observatieArhitecturala`, `tranzitieUrmatorulPunct`)
-- rază de deblocare (`unlockRadiusMeters`)
-- lista `landmarks` pentru indexarea palatelor/clădirilor în Admin
+  - textul fiecărui capitol informativ
+  - imaginea fiecărei opriri (`image.src`, `image.alt`, `image.caption`)
+  - coordonate
+  - micro-povestea fiecărei opriri (`povesteScurta`, `ceVeziAici`, `firCronologic`)
+  - rază de deblocare (`unlockRadiusMeters`)
+  - lista `landmarks` pentru indexarea palatelor/clădirilor în Admin
 - Modifică `data/config.json` pentru:
   - titlu/subtitlu
   - mesaj final
@@ -106,7 +106,7 @@ https://<user>.github.io/<repo>/
 ## Story / Admin
 
 - În interfață ai un meniu hamburger cu 3 secțiuni: `Story`, `Hartă`, `Setări`.
-- `Story` = experiența principală, cu pașii turului și secțiuni informative fixe.
+- `Story` = experiența principală, cu 3 blocuri narative: `Povestea locului`, `Ce vezi aici`, `Cum continuă povestea`.
 - `Hartă` = OpenStreetMap cu markere numerotate pentru toate opririle.
 - `Setări` = Date mode, Istorie+, Test mode, fullscreen, reset + secțiune internă `Date tehnice (Admin)`.
 - `Date tehnice (Admin)` = listare read-only date locale, fără editare din UI.
