@@ -126,5 +126,5 @@ https://<user>.github.io/<repo>/
 - Mod `Date` + mod `Istorie+`
 - View `Date tehnice (Admin)` read-only (setări, locații, palate/clădiri deduplicate)
 - Progres salvat local
-- Ecran final la Turnul Pompierilor
+- Ecran final la Cetățuia
 - Service worker pentru funcționare offline după prima încărcare

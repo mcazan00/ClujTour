@@ -1,8 +1,8 @@
 {
-  "tourTitle": "Tur istoric Cluj (ghid local)",
-  "tourSubtitle": "Traseu cronologic, în 10 opriri: de la Napoca romană și orașul medieval, până la extinderea modernă și infrastructurile secolului XX.",
+  "tourTitle": "Tur istoric Cluj (traseu complet)",
+  "tourSubtitle": "Un singur traseu cronologic, în 27 opriri: cetatea medievală, palatele baroce, extinderea sec. XIX-XX, modernismul anilor 1960 și final panoramic la Cetățuia.",
   "authorNote": "Aplicație local-first pentru explicarea istoriei orașului direct pe teren.",
-  "defaultUnlockRadiusMeters": 85,
+  "defaultUnlockRadiusMeters": 100,
   "distanceUpdateIntervalMs": 6000,
   "admin": {
     "storyTabLabel": "Story",
@@ -14,7 +14,7 @@
     "landmarksTitle": "Palate / Clădiri indexate"
   },
   "ending": {
-    "title": "Final la Turnul Pompierilor",
-    "message": "Ai parcurs traseul cronologic al centrului: strat roman, oraș medieval fortificat, modernizare habsburgică, extindere de secol XX și infrastructuri urbane. Poți relua punctele direct din Hartă pentru recapitulare."
+    "title": "Final la Cetățuia",
+    "message": "Ai parcurs traseul unificat al Clujului, de la bastioanele medievale și piețele baroce până la bulevardele moderne, palatele secession și clădirile moderniste. Din acest punct panoramic poți reciti orașul ca un singur fir istoric."
   }
 }
