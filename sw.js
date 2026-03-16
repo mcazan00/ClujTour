@@ -1,4 +1,4 @@
-const CACHE_NAME = "cluj-tour-v2";
+const CACHE_NAME = "cluj-tour-v3";
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
@@ -12,6 +12,16 @@ const PRECACHE_ASSETS = [
   "./manifest.webmanifest",
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png",
+  "./assets/stops/01-avram-iancu-universitatii.svg",
+  "./assets/stops/02-zidul-cetatii-potaissa.svg",
+  "./assets/stops/03-strada-universitatii.svg",
+  "./assets/stops/04-piata-unirii.svg",
+  "./assets/stops/05-strada-iuliu-maniu.svg",
+  "./assets/stops/06-piata-muzeului.svg",
+  "./assets/stops/07-parcul-caragiale.svg",
+  "./assets/stops/08-palatul-telefoanelor.svg",
+  "./assets/stops/09-horea-mihai-viteazu-palate.svg",
+  "./assets/stops/10-turnul-pompierilor.svg",
 ];
 
 self.addEventListener("install", (event) => {

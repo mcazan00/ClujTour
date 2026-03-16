@@ -59,6 +59,9 @@ const els = {
   stopTitle: byId("stopTitle"),
   lockedNotice: byId("lockedNotice"),
   storyBlock: byId("storyBlock"),
+  stopFigure: byId("stopFigure"),
+  stopImage: byId("stopImage"),
+  stopImageCaption: byId("stopImageCaption"),
   introText: byId("introText"),
   historyText: byId("historyText"),
   historyExtraText: byId("historyExtraText"),
@@ -379,6 +382,19 @@ function renderStop(stop) {
   els.historyText.textContent = stop.historyShort;
   els.historyExtraText.textContent = stop.historyExtra;
   setVisible(els.historyExtraText, runtime.state.settings.historyMode);
+
+  const image = stop.image || null;
+  if (image?.src) {
+    els.stopImage.src = image.src;
+    els.stopImage.alt = image.alt || stop.title;
+    els.stopImageCaption.textContent = image.caption || "";
+    setVisible(els.stopFigure, true);
+  } else {
+    els.stopImage.removeAttribute("src");
+    els.stopImage.alt = "";
+    els.stopImageCaption.textContent = "";
+    setVisible(els.stopFigure, false);
+  }
 
   els.observationText.textContent = `Observă: ${stop.observationPrompt}`;
   els.clueText.textContent = `Indiciu ascuns: ${stop.hiddenClue}`;

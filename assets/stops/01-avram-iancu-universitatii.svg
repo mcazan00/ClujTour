@@ -1,0 +1,5 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 750'>
+  <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#dbc7aa'/><stop offset='1' stop-color='#b08b66'/></linearGradient></defs>
+  <rect width='1200' height='750' fill='url(#g)'/><circle cx='180' cy='160' r='95' fill='#f3e8d5' opacity='.7'/><rect x='140' y='380' width='920' height='210' rx='22' fill='#f8f0e2' opacity='.88'/>
+  <text x='170' y='458' font-family='Georgia,serif' font-size='56' fill='#3d2c1d'>Avram Iancu × Universității</text><text x='170' y='524' font-family='Verdana,sans-serif' font-size='30' fill='#5a4634'>Intrarea în orașul vechi</text>
+</svg>

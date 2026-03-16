@@ -92,6 +92,7 @@ https://<user>.github.io/<repo>/
 
 - Modifică doar `data/stops.json`:
   - textul fiecărui capitol
+  - imaginea fiecărei opriri (`image.src`, `image.alt`, `image.caption`)
   - coordonate
   - provocări și hint-uri
   - rază de deblocare (`unlockRadiusMeters`)

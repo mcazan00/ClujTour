@@ -1,447 +1,491 @@
 [
   {
-    "id": "avram-iancu-intrare",
-    "title": "Strada/Piața Avram Iancu - intrarea în orașul vechi",
-    "chapterTitle": "Capitolul 1: Intrarea în poveste",
+    "id": "avram-iancu-universitatii",
+    "title": "Avram Iancu × Universității",
+    "chapterTitle": "1. Intrarea în orașul vechi",
     "coords": { "lat": 46.76952, "lng": 23.59253 },
-    "intro": "Aici deschidem seara: Clujul începe să vorbească prin clădiri mari, piețe ample și pași care încetinesc firesc.",
-    "historyShort": "Zona Avram Iancu a devenit una dintre marile porți urbane spre centrul istoric, cu repere culturale și administrative importante.",
-    "historyExtra": "Spațiul leagă orașul modern de țesutul vechi. E locul bun în care „intrarea” în Cluj capătă greutate și ritm.",
+    "image": {
+      "src": "assets/stops/01-avram-iancu-universitatii.svg",
+      "alt": "Ilustrație stilizată Avram Iancu și intrarea spre centrul vechi",
+      "caption": "Intrarea în nucleul istoric al Clujului"
+    },
+    "intro": "Aici deschidem traseul. Orașul modern și orașul vechi se ating exact în acest nod urban.",
+    "historyShort": "Zona marchează limita vechiului oraș medieval și începutul extinderii moderne din secolul XIX.",
+    "historyExtra": "În Evul Mediu, Clujul era înconjurat de ziduri, iar această zonă era aproape de una dintre limitele cetății. Clujul era numit uneori „mica Vienă a Transilvaniei” datorită influențelor austro-ungare.",
     "challenge": {
       "type": "quiz",
-      "question": "Cum pornim traseul?",
+      "question": "Ce observi prima dată aici?",
       "options": [
-        "Cu pas lent și privirea ridicată la fațade",
-        "În grabă, fără opriri",
-        "Doar pe telefon"
+        "Tranziția dintre orașul vechi și cel modern",
+        "Doar trafic",
+        "Nimic special"
       ],
       "correctIndex": 0,
-      "success": "Perfect. Așa se citește orașul.",
-      "failure": "Mai ridică privirea 20 de secunde. Vei simți diferența."
+      "success": "Exact. Aici începe povestea de tranziție a Clujului.",
+      "failure": "Mai privește fronturile clădirilor. Se simte trecerea dintre epoci."
     },
-    "observationPrompt": "Alege o clădire din zonă care pare „deschiderea” potrivită pentru seara noastră.",
-    "forUsNote": "Îmi place că începuturile cu tine au mereu un ritm bun.",
-    "hiddenClue": "De aici coborâm spre vechile linii defensive ale orașului.",
-    "hintToFind": "Mergi spre zona Avram Iancu, la limita dintre bulevard și nucleul vechi.",
-    "nextStopHint": "Următoarea oprire: zidul cetății, zona străzii Potaissa.",
+    "observationPrompt": "Găsește o clădire care pare mai imperială decât restul și spune de ce.",
+    "forUsNote": "Aș vrea să păstrăm momentul ăsta ca „prima pagină” a turului nostru.",
+    "hiddenClue": "Următoarea oprire ne duce direct la zidurile cetății medievale.",
+    "hintToFind": "Caută axa dintre Avram Iancu și Universității, la intrarea în orașul vechi.",
+    "nextStopHint": "Mergem spre Strada Potaissa, la zidul cetății.",
     "unlockRadiusMeters": 110,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută piața amplă și fronturile monumentale.",
-    "distanceNarrativeFar": "Ține direcția spre Avram Iancu, poarta de intrare în centrul istoric.",
+    "distanceNarrativeNear": "Ești aproape. Caută intersecția care deschide centrul istoric.",
+    "distanceNarrativeFar": "Ține direcția spre Avram Iancu, spre intrarea în orașul vechi.",
     "landmarks": [
-      {
-        "name": "Teatrul Național \"Lucian Blaga\"",
-        "category": "clădire culturală",
-        "area": "Avram Iancu",
-        "noteShort": "Reper major la intrarea în orașul vechi."
-      },
       {
         "name": "Catedrala Mitropolitană",
         "category": "clădire religioasă",
-        "area": "Avram Iancu",
-        "noteShort": "Un punct vizual puternic pe axa pieței."
+        "area": "Piața Avram Iancu",
+        "noteShort": "Reper major al extinderii moderne."
+      },
+      {
+        "name": "Teatrul Național \"Lucian Blaga\"",
+        "category": "clădire culturală",
+        "area": "Piața Avram Iancu",
+        "noteShort": "Semnătura culturală a zonei de intrare."
       }
     ]
   },
   {
     "id": "zidul-cetatii-potaissa",
-    "title": "Zidul Cetății - zona străzii Potaissa",
-    "chapterTitle": "Capitolul 2: Orașul fortificat",
+    "title": "Zidul cetății - Strada Potaissa",
+    "chapterTitle": "2. Orașul medieval fortificat",
     "coords": { "lat": 46.76852, "lng": 23.58934 },
-    "intro": "Piatra asta păstrează altă temperatură: e Clujul care se apăra, nu doar cel care se plimba.",
-    "historyShort": "În zona Potaissa se mai simt urmele vechiului sistem defensiv al cetății medievale. E unul dintre cele mai bune locuri pentru a vedea osatura istorică a orașului.",
-    "historyExtra": "Fragmentele de zid sunt rare pentru că orașul a evoluat peste ele. Tocmai de aceea, locul are greutate: vezi istoria în strat brut, nu în vitrină.",
+    "image": {
+      "src": "assets/stops/02-zidul-cetatii-potaissa.svg",
+      "alt": "Ilustrație zid medieval pe Strada Potaissa",
+      "caption": "Fragment din fortificațiile secolelor XIV-XV"
+    },
+    "intro": "Aici orașul își arată armura. Piatra veche schimbă complet ritmul plimbării.",
+    "historyShort": "Fragment al fortificațiilor medievale ridicate în secolele XIV-XV.",
+    "historyExtra": "Cetatea avea aproximativ 2 km de ziduri, peste 20 de turnuri și mai multe porți. Turnurile erau apărate de bresle. În unele zone s-au folosit pietre din ruine romane.",
     "challenge": {
       "type": "quiz",
-      "question": "Ce imagine îți vine prima dată aici?",
+      "question": "Cine apăra de regulă turnurile cetății?",
       "options": [
-        "Un oraș viu care își păstrează urmele",
-        "Doar un perete vechi",
-        "Un decor fără context"
+        "Breslele orașului",
+        "Studenții",
+        "Negustori veniți ocazional"
       ],
       "correctIndex": 0,
-      "success": "Exact. Asta e frumusețea zonei.",
-      "failure": "Mai privește textura zidului. Acolo stă povestea."
+      "success": "Corect. Breslele aveau rol defensiv clar.",
+      "failure": "Indiciu: economia și apărarea mergeau mână în mână în orașul medieval."
     },
-    "observationPrompt": "Caută locul unde piatra pare cea mai veche și descrie-l în trei cuvinte.",
-    "forUsNote": "În locurile cu memorie lungă îmi place să stăm puțin mai aproape.",
-    "hiddenClue": "Următorul capitol e pe o stradă universitară, cu ritm de idei.",
-    "hintToFind": "Caută porțiunea de zid medieval din zona străzii Potaissa.",
-    "nextStopHint": "Mergem spre Strada Universității.",
+    "observationPrompt": "Caută porțiunea de zid cu textură cea mai neregulată.",
+    "forUsNote": "În locurile de piatră veche, liniștea cu tine pare și mai frumoasă.",
+    "hiddenClue": "Următoarea oprire: strada care a făcut Clujul un centru academic.",
+    "hintToFind": "Mergi pe Potaissa, la porțiunea vizibilă de zid medieval.",
+    "nextStopHint": "Următorul punct: Strada Universității.",
     "unlockRadiusMeters": 95,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută zidul și diferența de textură în peisaj.",
-    "distanceNarrativeFar": "Ține direcția spre Potaissa, în zona vechilor urme defensive.",
+    "distanceNarrativeNear": "Ești aproape. Uită-te după zidul gros, din piatră medievală.",
+    "distanceNarrativeFar": "Ține direcția spre Potaissa, spre urmele cetății.",
     "landmarks": [
       {
-        "name": "Zidul Cetății (Potaissa)",
+        "name": "Zidul Cetății",
         "category": "fortificație",
-        "area": "strada Potaissa",
-        "noteShort": "Fragment esențial din Clujul fortificat."
+        "area": "Strada Potaissa",
+        "noteShort": "Una dintre cele mai clare urme ale orașului medieval."
       }
     ]
   },
   {
     "id": "strada-universitatii",
     "title": "Strada Universității",
-    "chapterTitle": "Capitolul 3: Strada ideilor",
+    "chapterTitle": "3. Centrul intelectual",
     "coords": { "lat": 46.76959, "lng": 23.58988 },
-    "intro": "Aici orașul devine intelectual, dar rămâne cald: librării, pași, conversații lungi.",
-    "historyShort": "Strada Universității este una dintre axele simbolice ale vieții academice clujene, conectând repere culturale și instituționale.",
-    "historyExtra": "Universitatea a modelat ritmul centrului nu doar prin clădiri, ci și prin atmosfera locului: dezbatere, cercetare, curiozitate.",
+    "image": {
+      "src": "assets/stops/03-strada-universitatii.svg",
+      "alt": "Ilustrație cu front academic pe Strada Universității",
+      "caption": "Clujul universitar"
+    },
+    "intro": "Pe strada asta orașul capătă ton de idei, biblioteci și dezbateri.",
+    "historyShort": "Strada s-a dezvoltat în jurul tradiției universitare începute în 1581, în epoca lui Ștefan Báthory.",
+    "historyExtra": "Clujul a devenit unul dintre cele mai importante centre academice din Europa Centrală. Astăzi are peste 100.000 de studenți.",
     "challenge": {
       "type": "quiz",
-      "question": "Ce joc facem aici?",
+      "question": "În ce secol începe tradiția universitară locală?",
       "options": [
-        "Inventăm titlul unei cărți despre plimbarea noastră",
-        "Numărăm doar mașini",
-        "Sărim peste oprire"
+        "Secolul XVI",
+        "Secolul XIX",
+        "Secolul XXI"
       ],
       "correctIndex": 0,
-      "success": "Titlul bun e deja un suvenir.",
-      "failure": "Hai să ne dăm 30 de secunde pentru imaginație."
+      "success": "Da, rădăcina e în sec. XVI.",
+      "failure": "Indiciu: anul-cheie este 1581."
     },
-    "observationPrompt": "Alege o fațadă academică și spune ce te face să te oprești la ea.",
-    "forUsNote": "Tu pui emoția, eu pun contextul, și ne iese povestea completă.",
-    "hiddenClue": "Urmează inima orașului: palate, clădiri și urme romane.",
-    "hintToFind": "Caută Strada Universității, în vecinătatea Pieței Unirii.",
-    "nextStopHint": "Ne mutăm în Piața Unirii, la palatele din jur.",
+    "observationPrompt": "Găsește un detaliu arhitectural care inspiră „disciplină” și „calm”.",
+    "forUsNote": "Îmi place cum aici conversațiile noastre devin mai profunde fără efort.",
+    "hiddenClue": "Urmează piața centrală: palate, vestigii și clădiri simbol.",
+    "hintToFind": "Caută Strada Universității, foarte aproape de Piața Unirii.",
+    "nextStopHint": "Mergem spre Piața Unirii.",
     "unlockRadiusMeters": 90,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută strada cu vibe universitar clasic.",
-    "distanceNarrativeFar": "Revino spre nucleul central dintre Potaissa și Piața Unirii.",
+    "distanceNarrativeNear": "Ești aproape. Caută axa academică din centru.",
+    "distanceNarrativeFar": "Revino spre centrul vechi, în jurul Universității.",
     "landmarks": [
       {
-        "name": "Fronturile academice de pe Strada Universității",
-        "category": "ansamblu urban",
+        "name": "Universitatea Babeș-Bolyai (zonă)",
+        "category": "instituție academică",
         "area": "Strada Universității",
-        "noteShort": "Ritmul intelectual al centrului clujean."
+        "noteShort": "Nucleu universitar major al orașului."
       }
     ]
   },
   {
-    "id": "piata-unirii-palate-castru",
-    "title": "Piața Unirii - palate, clădiri, urme de castru roman",
-    "chapterTitle": "Capitolul 4: Centrul mare",
+    "id": "piata-unirii",
+    "title": "Piața Unirii - centru urban și urme romane",
+    "chapterTitle": "4. De la Napoca la Cluj",
     "coords": { "lat": 46.77022, "lng": 23.58962 },
-    "intro": "Aici se adună straturile mari: gotic, baroc, modern și ecoul Napoca romană.",
-    "historyShort": "Piața Unirii este punctul major al centrului istoric, cu palate reprezentative și clădiri-simbol. În zona orașului există și repere legate de vechiul castru roman Napoca.",
-    "historyExtra": "Palatele din piață spun povestea elitelor urbane, iar stratul roman amintește că orașul are rădăcini mult mai vechi decât fronturile actuale.",
+    "image": {
+      "src": "assets/stops/04-piata-unirii.svg",
+      "alt": "Ilustrație Piața Unirii cu repere istorice",
+      "caption": "Piața centrală a orașului de peste 700 de ani"
+    },
+    "intro": "Aici se întâlnesc toate straturile: roman, medieval, baroc și modern.",
+    "historyShort": "Piața Unirii este centrul orașului de peste 700 de ani. Sub piața actuală există vestigii ale orașului roman Napoca.",
+    "historyExtra": "Repere majore: Biserica Sfântul Mihail (1316-1487, turn ~80 m), Palatul Bánffy (1774-1785), Casa Rhédey, Casa Hintz (farmacie din sec. XVI), Hotel Continental/New York.",
     "challenge": {
       "type": "quiz",
-      "question": "Ce observi prima dată aici?",
+      "question": "Ce perioadă NU lipsește din piață?",
       "options": [
-        "Contrastul dintre palatele elegante și spațiul deschis al pieței",
-        "Doar traficul",
-        "Nimic special"
+        "Epoca romană",
+        "Doar secolul XX",
+        "Doar epoca medievală"
       ],
       "correctIndex": 0,
-      "success": "Da, aici contrastul face spectacol.",
-      "failure": "Privește pe laterale. Fronturile pieței spun tot."
+      "success": "Exact. Piața are memorie multistrat.",
+      "failure": "Indiciu: sub piață există urme ale Napoca romane."
     },
-    "observationPrompt": "Alege un palat din piață și spune ce rol ar avea într-un film istoric.",
-    "forUsNote": "Îmi place că în locurile mari găsim mereu un detaliu doar al nostru.",
-    "hiddenClue": "Urmează strada în oglindă, cea mai „friguroasă” din Cluj.",
-    "hintToFind": "Intră în Piața Unirii și urmărește fronturile cu palate.",
-    "nextStopHint": "Ne strecurăm spre Strada Iuliu Maniu.",
+    "observationPrompt": "Alege două clădiri din piață și spune ce epoci par să reprezinte.",
+    "forUsNote": "Dacă orașul are o inimă, aici se aude cel mai clar.",
+    "hiddenClue": "Următoarea oprire: strada în oglindă.",
+    "hintToFind": "Intră în Piața Unirii, în zona fronturilor istorice.",
+    "nextStopHint": "Continuăm spre Strada Iuliu Maniu.",
     "unlockRadiusMeters": 100,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută frontul de palate al pieței.",
-    "distanceNarrativeFar": "Ține direcția spre Piața Unirii, centrul mare al orașului vechi.",
+    "distanceNarrativeNear": "Ești aproape de inima orașului.",
+    "distanceNarrativeFar": "Ține direcția spre Piața Unirii.",
     "landmarks": [
+      {
+        "name": "Biserica Sfântul Mihail",
+        "category": "clădire religioasă",
+        "area": "Piața Unirii",
+        "noteShort": "Monument gotic major, construit între 1316-1487."
+      },
       {
         "name": "Palatul Bánffy",
         "category": "palat",
         "area": "Piața Unirii",
-        "noteShort": "Reper baroc major al centrului."
+        "noteShort": "Palat baroc, astăzi Muzeul de Artă."
       },
       {
-        "name": "Palatul Rhédey",
+        "name": "Casa Rhédey",
         "category": "palat",
         "area": "Piața Unirii",
-        "noteShort": "Fațadă nobilă pe frontul principal al pieței."
+        "noteShort": "Palat aristocratic din sec. XVIII."
       },
       {
-        "name": "Casa cu Cerb (Wolphard-Kakas)",
+        "name": "Casa Hintz",
         "category": "clădire istorică",
         "area": "Piața Unirii",
-        "noteShort": "Un detaliu celebru în peisajul pieței."
+        "noteShort": "Clădire legată de prima farmacie din Cluj."
       },
       {
-        "name": "Castrul roman Napoca (urme/repere)",
-        "category": "patrimoniu arheologic",
+        "name": "Hotel Continental (New York)",
+        "category": "hotel istoric",
         "area": "zona centrală",
-        "noteShort": "Stratul roman care completează istoria pieței."
+        "noteShort": "Unul dintre cele mai luxoase hoteluri din Transilvania."
+      },
+      {
+        "name": "Vestigii Napoca",
+        "category": "patrimoniu arheologic",
+        "area": "Piața Unirii",
+        "noteShort": "Stratul roman al centrului actual."
       }
     ]
   },
   {
     "id": "strada-iuliu-maniu",
     "title": "Strada Iuliu Maniu - strada în oglindă",
-    "chapterTitle": "Capitolul 5: Geometrie urbană",
+    "chapterTitle": "5. Geometrie urbană",
     "coords": { "lat": 46.77016, "lng": 23.59069 },
-    "intro": "Aici Clujul devine precis: linii paralele, simetrie, un aer răcoros care i-a adus și faima de stradă „friguroasă”.",
-    "historyShort": "Strada Iuliu Maniu este cunoscută pentru fronturile simetrice și pentru curenții de aer resimțiți de localnici, motiv pentru care e adesea numită „cea mai friguroasă” stradă din Cluj.",
-    "historyExtra": "E unul dintre cele mai recognoscibile exerciții de perspectivă urbană din centru, unde fiecare pas confirmă designul riguros al străzii.",
+    "image": {
+      "src": "assets/stops/05-strada-iuliu-maniu.svg",
+      "alt": "Ilustrație cu fronturi simetrice pe Strada Iuliu Maniu",
+      "caption": "Strada în oglindă"
+    },
+    "intro": "Aici orașul pare desenat cu rigla. Simetria face tot spectacolul.",
+    "historyShort": "Strada a fost proiectată la începutul secolului XX, cu clădiri construite simetric pe ambele părți.",
+    "historyExtra": "Localnicii o numesc „strada în oglindă”; este cunoscută și pentru curenții reci de aer, de unde reputația de stradă „friguroasă”.",
     "challenge": {
       "type": "quiz",
-      "question": "Misiunea noastră aici:",
+      "question": "Ce misiune facem aici?",
       "options": [
-        "O fotografie perfect centrată pe axul străzii",
-        "Traversare grăbită",
-        "Privire doar la asfalt"
+        "Găsim un balcon „pereche” pe partea opusă",
+        "Trecem fără să privim",
+        "Ne uităm doar la vitrine"
       ],
       "correctIndex": 0,
-      "success": "Perfect. Strada asta cere simetrie.",
-      "failure": "Mai încearcă din centru. Acolo se vede magia."
+      "success": "Exact. Simetria e cheia străzii.",
+      "failure": "Privirea în axă te ajută să vezi perechile arhitecturale."
     },
-    "observationPrompt": "Spune pe ce parte a străzii simți mai puternic efectul de „oglindă”.",
-    "forUsNote": "Dacă îți e frig aici, promisiunea mea e ceai după traseu.",
-    "hiddenClue": "Urmează piața boemă, cu clădiri vechi și obiective ascunse.",
-    "hintToFind": "Caută strada scurtă, aliniată și simetrică din centrul vechi.",
+    "observationPrompt": "Stai în axul străzii și descrie unde vezi simetria cea mai clară.",
+    "forUsNote": "Dacă e frig, eu votez pentru o pauză caldă după punctul următor.",
+    "hiddenClue": "Urmează cea mai veche piață medievală a orașului.",
+    "hintToFind": "Caută strada scurtă și simetrică dintre Piața Unirii și 21 Decembrie.",
     "nextStopHint": "Mergem spre Piața Muzeului.",
     "unlockRadiusMeters": 90,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută axul perfect și fronturile în oglindă.",
-    "distanceNarrativeFar": "Revino lângă Piața Unirii și caută strada scurtă, foarte simetrică.",
+    "distanceNarrativeNear": "Ești aproape. Caută efectul de oglindă al fațadelor.",
+    "distanceNarrativeFar": "Revino spre zona centrală și caută strada simetrică.",
     "landmarks": [
       {
-        "name": "Strada Iuliu Maniu - fronturi simetrice",
+        "name": "Fronturile simetrice Iuliu Maniu",
         "category": "ansamblu urban",
-        "area": "centru",
-        "noteShort": "Cea mai fotogenică stradă „în oglindă” din Cluj."
+        "area": "Strada Iuliu Maniu",
+        "noteShort": "Unul dintre cele mai recognoscibile cadre urbane din Cluj."
       }
     ]
   },
   {
-    "id": "piata-muzeului-obiective",
-    "title": "Piața Muzeului - clădiri și obiective",
-    "chapterTitle": "Capitolul 6: Clujul intim",
+    "id": "piata-muzeului",
+    "title": "Piața Muzeului",
+    "chapterTitle": "6. Cea mai veche piață medievală",
     "coords": { "lat": 46.77172, "lng": 23.58778 },
-    "intro": "După piețele mari, aici orașul își coboară vocea și îți dă detaliul la distanță de un braț.",
-    "historyShort": "Piața Muzeului concentrează un front istoric prețios, cu case vechi, monumente și urme ale vieții urbane medievale.",
-    "historyExtra": "E zona în care nu impresia grandioasă te cucerește, ci textura: ancadramente, volume mici, colțuri care par neschimbate.",
+    "image": {
+      "src": "assets/stops/06-piata-muzeului.svg",
+      "alt": "Ilustrație Piața Muzeului și clădiri istorice",
+      "caption": "Nucleul medieval intim al Clujului"
+    },
+    "intro": "Aici orașul devine boem și concentrat. Totul e mai aproape, mai personal.",
+    "historyShort": "Piața Muzeului este cea mai veche piață a orașului medieval. În zonă se află Casa Matei Corvin, locul nașterii sale (1443).",
+    "historyExtra": "Piața păstrează o țesătură valoroasă de clădiri istorice, cu atmosferă diferită față de monumentalitatea Pieței Unirii.",
     "challenge": {
       "type": "quiz",
-      "question": "Ce facem în piață?",
+      "question": "Cu ce se simte diferită piața asta?",
       "options": [
-        "Vânăm două detalii pe care alții le ratează",
-        "Ne uităm doar la meniuri",
-        "Plecăm imediat"
+        "E mai intimă și mai boemă",
+        "E strict administrativă",
+        "Nu e nicio diferență"
       ],
       "correctIndex": 0,
-      "success": "Asta e ideea. Piața asta recompensează privirea atentă.",
-      "failure": "Mai privește fațadele laterale. Acolo e farmecul."
+      "success": "Exact, asta e personalitatea ei.",
+      "failure": "Privește ritmul clădirilor și distanțele dintre ele."
     },
-    "observationPrompt": "Alege un obiectiv din piață care ți se pare cel mai „de poveste”.",
-    "forUsNote": "În locurile de genul ăsta, timpul cu tine parcă încetinește frumos.",
-    "hiddenClue": "Următoarea zonă e verde, dar păstrează și o surpriză urbană: Palatul Telefoanelor.",
-    "hintToFind": "Revino în Piața Muzeului și urmărește fronturile istorice, nu doar centrul pieței.",
-    "nextStopHint": "Pornim spre Parcul I. L. Caragiale și Palatul Telefoanelor.",
+    "observationPrompt": "Găsește o fațadă care pare „de poveste” și spune ce epocă îți sugerează.",
+    "forUsNote": "Piața asta e perfectă pentru o amintire care rămâne.",
+    "hiddenClue": "Următoarea oprire: zona care a devenit parc după demolarea zidurilor.",
+    "hintToFind": "Mergi în Piața Muzeului, în zona cu fronturi istorice compacte.",
+    "nextStopHint": "Continuăm spre Parcul I. L. Caragiale.",
     "unlockRadiusMeters": 95,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută piața boemă și clădirile vechi din jur.",
-    "distanceNarrativeFar": "Ține direcția spre Piața Muzeului, în nucleul vechi al orașului.",
+    "distanceNarrativeNear": "Ești aproape. Caută piața veche, cu atmosferă boemă.",
+    "distanceNarrativeFar": "Ține direcția spre Piața Muzeului.",
     "landmarks": [
+      {
+        "name": "Casa Matia Corvin",
+        "category": "clădire istorică",
+        "area": "Piața Muzeului",
+        "noteShort": "Loc asociat nașterii lui Matei Corvin (1443)."
+      },
       {
         "name": "Obeliscul Carolina",
         "category": "monument",
         "area": "Piața Muzeului",
-        "noteShort": "Reper central pentru citirea pieței."
-      },
-      {
-        "name": "Casele istorice din Piața Muzeului",
-        "category": "ansamblu urban",
-        "area": "Piața Muzeului",
-        "noteShort": "Țesătură urbană veche, foarte valoroasă."
+        "noteShort": "Reper vizual central în piață."
       }
     ]
   },
   {
-    "id": "parcul-caragiale-telefon",
-    "title": "Parcul I. L. Caragiale + Palatul Telefoanelor",
-    "chapterTitle": "Capitolul 7: Verde + oraș",
+    "id": "parcul-caragiale",
+    "title": "Parcul I. L. Caragiale",
+    "chapterTitle": "7. De la ziduri la parc",
     "coords": { "lat": 46.77326, "lng": 23.58776 },
-    "intro": "Aici traseul respiră: puțin parc, puțină arhitectură urbană, exact cât să schimbăm ritmul.",
-    "historyShort": "Zona Parcului I. L. Caragiale oferă o tranziție plăcută între centrul istoric compact și coridorul nordic al orașului. În proximitate, Palatul Telefoanelor marchează modernizarea utilitară a Clujului.",
-    "historyExtra": "Combinația dintre spațiu verde și clădiri administrative/comerciale face zona ideală pentru un capitol de „respiro” în tur.",
+    "image": {
+      "src": "assets/stops/07-parcul-caragiale.svg",
+      "alt": "Ilustrație Parcul I. L. Caragiale",
+      "caption": "Spațiu urban apărut după demolarea fortificațiilor"
+    },
+    "intro": "Aici orașul respiră altfel. Loc de apărare odinioară, loc de plimbare azi.",
+    "historyShort": "Zona făcea parte din sistemul defensiv medieval. După demolarea zidurilor în secolul XIX, a fost amenajată ca parc.",
+    "historyExtra": "Este un bun exemplu de transformare urbană: de la protecție militară la spațiu public de relaxare.",
     "challenge": {
       "type": "quiz",
-      "question": "Ce alegem aici?",
+      "question": "Ce transformare definește cel mai bine locul?",
       "options": [
-        "Un minut de pauză + un detaliu de clădire",
-        "Doar alergăm mai departe",
-        "Ignorăm complet zona"
+        "Defensiv medieval -> parc urban",
+        "Parc -> cetate militară",
+        "Zonă industrială -> aeroport"
       ],
       "correctIndex": 0,
-      "success": "Exact. E pauza bună dintre două capitole dense.",
-      "failure": "Dă-i totuși un minut. Zona asta merită."
+      "success": "Exact. E o transformare urbană clasică.",
+      "failure": "Indiciu: secolul XIX schimbă rolul zonei."
     },
-    "observationPrompt": "Compară textura parcului cu fațadele din jur: ce contrast îți place mai mult?",
-    "forUsNote": "Îmi place mixul ăsta: un pic de liniște, un pic de oraș, și noi doi la mijloc.",
-    "hiddenClue": "Urmează intersecția unde palatele se întâlnesc cu Horea și muralul H33.",
-    "hintToFind": "Mergi spre Parcul I. L. Caragiale și caută zona Palatului Telefoanelor.",
-    "nextStopHint": "Mergem spre intersecția Mihai Viteazu x Horea.",
-    "unlockRadiusMeters": 105,
+    "observationPrompt": "Alege un punct unde simți cel mai clar contrastul vechi-nou.",
+    "forUsNote": "Îmi place că traseul nostru are și capitole de respirație.",
+    "hiddenClue": "La câteva minute urmează clădirea comunicațiilor moderne.",
+    "hintToFind": "Caută Parcul I. L. Caragiale, la nordul centrului.",
+    "nextStopHint": "Mergem spre Palatul Telefoanelor.",
+    "unlockRadiusMeters": 100,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută zona verde și clădirile administrative din jur.",
-    "distanceNarrativeFar": "Ține direcția spre Parcul Caragiale, spre zona cu Palatul Telefoanelor.",
+    "distanceNarrativeNear": "Ești aproape. Caută zona verde legată de vechile fortificații.",
+    "distanceNarrativeFar": "Ține direcția spre Parcul I. L. Caragiale.",
     "landmarks": [
       {
         "name": "Parcul I. L. Caragiale",
         "category": "parc urban",
         "area": "centru-nord",
-        "noteShort": "Punct de respiro între capitolele istorice."
-      },
-      {
-        "name": "Palatul Telefoanelor",
-        "category": "clădire administrativă",
-        "area": "zona Caragiale",
-        "noteShort": "Semn al modernizării infrastructurii urbane."
+        "noteShort": "Exemplu de conversie urbană post-fortificații."
       }
     ]
   },
   {
-    "id": "intersectie-mihai-viteazu-horea",
-    "title": "Intersecția Mihai Viteazu x Horea - palate",
-    "chapterTitle": "Capitolul 8: Nordul eclectic",
-    "coords": { "lat": 46.77468, "lng": 23.59055 },
-    "intro": "Intersecția asta e un schimb de energii: piață mare, axă comercială, palate și surprize contemporane.",
-    "historyShort": "Zona Mihai Viteazu - Horea concentrează fronturi urbane valoroase și legături spre clădiri istorice de pe coridorul nordic al centrului.",
-    "historyExtra": "În proximitate se află și muralul „Omul Micro Macro Cosmic” (H33), cunoscut pentru scara sa impresionantă.",
+    "id": "palatul-telefoanelor",
+    "title": "Palatul Telefoanelor",
+    "chapterTitle": "8. Clujul comunicațiilor moderne",
+    "coords": { "lat": 46.77302, "lng": 23.58879 },
+    "image": {
+      "src": "assets/stops/08-palatul-telefoanelor.svg",
+      "alt": "Ilustrație Palatul Telefoanelor",
+      "caption": "Reper al modernizării comunicațiilor"
+    },
+    "intro": "Aici povestea trece în epoca firelor, centralelor și conectării rapide a orașului.",
+    "historyShort": "Palatul Telefoanelor a fost important pentru dezvoltarea comunicațiilor moderne în Cluj.",
+    "historyExtra": "În clădire se conectau manual convorbirile, inclusiv cele internaționale, într-o epocă în care infrastructura telefonică era strategică.",
     "challenge": {
       "type": "quiz",
-      "question": "Ce „vânătoare” facem aici?",
+      "question": "Cum erau conectate multe convorbiri în trecut?",
       "options": [
-        "Un palat + un detaliu contemporan (mural H33)",
-        "Doar semne de circulație",
-        "Nimic"
+        "Manual, prin centraliste",
+        "Automat prin internet",
+        "Prin satelit personal"
       ],
       "correctIndex": 0,
-      "success": "Exact. Asta e combinația bună pentru zona asta.",
-      "failure": "Mai uită-te puțin în jur: contrastul e chiar farmecul locului."
+      "success": "Da, manualitatea era esențială atunci.",
+      "failure": "Indiciu: era o muncă umană foarte precisă."
     },
-    "observationPrompt": "Dacă ajungi la H33, spune ce emoție transmite muralul în 3 cuvinte.",
-    "forUsNote": "Îmi place cum găsim împreună și „vechiul”, și „acum-ul” orașului.",
-    "hiddenClue": "Ne mutăm câteva minute în Piața Mihai Viteazu.",
-    "hintToFind": "Caută nodul Mihai Viteazu cu Horea și fronturile istorice din jur.",
-    "nextStopHint": "Următoarea oprire: Piața Mihai Viteazu.",
-    "unlockRadiusMeters": 110,
+    "observationPrompt": "Caută un element de fațadă care sugerează funcțiune administrativă/tehnică.",
+    "forUsNote": "Îmi place ideea că un oraș mare e, în fond, o rețea de conexiuni.",
+    "hiddenClue": "Următorul punct ne duce în zona palatelor de la Horea × Mihai Viteazu.",
+    "hintToFind": "Caută Palatul Telefoanelor în proximitatea zonei Caragiale.",
+    "nextStopHint": "Mergem spre intersecția Horea × Mihai Viteazu.",
+    "unlockRadiusMeters": 95,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută intersecția mare și fronturile eclectice.",
-    "distanceNarrativeFar": "Ține direcția spre intersecția Mihai Viteazu x Horea.",
+    "distanceNarrativeNear": "Ești aproape. Caută clădirea legată de comunicațiile moderne.",
+    "distanceNarrativeFar": "Ține direcția spre zona Palatului Telefoanelor.",
     "landmarks": [
       {
-        "name": "Palatul New York (Hotel Continental)",
+        "name": "Palatul Telefoanelor",
+        "category": "clădire administrativă",
+        "area": "centru-nord",
+        "noteShort": "Nod istoric al telecomunicațiilor urbane."
+      }
+    ]
+  },
+  {
+    "id": "horea-mihai-viteazu-palate",
+    "title": "Horea × Mihai Viteazu - zona palatelor",
+    "chapterTitle": "9. Extinderea modernă și Secession",
+    "coords": { "lat": 46.77468, "lng": 23.59055 },
+    "image": {
+      "src": "assets/stops/09-horea-mihai-viteazu-palate.svg",
+      "alt": "Ilustrație zona palatelor Horea Mihai Viteazu",
+      "caption": "Palate de început de secol XX"
+    },
+    "intro": "Aici orașul își etalează ambiția de început de secol XX: fațade decorative și energie comercială.",
+    "historyShort": "Zona a devenit importantă după demolarea zidurilor, cu palate Secession/Art Nouveau ridicate la începutul secolului XX.",
+    "historyExtra": "Repere: Palatul Széki, Palatul Elian, Palatul Babos. În proximitate, muralul H33 („Omul Micro Macro Cosmic”) aduce stratul artistic contemporan.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Ce definește cel mai bine zona?",
+      "options": [
+        "Palate decorative + extindere urbană modernă",
+        "Doar blocuri recente",
+        "Doar construcții medievale"
+      ],
+      "correctIndex": 0,
+      "success": "Exact. Aici se vede orașul modern în formare.",
+      "failure": "Indiciu: privește decorațiunile fațadelor de început de secol XX."
+    },
+    "observationPrompt": "Găsește o decorațiune florală și o linie curbată tipică Art Nouveau.",
+    "forUsNote": "Îmi place că locurile astea „de detaliu” ne țin atenți unul la altul.",
+    "hiddenClue": "Ultimul capitol urcă spre Turnul Pompierilor.",
+    "hintToFind": "Caută intersecția Horea × Mihai Viteazu și fronturile de palate.",
+    "nextStopHint": "Final: Turnul Pompierilor.",
+    "unlockRadiusMeters": 105,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape. Caută intersecția cu fronturi eclectice.",
+    "distanceNarrativeFar": "Ține direcția spre Horea × Mihai Viteazu.",
+    "landmarks": [
+      {
+        "name": "Palatul Széki",
         "category": "palat",
-        "area": "Mihai Viteazu",
-        "noteShort": "Unul dintre reperele Belle Époque din zonă."
+        "area": "Horea",
+        "noteShort": "Palat Art Nouveau cu decorațiuni florale."
       },
       {
         "name": "Palatul Elian",
         "category": "palat",
-        "area": "centru extins",
-        "noteShort": "Legat de fronturile elegante ale zonei centrale."
+        "area": "zona centrală",
+        "noteShort": "Ridicat pentru comercianți bogați."
+      },
+      {
+        "name": "Palatul Babos",
+        "category": "palat",
+        "area": "Mihai Viteazu",
+        "noteShort": "Exemplu eclectico-secession de început de secol XX."
       },
       {
         "name": "Omul Micro Macro Cosmic (H33)",
         "category": "pictură murală",
-        "area": "strada Horea",
-        "noteShort": "Mural de scară mare, reper contemporan al zonei."
-      }
-    ]
-  },
-  {
-    "id": "piata-mihai-viteazu",
-    "title": "Piața Mihai Viteazu",
-    "chapterTitle": "Capitolul 9: Piața de tranzit cu personalitate",
-    "coords": { "lat": 46.77364, "lng": 23.59141 },
-    "intro": "Piața asta e vie și practică, dar dacă stai puțin, descoperi exact stratul de istorie urbană pe care mulți îl ratează.",
-    "historyShort": "Piața Mihai Viteazu a funcționat ca nod comercial și de mobilitate, legând centrul vechi de extinderile moderne ale orașului.",
-    "historyExtra": "Fronturile din jur reflectă evoluția Clujului spre orașul secolului XX, cu arhitectură mixtă și funcțiuni urbane intense.",
-    "challenge": {
-      "type": "quiz",
-      "question": "Cum citim piața asta?",
-      "options": [
-        "Ca loc de trecere care ascunde povești bune",
-        "Ca loc fără identitate",
-        "Doar ca stație"
-      ],
-      "correctIndex": 0,
-      "success": "Corect. Aici tocmai asta e cheia.",
-      "failure": "Mai privește fronturile laterale. Identitatea e acolo."
-    },
-    "observationPrompt": "Alege un colț din piață care ți se pare cel mai cinematografic.",
-    "forUsNote": "Îți promit că în orașele mari tot caut locuri care să semene cu liniștea noastră.",
-    "hiddenClue": "Finalul e aproape: urmează Turnul Pompierilor.",
-    "hintToFind": "Mergi în Piața Mihai Viteazu, în nodul mare dintre centru și Horea.",
-    "nextStopHint": "Ultima oprire: Turnul Pompierilor.",
-    "unlockRadiusMeters": 100,
-    "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești aproape. Caută piața mare cu flux urban intens.",
-    "distanceNarrativeFar": "Ține direcția spre Piața Mihai Viteazu.",
-    "landmarks": [
-      {
-        "name": "Piața Mihai Viteazu",
-        "category": "piață urbană",
-        "area": "centru-nord",
-        "noteShort": "Nod urban important între centru și Horea."
-      },
-      {
-        "name": "Fronturile istorice din jurul pieței",
-        "category": "ansamblu urban",
-        "area": "Mihai Viteazu",
-        "noteShort": "Tranziția dintre orașul vechi și extinderile moderne."
+        "area": "Strada Horea",
+        "noteShort": "Mural de mari dimensiuni, reper urban contemporan."
       }
     ]
   },
   {
     "id": "turnul-pompierilor",
     "title": "Turnul Pompierilor",
-    "chapterTitle": "Capitolul 10: Final cu privire de sus",
+    "chapterTitle": "10. Finalul turului",
     "coords": { "lat": 46.77342, "lng": 23.59096 },
-    "intro": "Închidem traseul într-un loc de veghe: orașul se așază frumos când îl privești cu răbdare.",
-    "historyShort": "Turnul Pompierilor este legat de vechile fortificații și de rolul de observație urbană, astăzi fiind un reper cultural restaurat.",
-    "historyExtra": "E finalul ideal pentru traseul vostru: un punct unde legi piețele, străzile și palatele într-o singură imagine.",
+    "image": {
+      "src": "assets/stops/10-turnul-pompierilor.svg",
+      "alt": "Ilustrație Turnul Pompierilor",
+      "caption": "Final panoramic asupra centrului"
+    },
+    "intro": "Închidem traseul într-un loc de veghe. De sus, orașul se leagă într-o singură poveste coerentă.",
+    "historyShort": "Turnul a fost construit în secolul XIX pentru observarea incendiilor și supravegherea strategică a orașului.",
+    "historyExtra": "Astăzi este unul dintre cele mai bune puncte panoramice asupra centrului istoric și un final excelent pentru tur.",
     "challenge": {
       "type": "quiz",
-      "question": "Ce păstrăm din traseul de azi?",
+      "question": "Ce păstrăm din turul de azi?",
       "options": [
-        "Un loc favorit + o revenire promisă",
+        "Un loc preferat + un motiv de revenire",
         "Doar oboseala",
         "Nimic"
       ],
       "correctIndex": 0,
-      "success": "Asta e încheierea potrivită.",
-      "failure": "Mai privim o dată și alegem ce merită luat cu noi."
+      "success": "Asta e finalul care merită.",
+      "failure": "Mai privește orașul un minut și alege ce vrei să păstrezi."
     },
-    "observationPrompt": "Alege locul preferat din traseu și spune în ce anotimp ai vrea să-l revedem.",
-    "forUsNote": "Cel mai bun final e când știm deja că vrem episodul doi.",
+    "observationPrompt": "Arată spre locul tău preferat din traseu și spune de ce l-ai alege din nou.",
+    "forUsNote": "Azi am făcut un tur de istorie, dar am strâns și o poveste a noastră.",
     "hiddenClue": "Apasă Next stop pentru mesajul final.",
     "hintToFind": "Caută Turnul Pompierilor în zona centrală-nordică.",
     "nextStopHint": "Next stop închide traseul.",
     "unlockRadiusMeters": 110,
     "fallbackManualAllowed": true,
-    "distanceNarrativeNear": "Ești foarte aproape. Ridică privirea după turn.",
-    "distanceNarrativeFar": "Ține direcția spre Turnul Pompierilor, finalul traseului.",
+    "distanceNarrativeNear": "Ești aproape de final. Caută turnul.",
+    "distanceNarrativeFar": "Ține direcția spre Turnul Pompierilor.",
     "landmarks": [
       {
         "name": "Turnul Pompierilor",
         "category": "turn istoric",
         "area": "centru-nord",
-        "noteShort": "Loc-simbol pentru finalul traseului."
-      },
-      {
-        "name": "Palatul Urania",
-        "category": "palat",
-        "area": "Horea",
-        "noteShort": "Un reper suplimentar pentru tururile viitoare."
-      },
-      {
-        "name": "Palatul Babos",
-        "category": "palat",
-        "area": "centru",
-        "noteShort": "Parte din inventarul de palate din zona centrală."
+        "noteShort": "Punct strategic și panoramic al orașului."
       }
     ]
   }

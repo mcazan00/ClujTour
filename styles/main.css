@@ -259,6 +259,25 @@ button:disabled {
   line-height: 1.52;
 }
 
+.stop-figure {
+  margin: 8px 0 0;
+}
+
+.stop-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #efe4cf;
+}
+
+.stop-image-caption {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--soft-ink);
+}
+
 .observation {
   font-style: italic;
 }
