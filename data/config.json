@@ -1,6 +1,6 @@
 {
   "tourTitle": "Cluj cu Noi Doi",
-  "tourSubtitle": "Un traseu non-mainstream cu palate, poduri și clădiri ascunse în centrul Clujului, spus ca o poveste doar pentru noi.",
+  "tourSubtitle": "Intrăm în orașul vechi pas cu pas: ziduri, palate, piețe și colțuri care fac Clujul memorabil, într-o poveste caldă și jucăușă.",
   "authorNote": "Făcut local, pentru o plimbare care să rămână în memorie.",
   "defaultUnlockRadiusMeters": 85,
   "distanceUpdateIntervalMs": 6000,
@@ -14,7 +14,7 @@
     "landmarksTitle": "Palate / Clădiri indexate"
   },
   "ending": {
-    "title": "Cetățuia: epilog cu orașul la picioare",
-    "message": "Ai ajuns sus. Acum Clujul e ca un decor de film, iar noi suntem scena principală. Dacă vrei, mai stăm două minute în liniște și alegem un detaliu din oraș pe care îl luăm acasă doar pentru noi."
+    "title": "Turnul Pompierilor: final cu perspectivă",
+    "message": "Ai închis traseul exact cum trebuie: cu orașul văzut dintr-un loc-simbol și cu poveștile legate între ele. La întoarcere, putem alege un palat preferat și îl transformăm în „locul nostru” din Cluj."
   }
 }

@@ -189,6 +189,12 @@ function renderAdminRows(listEl, rows) {
   });
 }
 
+function shortText(text, max = 180) {
+  const normalized = String(text || "").replace(/\s+/g, " ").trim();
+  if (normalized.length <= max) return normalized;
+  return `${normalized.slice(0, max - 1)}…`;
+}
+
 function collectLandmarks(stops) {
   const map = new Map();
 
@@ -244,9 +250,10 @@ function renderAdmin() {
     const radius = stop.unlockRadiusMeters || runtime.config.defaultUnlockRadiusMeters || 85;
     const coordsText = `${stop.coords.lat.toFixed(5)}, ${stop.coords.lng.toFixed(5)}`;
     const hint = stop.hintToFind || "-";
+    const storyPreview = `Intro: ${shortText(stop.intro, 130)} | Istorie: ${shortText(stop.historyShort, 170)}`;
     return {
       label: `${index + 1}. ${stop.title} (${stop.id})`,
-      value: `Coordonate: ${coordsText} | Rază: ${radius} m | Capitol: ${stop.chapterTitle} | Hint: ${hint}`,
+      value: `Coordonate: ${coordsText} | Rază: ${radius} m | Capitol: ${stop.chapterTitle} | Hint: ${hint} | ${storyPreview}`,
     };
   });
   renderAdminRows(els.adminStopsList, stopRows);
