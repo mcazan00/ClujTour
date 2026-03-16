@@ -1,0 +1,22 @@
+{
+  "name": "Cluj cu Noi Doi",
+  "short_name": "ClujDate",
+  "description": "Companion narativ local-first pentru o plimbare romantică în Cluj-Napoca.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4efe4",
+  "theme_color": "#d6c9b2",
+  "lang": "ro",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

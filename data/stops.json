@@ -1,0 +1,464 @@
+[
+  {
+    "id": "piata-muzeului-case",
+    "title": "Piața Muzeului - fronturi istorice",
+    "chapterTitle": "Capitolul 1: Curți, pietre, început",
+    "coords": { "lat": 46.77172, "lng": 23.58776 },
+    "intro": "Pornim dintr-o piață care nu se grăbește. Aici Clujul nu îți cere atenția, ți-o câștigă încet.",
+    "historyShort": "Piața Muzeului păstrează o țesătură veche de case nobiliare și comerciale. Nu are monumentalitatea oficială din piața mare, dar are detaliul care rămâne în memorie.",
+    "historyExtra": "În zona asta au coexistat ateliere, case patriciene și viață urbană compactă. E locul ideal pentru a înțelege Clujul intim, nu doar cel de carte poștală.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Ce joc facem aici?",
+      "options": [
+        "Alegem fațada care pare că ascunde un secret",
+        "Numărăm doar semafoare",
+        "Trecem în grabă"
+      ],
+      "correctIndex": 0,
+      "success": "Fix asta. Piața asta e despre nuanțe.",
+      "failure": "Mai privește o dată ancadramentele și balcoanele. Aici secretul stă în detalii."
+    },
+    "observationPrompt": "Găsește o clădire cu ferestre asimetrice și spune ce stare îți dă.",
+    "forUsNote": "Dacă mă întrebi ce îmi place aici, răspunsul e simplu: ritmul tău lângă mine.",
+    "hiddenClue": "Urmează piața unde palatele stau față în față ca într-un duel elegant.",
+    "hintToFind": "Intră în Piața Muzeului și caută fronturile istorice, nu doar terasa centrală.",
+    "nextStopHint": "Următorul capitol e în Piața Unirii, la clădirile de pe frontul vechi.",
+    "unlockRadiusMeters": 95,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape. Caută clădirile care par mai vechi decât restul pieței.",
+    "distanceNarrativeFar": "Ține direcția spre Piața Muzeului, în zona clădirilor istorice compacte.",
+    "landmarks": [
+      {
+        "name": "Casa Mikes",
+        "category": "clădire istorică",
+        "area": "Piața Muzeului",
+        "noteShort": "Front urban aristocratic discret, cu detalii de epocă."
+      },
+      {
+        "name": "Obeliscul Carolina",
+        "category": "monument",
+        "area": "Piața Muzeului",
+        "noteShort": "Reperează axa pieței și schimbările de epocă."
+      },
+      {
+        "name": "Casele patriciene din Piața Muzeului",
+        "category": "ansamblu urban",
+        "area": "Piața Muzeului",
+        "noteShort": "Un front continuu de arhitectură istorică, foarte fotogenic."
+      },
+      {
+        "name": "Casa Mauksch-Hintz",
+        "category": "clădire istorică",
+        "area": "zona centrală",
+        "noteShort": "Legată de tradiția farmaceutică și de vechiul centru."
+      }
+    ]
+  },
+  {
+    "id": "piata-unirii-palate",
+    "title": "Piața Unirii - palate și fațade",
+    "chapterTitle": "Capitolul 2: Fațade cu caracter",
+    "coords": { "lat": 46.77024, "lng": 23.58949 },
+    "intro": "Aici orașul joacă pe scenă mare, dar dacă privești atent, fiecare clădire are altă voce.",
+    "historyShort": "Piața Unirii este centrul civic clasic al Clujului. Dincolo de biserică, fronturile pieței spun povestea elitelor urbane și a modernizării orașului.",
+    "historyExtra": "Palatele și casele de pe marginea pieței combină gotic târziu, baroc și intervenții moderne. E o hartă vie a gusturilor urbane pe mai multe secole.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Dacă piața ar fi o scenă, ce rol au palatele?",
+      "options": [
+        "Sunt personajele secundare care dau profunzime",
+        "Sunt doar fundal fără poveste",
+        "Sunt decor temporar"
+      ],
+      "correctIndex": 0,
+      "success": "Exact. Fără ele, piața ar fi mult mai săracă.",
+      "failure": "Privește fronturile laterale. Acolo e jumătate din povestea locului."
+    },
+    "observationPrompt": "Alege două palate cu stil diferit și spune care ți se pare mai teatral.",
+    "forUsNote": "Într-un alt secol, cred că aici tot te-aș fi recunoscut dintr-o privire.",
+    "hiddenClue": "Pasul următor: un palat mai puțin fotografiat, dar cu prezență calmă.",
+    "hintToFind": "Rămâi în Piața Unirii, pe latura cu palate și clădiri istorice.",
+    "nextStopHint": "Mergem spre Palatul Elian, în axa centrală extinsă.",
+    "unlockRadiusMeters": 100,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape. Uită-te la frontul pieței, nu doar la centrul ei.",
+    "distanceNarrativeFar": "Revino în inima Pieței Unirii, lângă clădirile istorice de pe margine.",
+    "landmarks": [
+      {
+        "name": "Palatul Bánffy",
+        "category": "palat",
+        "area": "Piața Unirii",
+        "noteShort": "Un reper baroc major, azi legat de viața culturală a orașului."
+      },
+      {
+        "name": "Palatul Rhédey",
+        "category": "palat",
+        "area": "Piața Unirii",
+        "noteShort": "Fațadă nobilă și poziție strategică în compoziția pieței."
+      },
+      {
+        "name": "Casa cu Cerb (Wolphard-Kakas)",
+        "category": "clădire istorică",
+        "area": "Piața Unirii",
+        "noteShort": "Un detaliu emblematic al memoriei urbane locale."
+      },
+      {
+        "name": "Hotel Melody",
+        "category": "clădire istorică",
+        "area": "Piața Unirii",
+        "noteShort": "Punct clasic de întâlnire în centrul vechi."
+      }
+    ]
+  },
+  {
+    "id": "palatul-elian",
+    "title": "Palatul Elian",
+    "chapterTitle": "Capitolul 3: Eleganță de bulevard",
+    "coords": { "lat": 46.77189, "lng": 23.59304 },
+    "intro": "Palatul ăsta nu strigă, dar are postura cuiva care știe exact cine este.",
+    "historyShort": "Palatul Elian aparține stratului de arhitectură urbană care a rafinat centrul modern al Clujului. E un bun exemplu de eleganță burgheză de început de secol.",
+    "historyExtra": "Zona 21 Decembrie a concentrat comerț, administrație și reprezentare socială. Clădirile de aici arată cum orașul medieval s-a prelungit în orașul modern.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Ce misiune avem la palat?",
+      "options": [
+        "Găsim detaliul de fațadă care pare cel mai \"franțuzesc\"",
+        "Numărăm doar reclame",
+        "Ignorăm etajele superioare"
+      ],
+      "correctIndex": 0,
+      "success": "Bun ochi. Etajele spun cel mai mult despre epocă.",
+      "failure": "Ridică privirea la cornișe și balcoane. Acolo e farmecul."
+    },
+    "observationPrompt": "Caută o combinație de fier forjat + stucco și descrie-o în 4 cuvinte.",
+    "forUsNote": "Dacă orașul are eleganță, mie îmi place că tu ai naturalețe.",
+    "hiddenClue": "Urmează strada perfect aliniată, ca un mic truc de perspectivă.",
+    "hintToFind": "Caută Palatul Elian pe axa centrală spre 21 Decembrie.",
+    "nextStopHint": "Ne mutăm pe Strada Iuliu Maniu, strada în oglindă.",
+    "unlockRadiusMeters": 90,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape. Uită-te după fațada elegantă de tip palat urban.",
+    "distanceNarrativeFar": "Ține direcția spre bulevardul central, în zona palatelor de început de secol.",
+    "landmarks": [
+      {
+        "name": "Palatul Elian",
+        "category": "palat",
+        "area": "Bulevardul 21 Decembrie",
+        "noteShort": "Fațadă urbană elegantă, emblematică pentru Clujul modern."
+      },
+      {
+        "name": "Palatul Toldalagi-Korda",
+        "category": "palat",
+        "area": "zona centrală",
+        "noteShort": "Reper nobil în proximitatea nucleului istoric."
+      },
+      {
+        "name": "Clădirile comerciale de pe 21 Decembrie",
+        "category": "ansamblu urban",
+        "area": "centru extins",
+        "noteShort": "Tranziția dintre vechiul centru și orașul modern."
+      }
+    ]
+  },
+  {
+    "id": "strada-iuliu-maniu",
+    "title": "Strada Iuliu Maniu (în oglindă)",
+    "chapterTitle": "Capitolul 4: Axa perfectă",
+    "coords": { "lat": 46.77016, "lng": 23.59069 },
+    "intro": "Pe strada asta simți că orașul a fost desenat cu precizie și un pic de vanitate.",
+    "historyShort": "Iuliu Maniu este celebră pentru compoziția simetrică a fronturilor. E un gest urbanistic rar, memorabil chiar și pentru cine vede Clujul prima dată.",
+    "historyExtra": "Arterele de acest tip au susținut promenada urbană și imaginea de oraș ordonat. E unul dintre locurile unde perspectivele fac spectacol.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Cum marcăm oprirea asta?",
+      "options": [
+        "Facem o fotografie din axul străzii",
+        "Stăm doar pe margine",
+        "Sărim peste"
+      ],
+      "correctIndex": 0,
+      "success": "Da. E unul dintre cele mai bune cadre geometrice din centru.",
+      "failure": "Merită un cadru din axă. Asta e semnătura străzii."
+    },
+    "observationPrompt": "Compară ritmul ferestrelor stânga-dreapta și spune unde pare mai teatral.",
+    "forUsNote": "Dacă ne iese poza din prima, cer un mic high-five romantic.",
+    "hiddenClue": "Urmează un palat-bijuterie de tip Belle Époque.",
+    "hintToFind": "Caută strada scurtă, dreaptă și simetrică din centrul vechi.",
+    "nextStopHint": "Pornim spre Palatul New York (Continental).",
+    "unlockRadiusMeters": 85,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape. Caută perspectiva care trage privirea în centru.",
+    "distanceNarrativeFar": "Întoarce-te spre axa centrală dintre Piața Unirii și 21 Decembrie.",
+    "landmarks": [
+      {
+        "name": "Strada Iuliu Maniu - fronturi simetrice",
+        "category": "ansamblu urban",
+        "area": "centru",
+        "noteShort": "Una dintre cele mai recognoscibile compoziții urbane din Cluj."
+      },
+      {
+        "name": "Palatul Berde",
+        "category": "palat",
+        "area": "zona centrală",
+        "noteShort": "Reper de tranziție spre zona Horea."
+      }
+    ]
+  },
+  {
+    "id": "palatul-new-york",
+    "title": "Palatul New York (Hotel Continental)",
+    "chapterTitle": "Capitolul 5: Belle Époque clujeană",
+    "coords": { "lat": 46.77208, "lng": 23.59394 },
+    "intro": "Aici intrăm în zona clădirilor care au fost făcute să impresioneze, nu doar să funcționeze.",
+    "historyShort": "Palatul New York, cunoscut și prin Hotel Continental, e unul dintre reperele de eleganță urbană din Clujul de început de secol XX.",
+    "historyExtra": "În această zonă, arhitectura a reflectat ambiția orașului de a arăta cosmopolit. Fațadele sunt un dialog între prestigiu, comerț și viață socială.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Ce detaliu căutăm aici?",
+      "options": [
+        "Un element decorativ care pare făcut pentru serile de bal",
+        "Doar vitrinele moderne",
+        "Numerele de înmatriculare"
+      ],
+      "correctIndex": 0,
+      "success": "Corect. Asta e energia locului.",
+      "failure": "Mai urcă puțin privirea. Ornamentele sunt partea cea mai bună."
+    },
+    "observationPrompt": "Alege un unghi în care palatul pare „personaj principal”.",
+    "forUsNote": "Dacă acest loc e o sală de bal, eu deja te-am invitat la dans.",
+    "hiddenClue": "Schimbăm registrul: urmează apa și podul cu poveste.",
+    "hintToFind": "Caută Palatul New York/Continental în zona centrală spre Teatru.",
+    "nextStopHint": "Coborâm spre Podul Elisabeta și malul Someșului.",
+    "unlockRadiusMeters": 100,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești foarte aproape. Caută volumul mare al clădirii istorice.",
+    "distanceNarrativeFar": "Ține direcția spre zona Continental, la granița centrului extins.",
+    "landmarks": [
+      {
+        "name": "Palatul New York (Hotel Continental)",
+        "category": "palat",
+        "area": "zona centrală",
+        "noteShort": "Reper Belle Époque și punct iconic în peisajul urban."
+      },
+      {
+        "name": "Palatul Babos",
+        "category": "palat",
+        "area": "zona centrală",
+        "noteShort": "Exemplu valoros de arhitectură urbană de început de secol XX."
+      },
+      {
+        "name": "Teatrul Național \"Lucian Blaga\"",
+        "category": "clădire culturală",
+        "area": "Piața Avram Iancu",
+        "noteShort": "Reperează axa culturală majoră a orașului."
+      }
+    ]
+  },
+  {
+    "id": "podul-elisabeta",
+    "title": "Podul Elisabeta",
+    "chapterTitle": "Capitolul 6: Traversare pe apă",
+    "coords": { "lat": 46.76777, "lng": 23.58137 },
+    "intro": "Podurile sunt mereu despre legături. Asta e partea în care schimbăm ritmul și privim orașul din lateral.",
+    "historyShort": "Podul Elisabeta face legătura între nucleul central și zona parcului, pe malul Someșului. E un punct bun pentru a înțelege geografia afectivă a orașului.",
+    "historyExtra": "Malurile Someșului au trecut prin multe transformări urbane. Podurile au rămas repere de orientare, întâlnire și tranziție între capitolele orașului.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Ce observăm prima dată de pe pod?",
+      "options": [
+        "Cum se schimbă orașul când îl vezi peste apă",
+        "Doar traficul",
+        "Doar ceasul"
+      ],
+      "correctIndex": 0,
+      "success": "Exact. De pe pod, orașul capătă altă scară.",
+      "failure": "Întoarce privirea spre maluri. Acolo se simte diferența."
+    },
+    "observationPrompt": "Spune ce e mai frumos: curba apei sau linia clădirilor de pe fundal.",
+    "forUsNote": "E genul de loc unde îmi vine natural să-ți iau mâna fără explicații.",
+    "hiddenClue": "Urmează nordul centrului, cu palate mai puțin fotografiate.",
+    "hintToFind": "Mergi spre Podul Elisabeta, între centru și zona parcului/malului.",
+    "nextStopHint": "Următoarea oprire: zona Horea, la Palatul Szeki.",
+    "unlockRadiusMeters": 110,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape. Caută podul cu deschidere spre malurile Someșului.",
+    "distanceNarrativeFar": "Ține direcția spre Someș, spre podul care leagă centrul de zona verde.",
+    "landmarks": [
+      {
+        "name": "Podul Elisabeta",
+        "category": "pod",
+        "area": "malul Someșului",
+        "noteShort": "Punct de trecere și perspectivă asupra centrului extins."
+      },
+      {
+        "name": "Clădirea Casino",
+        "category": "clădire istorică",
+        "area": "Parcul Central",
+        "noteShort": "Reper de promenadă și sociabilitate urbană."
+      },
+      {
+        "name": "Fronturile de pe malul Someșului",
+        "category": "ansamblu urban",
+        "area": "Someș",
+        "noteShort": "Arată tranziția Clujului către orașul contemporan."
+      }
+    ]
+  },
+  {
+    "id": "zona-horea-palatul-szeki",
+    "title": "Zona Horea - Palatul Szeki",
+    "chapterTitle": "Capitolul 7: Nordul elegant al centrului",
+    "coords": { "lat": 46.77771, "lng": 23.59376 },
+    "intro": "Aici intrăm într-o zonă pe care mulți o traversează, dar puțini o privesc cu atenție.",
+    "historyShort": "Palatul Szeki și vecinătățile de pe Horea păstrează stratul de dezvoltare urbană de început de secol XX, cu influențe eclectice și secession.",
+    "historyExtra": "Nordul centrului a crescut ca zonă de conectare comercială și rezidențială. E o arhivă excelentă pentru cine iubește fațadele mai puțin „vândute” turistic.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Ce facem în zona asta?",
+      "options": [
+        "Vânăm două detalii art nouveau pe același front",
+        "Mergem doar cu privirea în jos",
+        "Ne grăbim direct la final"
+      ],
+      "correctIndex": 0,
+      "success": "Super. Aici chiar merită \"vânătoarea\" de detalii.",
+      "failure": "Mai ridică privirea la etaje. Acolo e tot spectacolul."
+    },
+    "observationPrompt": "Găsește un balcon sau un bovindou care merită o fotografie.",
+    "forUsNote": "Îmi place că în locurile astea mai tăcute ne auzim mai bine unul pe altul.",
+    "hiddenClue": "Penultimul capitol e despre memorie și demnitate, la sinagogă.",
+    "hintToFind": "Caută zona Horea și fațadele de început de secol în jurul Palatului Szeki.",
+    "nextStopHint": "Mergem spre Sinagoga Neologă, pe aceeași axă a orașului.",
+    "unlockRadiusMeters": 100,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape. Caută ornamentația de pe fronturile nordului central.",
+    "distanceNarrativeFar": "Mergi spre strada Horea, în zona cu palate mai puțin mainstream.",
+    "landmarks": [
+      {
+        "name": "Palatul Szeki",
+        "category": "palat",
+        "area": "strada Horea",
+        "noteShort": "Reper al arhitecturii de început de secol XX în nordul centrului."
+      },
+      {
+        "name": "Palatul Urania",
+        "category": "palat",
+        "area": "strada Horea",
+        "noteShort": "Unul dintre punctele de interes arhitectural din zonă."
+      },
+      {
+        "name": "Palatul Berde",
+        "category": "palat",
+        "area": "zona Horea",
+        "noteShort": "Leagă povestea palatelor dintre centru și zona gării."
+      },
+      {
+        "name": "Fronturile istorice de pe Horea",
+        "category": "ansamblu urban",
+        "area": "strada Horea",
+        "noteShort": "Coridor urban plin de detalii decorative subtile."
+      }
+    ]
+  },
+  {
+    "id": "sinagoga-neologa",
+    "title": "Sinagoga Neologă",
+    "chapterTitle": "Capitolul 8: Memorie și respect",
+    "coords": { "lat": 46.77626, "lng": 23.59496 },
+    "intro": "Aici coborâm tonul. E un loc care cere atenție, liniște și respect.",
+    "historyShort": "Sinagoga Neologă din Cluj este un reper major al patrimoniului comunității evreiești locale și al memoriei orașului.",
+    "historyExtra": "Spațiul amintește atât de viața culturală și religioasă a comunității, cât și de traumele deportărilor. E unul dintre punctele esențiale pentru o înțelegere matură a istoriei urbane.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Cum abordăm oprirea asta?",
+      "options": [
+        "Cu liniște, atenție și respect",
+        "Cu glume continue",
+        "O sărim rapid"
+      ],
+      "correctIndex": 0,
+      "success": "Da. Exact atitudinea potrivită.",
+      "failure": "Locul merită un ritm mai calm și o privire atentă."
+    },
+    "observationPrompt": "Observă fațada și spune ce element îți transmite cel mai clar ideea de memorie.",
+    "forUsNote": "Îmi place că putem fi și jucăuși, dar și serioși când locul o cere.",
+    "hiddenClue": "Ultimul urcuș: privirea de sus, pe Cetățuie.",
+    "hintToFind": "Caută Sinagoga Neologă de pe strada Horea.",
+    "nextStopHint": "Ultima oprire: Cetățuia, pentru finalul panoramic.",
+    "unlockRadiusMeters": 110,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape. Caută clădirea sinagogii și păstrează un ritm calm.",
+    "distanceNarrativeFar": "Rămâi pe axa Horea spre zona sinagogii neologe.",
+    "landmarks": [
+      {
+        "name": "Sinagoga Neologă",
+        "category": "sinagogă",
+        "area": "strada Horea",
+        "noteShort": "Reper al memoriei comunității evreiești clujene."
+      },
+      {
+        "name": "Templul Memorial al Deportaților Evrei",
+        "category": "memorial",
+        "area": "strada Horea",
+        "noteShort": "Dimensiunea memorială care completează istoria locului."
+      },
+      {
+        "name": "Fronturile istorice de pe Horea",
+        "category": "ansamblu urban",
+        "area": "strada Horea",
+        "noteShort": "Contextul arhitectural al sinagogii în peisajul urban."
+      }
+    ]
+  },
+  {
+    "id": "cetatuia",
+    "title": "Cetățuia - belvedere",
+    "chapterTitle": "Capitolul 9: Orașul la picioare",
+    "coords": { "lat": 46.77522, "lng": 23.57963 },
+    "intro": "Finalul nostru vine de sus: orașul se liniștește în depărtare și povestea capătă sens.",
+    "historyShort": "Cetățuia este un punct istoric de observație, devenit astăzi una dintre cele mai frumoase panorame asupra Clujului.",
+    "historyExtra": "Din acest loc vezi cum se leagă între ele piețe, bulevarde, poduri și cartiere. E finalul perfect pentru un traseu care a mers pe detaliu și memorie.",
+    "challenge": {
+      "type": "quiz",
+      "question": "Ce luăm cu noi din plimbarea asta?",
+      "options": [
+        "Un loc preferat + o promisiune de revenire",
+        "Doar oboseala",
+        "Nimic"
+      ],
+      "correctIndex": 0,
+      "success": "Asta e varianta bună.",
+      "failure": "Mai privim o dată orașul și alegem ceva ce merită păstrat."
+    },
+    "observationPrompt": "Arată spre un palat sau o zonă văzută azi pe care vrei să o revedem.",
+    "forUsNote": "Dacă ziua asta e un film, tu ești scena pe care o țin minte după generic.",
+    "hiddenClue": "Apasă Next stop pentru mesajul final.",
+    "hintToFind": "Urcă spre belvederea Cetățuie pentru panorama centrului.",
+    "nextStopHint": "Finalul e pregătit. Next stop închide povestea.",
+    "unlockRadiusMeters": 120,
+    "fallbackManualAllowed": true,
+    "distanceNarrativeNear": "Ești aproape de final. Panorama se simte deja.",
+    "distanceNarrativeFar": "Urmează urcarea spre Cetățuie, la belvedere.",
+    "landmarks": [
+      {
+        "name": "Cetățuia",
+        "category": "belvedere",
+        "area": "dealul Cetățuia",
+        "noteShort": "Punctul final pentru lectura panoramică a orașului."
+      },
+      {
+        "name": "Podul Elisabeta",
+        "category": "pod",
+        "area": "Someș",
+        "noteShort": "Se vede în logica legăturilor urbane pe care le-am traversat."
+      },
+      {
+        "name": "Palatele centrale ale Clujului",
+        "category": "ansamblu urban",
+        "area": "zona centrală",
+        "noteShort": "Un inventar viu de stiluri și epoci în câteva străzi compacte."
+      }
+    ]
+  }
+]
