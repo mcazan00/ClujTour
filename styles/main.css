@@ -247,7 +247,6 @@ button:disabled {
 
 .geo-status,
 .distance-text,
-.score-text,
 .locked-notice,
 .chapter-title {
   margin: 9px 0 0;
@@ -263,6 +262,27 @@ button:disabled {
 .story-block p {
   margin: 10px 0 0;
   line-height: 1.52;
+}
+
+.info-section {
+  margin-top: 12px;
+}
+
+.info-section h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.info-section p {
+  margin-top: 7px;
+}
+
+.repere-list {
+  margin: 7px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 5px;
 }
 
 .stop-figure {
@@ -281,58 +301,6 @@ button:disabled {
 .stop-image-caption {
   margin-top: 6px;
   font-size: 0.82rem;
-  color: var(--soft-ink);
-}
-
-.observation {
-  font-style: italic;
-}
-
-.for-us {
-  padding: 10px 12px;
-  border-left: 3px solid var(--accent);
-  background: rgba(143, 108, 78, 0.08);
-  border-radius: 10px;
-}
-
-.clue {
-  font-weight: 600;
-}
-
-.hint-box {
-  margin-top: 12px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px dashed rgba(126, 90, 58, 0.5);
-  background: rgba(255, 247, 233, 0.9);
-  line-height: 1.46;
-}
-
-.options {
-  margin-top: 12px;
-  display: grid;
-  gap: 8px;
-}
-
-.option-btn {
-  text-align: left;
-}
-
-.option-btn.correct {
-  border-color: #3f7c4a;
-  background: #eef9ef;
-  color: #1b4a25;
-}
-
-.option-btn.wrong {
-  border-color: #964242;
-  background: #fff1f1;
-  color: #602626;
-}
-
-.challenge-feedback {
-  min-height: 24px;
-  margin: 12px 0 0;
   color: var(--soft-ink);
 }
 

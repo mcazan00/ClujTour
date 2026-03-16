@@ -6,10 +6,8 @@ const DEFAULT_STATE = {
   currentIndex: 0,
   revealedStopIds: [],
   foundStopIds: [],
-  answers: {},
-  score: 0,
   settings: {
-    dateMode: true,
+    dateMode: false,
     historyMode: false,
     testMode: false,
   },
@@ -24,7 +22,6 @@ const runtime = {
     isAvailable: false,
     error: "",
   },
-  hintOpen: false,
   geoTimer: null,
   ui: {
     menuOpen: false,
@@ -46,7 +43,6 @@ const els = {
   tourTitle: byId("tourTitle"),
   tourSubtitle: byId("tourSubtitle"),
   authorNote: byId("authorNote"),
-  storyView: byId("storyView"),
 
   statusPanel: byId("statusPanel"),
   chapterLabel: byId("chapterLabel"),
@@ -63,23 +59,15 @@ const els = {
   stopFigure: byId("stopFigure"),
   stopImage: byId("stopImage"),
   stopImageCaption: byId("stopImageCaption"),
-  introText: byId("introText"),
-  historyText: byId("historyText"),
-  historyExtraText: byId("historyExtraText"),
-  observationText: byId("observationText"),
-  forUsText: byId("forUsText"),
-  clueText: byId("clueText"),
+  contextIstoricText: byId("contextIstoricText"),
+  repereCheieList: byId("repereCheieList"),
+  scriptGhidText: byId("scriptGhidText"),
+  observatieText: byId("observatieText"),
+  tranzitieText: byId("tranzitieText"),
 
-  hintBox: byId("hintBox"),
   revealBtn: byId("revealBtn"),
   foundBtn: byId("foundBtn"),
-  hintBtn: byId("hintBtn"),
   nextBtn: byId("nextBtn"),
-
-  challengePanel: byId("challengePanel"),
-  challengeQuestion: byId("challengeQuestion"),
-  challengeOptions: byId("challengeOptions"),
-  challengeFeedback: byId("challengeFeedback"),
 
   endingPanel: byId("endingPanel"),
   endingTitle: byId("endingTitle"),
@@ -132,8 +120,6 @@ function sanitizeState() {
   state.currentIndex = Math.max(0, Math.min(total, state.currentIndex));
   state.revealedStopIds = Array.isArray(state.revealedStopIds) ? state.revealedStopIds : [];
   state.foundStopIds = Array.isArray(state.foundStopIds) ? state.foundStopIds : [];
-  state.answers = typeof state.answers === "object" && state.answers ? state.answers : {};
-  state.score = Number.isFinite(state.score) ? state.score : 0;
 
   const settings = typeof state.settings === "object" && state.settings ? state.settings : {};
   const legacyManual = Boolean(settings.manualMode);
@@ -270,10 +256,11 @@ function renderAdmin() {
     const radius = stop.unlockRadiusMeters || runtime.config.defaultUnlockRadiusMeters || 85;
     const coordsText = `${stop.coords.lat.toFixed(5)}, ${stop.coords.lng.toFixed(5)}`;
     const hint = stop.hintToFind || "-";
-    const storyPreview = `Intro: ${shortText(stop.intro, 120)} | Istorie: ${shortText(stop.historyShort, 150)}`;
+    const contextPreview = shortText(stop.contextIstoric || stop.historyShort || "", 130);
+    const scriptPreview = shortText(stop.scriptGhid || stop.intro || "", 130);
     return {
       label: `${index + 1}. ${stop.title} (${stop.id})`,
-      value: `Coordonate: ${coordsText} | Rază: ${radius} m | Capitol: ${stop.chapterTitle} | Hint: ${hint} | ${storyPreview}`,
+      value: `Coordonate: ${coordsText} | Rază: ${radius} m | Capitol: ${stop.chapterTitle} | Hint: ${hint} | Context: ${contextPreview} | Script: ${scriptPreview}`,
     };
   });
   renderAdminRows(els.adminStopsList, stopRows);
@@ -454,99 +441,42 @@ function renderMapPanel() {
   }
 }
 
-function renderChallenge(stop) {
-  const challenge = stop.challenge;
-  if (!challenge) {
-    setVisible(els.challengePanel, false);
-    return;
-  }
-
-  const revealed = isRevealed(stop.id);
-  setVisible(els.challengePanel, revealed);
-  if (!revealed) return;
-
-  const answer = runtime.state.answers[stop.id];
-  els.challengeQuestion.textContent = challenge.question;
-  els.challengeOptions.innerHTML = "";
-
-  challenge.options.forEach((option, index) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "option-btn secondary";
-    btn.textContent = option;
-
-    if (answer) {
-      btn.disabled = true;
-      if (index === challenge.correctIndex) {
-        btn.classList.add("correct");
-      } else if (index === answer.selectedIndex && !answer.correct) {
-        btn.classList.add("wrong");
-      }
-    } else {
-      btn.addEventListener("click", () => {
-        const isCorrect = index === challenge.correctIndex;
-        runtime.state.answers[stop.id] = { selectedIndex: index, correct: isCorrect };
-        if (isCorrect) {
-          runtime.state.score += 1;
-          vibrate([12, 30, 12]);
-        } else {
-          vibrate(20);
-        }
-        persist();
-        render();
-      });
-    }
-
-    els.challengeOptions.appendChild(btn);
-  });
-
-  if (!answer) {
-    els.challengeFeedback.textContent = "";
-    return;
-  }
-
-  els.challengeFeedback.textContent = answer.correct ? challenge.success : challenge.failure;
-}
-
-function buildLockedNotice({ unlocked, revealed, distance, stop }) {
+function buildLockedNotice({ unlocked, revealed, distance }) {
   if (revealed) {
-    return "Capitol deschis. Continuați jocul împreună.";
+    return "Secțiunea informativă este deschisă pentru această oprire.";
   }
   if (runtime.state.settings.testMode) {
-    return "Test mode activ: poți deschide capitolul fără GPS.";
+    return "Test mode activ: poți deschide oprirea fără validare GPS.";
   }
   if (unlocked) {
-    return "Sunteți suficient de aproape. E momentul pentru poveste.";
+    return "Ai ajuns la punct. Poți deschide explicația istorică.";
   }
   if (!runtime.geo.isAvailable) {
-    return "GPS indisponibil. Activează Test mode din meniu pentru a continua.";
+    return "GPS indisponibil. Activează Test mode din meniu dacă vrei să continui.";
   }
   if (Number.isFinite(distance)) {
-    return `Mai aveți ${formatDistance(distance)} până la acest capitol.`;
+    return `Mai ai ${formatDistance(distance)} până la această oprire.`;
   }
   return "Căutăm locația actuală...";
 }
 
-function buildHintText({ stop, unlocked, revealed, found, distance }) {
-  if (!unlocked) {
-    if (Number.isFinite(distance)) {
-      const nearThreshold = 240;
-      const narrative =
-        distance <= nearThreshold ? stop.distanceNarrativeNear : stop.distanceNarrativeFar;
-      return `${narrative} (${formatDistance(distance)})`;
-    }
-    return `${stop.hintToFind} Dacă GPS-ul nu merge, activează Test mode din meniu.`;
+function renderRepereCheie(stop) {
+  els.repereCheieList.innerHTML = "";
+  const allItems = Array.isArray(stop.repereCheie) ? stop.repereCheie : [];
+  const items = runtime.state.settings.dateMode ? allItems.slice(0, 3) : allItems;
+
+  if (!items.length) {
+    const li = document.createElement("li");
+    li.textContent = "Nu sunt repere setate pentru acest punct.";
+    els.repereCheieList.appendChild(li);
+    return;
   }
 
-  if (!revealed) {
-    return 'Ai ajuns. Apasă "Reveal story" ca să înceapă capitolul.';
-  }
-
-  if (!found) {
-    return `Task de observație: ${stop.observationPrompt}`;
-  }
-
-  return stop.nextStopHint;
+  items.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    els.repereCheieList.appendChild(li);
+  });
 }
 
 function renderStop(stop) {
@@ -557,12 +487,7 @@ function renderStop(stop) {
 
   els.chapterTitle.textContent = stop.chapterTitle;
   els.stopTitle.textContent = stop.title;
-  els.lockedNotice.textContent = buildLockedNotice({ unlocked, revealed, distance, stop });
-
-  els.introText.textContent = stop.intro;
-  els.historyText.textContent = stop.historyShort;
-  els.historyExtraText.textContent = stop.historyExtra;
-  setVisible(els.historyExtraText, runtime.state.settings.historyMode);
+  els.lockedNotice.textContent = buildLockedNotice({ unlocked, revealed, distance });
 
   const image = stop.image || null;
   if (image?.src) {
@@ -577,26 +502,27 @@ function renderStop(stop) {
     setVisible(els.stopFigure, false);
   }
 
-  els.observationText.textContent = `Observă: ${stop.observationPrompt}`;
-  els.clueText.textContent = `Indiciu ascuns: ${stop.hiddenClue}`;
+  const contextBase = stop.contextIstoric || stop.historyShort || "";
+  const historyExtra = runtime.state.settings.historyMode ? stop.historyExtra || "" : "";
+  els.contextIstoricText.textContent = historyExtra
+    ? `${contextBase} ${historyExtra}`
+    : contextBase;
 
-  if (runtime.state.settings.dateMode && stop.forUsNote) {
-    els.forUsText.textContent = stop.forUsNote;
-    setVisible(els.forUsText, true);
-  } else {
-    setVisible(els.forUsText, false);
-  }
+  renderRepereCheie(stop);
+  const fullScript = stop.scriptGhid || stop.intro || "";
+  els.scriptGhidText.textContent = runtime.state.settings.dateMode
+    ? shortText(fullScript, 260)
+    : fullScript;
+  els.observatieText.textContent =
+    stop.observatieArhitecturala || stop.observationPrompt || "";
+  els.tranzitieText.textContent =
+    stop.tranzitieUrmatorulPunct || stop.nextStopHint || "";
 
   setVisible(els.storyBlock, revealed);
   if (revealed) {
     els.storyBlock.classList.remove("fade-in");
     void els.storyBlock.offsetWidth;
     els.storyBlock.classList.add("fade-in");
-  }
-
-  setVisible(els.hintBox, runtime.hintOpen);
-  if (runtime.hintOpen) {
-    els.hintBox.textContent = buildHintText({ stop, unlocked, revealed, found, distance });
   }
 
   els.revealBtn.disabled = !unlocked || revealed;
@@ -610,14 +536,11 @@ function renderStop(stop) {
   } else {
     els.distanceText.textContent = "Distanță până la oprire: indisponibilă";
   }
-
-  renderChallenge(stop);
 }
 
 function renderEnding() {
   setVisible(els.endingPanel, true);
   setVisible(els.stopPanel, false);
-  setVisible(els.challengePanel, false);
   els.endingTitle.textContent = runtime.config.ending.title;
   els.endingMessage.textContent = runtime.config.ending.message;
   els.progressText.textContent = `${runtime.stops.length}/${runtime.stops.length}`;
@@ -697,7 +620,6 @@ function markFound(stop) {
 function moveNext() {
   if (runtime.state.currentIndex < runtime.stops.length) {
     runtime.state.currentIndex += 1;
-    runtime.hintOpen = false;
     persist();
     vibrate([18, 20, 18]);
   }
@@ -760,11 +682,6 @@ function bindEvents() {
     render();
   });
 
-  els.hintBtn.addEventListener("click", () => {
-    runtime.hintOpen = !runtime.hintOpen;
-    render();
-  });
-
   els.dateModeToggle.addEventListener("change", (event) => {
     runtime.state.settings.dateMode = event.target.checked;
     persist();
@@ -799,7 +716,6 @@ function bindEvents() {
     if (!accepted) return;
     clearState();
     runtime.state = freshState();
-    runtime.hintOpen = false;
     applyStaticContent();
     render();
     refreshLocation();
@@ -808,7 +724,6 @@ function bindEvents() {
   els.restartBtn.addEventListener("click", () => {
     clearState();
     runtime.state = freshState();
-    runtime.hintOpen = false;
     setVisible(els.endingPanel, false);
     applyStaticContent();
     render();
@@ -825,7 +740,6 @@ function bindEvents() {
     if (index < 0 || index >= runtime.stops.length) return;
 
     runtime.state.currentIndex = index;
-    runtime.hintOpen = false;
     persist();
     closeDrawer();
     render();

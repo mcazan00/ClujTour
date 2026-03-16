@@ -1,7 +1,7 @@
 {
-  "tourTitle": "Cluj cu Noi Doi",
-  "tourSubtitle": "Intrăm în orașul vechi pas cu pas: ziduri, palate, piețe și colțuri care fac Clujul memorabil, într-o poveste caldă și jucăușă.",
-  "authorNote": "Făcut local, pentru o plimbare care să rămână în memorie.",
+  "tourTitle": "Tur istoric Cluj (ghid local)",
+  "tourSubtitle": "Traseu cronologic, în 10 opriri: de la Napoca romană și orașul medieval, până la extinderea modernă și infrastructurile secolului XX.",
+  "authorNote": "Aplicație local-first pentru explicarea istoriei orașului direct pe teren.",
   "defaultUnlockRadiusMeters": 85,
   "distanceUpdateIntervalMs": 6000,
   "admin": {
@@ -14,7 +14,7 @@
     "landmarksTitle": "Palate / Clădiri indexate"
   },
   "ending": {
-    "title": "Turnul Pompierilor: final cu perspectivă",
-    "message": "Ai închis traseul exact cum trebuie: cu orașul văzut dintr-un loc-simbol și cu poveștile legate între ele. La întoarcere, putem alege un palat preferat și îl transformăm în „locul nostru” din Cluj."
+    "title": "Final la Turnul Pompierilor",
+    "message": "Ai parcurs traseul cronologic al centrului: strat roman, oraș medieval fortificat, modernizare habsburgică, extindere de secol XX și infrastructuri urbane. Poți relua punctele direct din Hartă pentru recapitulare."
   }
 }

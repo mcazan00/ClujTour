@@ -51,31 +51,35 @@
               <img id="stopImage" class="stop-image" alt="" loading="lazy" />
               <figcaption id="stopImageCaption" class="stop-image-caption"></figcaption>
             </figure>
-            <p id="introText"></p>
-            <p id="historyText"></p>
-            <p id="historyExtraText" class="history-extra hidden"></p>
-            <p id="observationText" class="observation"></p>
-            <p id="forUsText" class="for-us hidden"></p>
-            <p id="clueText" class="clue"></p>
+            <section class="info-section">
+              <h3>Context istoric</h3>
+              <p id="contextIstoricText"></p>
+            </section>
+            <section class="info-section">
+              <h3>Repere-cheie</h3>
+              <ul id="repereCheieList" class="repere-list"></ul>
+            </section>
+            <section class="info-section">
+              <h3>Ce explici pe scurt</h3>
+              <p id="scriptGhidText"></p>
+            </section>
+            <section class="info-section">
+              <h3>Ce observi la fața locului</h3>
+              <p id="observatieText"></p>
+            </section>
+            <section class="info-section">
+              <h3>Următorul punct</h3>
+              <p id="tranzitieText"></p>
+            </section>
           </div>
-
-          <div id="hintBox" class="hint-box hidden" aria-live="polite"></div>
 
           <div class="button-row main-actions">
             <button id="revealBtn" type="button">Reveal story</button>
             <button id="foundBtn" type="button" class="secondary">I found it</button>
           </div>
           <div class="button-row">
-            <button id="hintBtn" type="button" class="secondary">Give me a hint</button>
             <button id="nextBtn" type="button" class="next-btn" disabled>Next stop</button>
           </div>
-        </section>
-
-        <section id="challengePanel" class="panel challenge hidden">
-          <h3>Provocare</h3>
-          <p id="challengeQuestion"></p>
-          <div id="challengeOptions" class="options"></div>
-          <p id="challengeFeedback" class="challenge-feedback"></p>
         </section>
 
         <section id="endingPanel" class="panel ending hidden">
@@ -127,7 +131,7 @@
           <h3>Setări</h3>
           <div class="controls">
             <label class="toggle-row" for="dateModeToggle">
-              <span>Mod Date</span>
+              <span>Mod Date (explicații compacte)</span>
               <input id="dateModeToggle" type="checkbox" />
             </label>
             <label class="toggle-row" for="historyModeToggle">

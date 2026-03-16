@@ -1,6 +1,6 @@
-# Cluj cu Noi Doi (Local-first PWA)
+# Tur istoric Cluj (Local-first PWA)
 
-Aplicație mobilă statică pentru un traseu narativ interactiv în Cluj-Napoca, cu progres local, provocări și deblocare pe bază de proximitate GPS.
+Aplicație mobilă statică pentru un traseu istoric informativ în Cluj-Napoca, cu progres local și deblocare pe bază de proximitate GPS.
 
 ## Tehnologii
 
@@ -8,7 +8,7 @@ Aplicație mobilă statică pentru un traseu narativ interactiv în Cluj-Napoca,
 - PWA: `manifest.webmanifest` + `sw.js`
 - Date locale JSON: `data/stops.json`, `data/config.json`
 - Persistență: `localStorage`
-- Panou intern read-only: listare setări, locații și palate/clădiri indexate
+- Panou intern read-only: listare setări, locații, rezumat informativ și palate/clădiri indexate
 
 ## Structura proiectului
 
@@ -64,7 +64,7 @@ ipconfig getifaddr en0
 4. Pe iPhone, deschide `http://IP_MAC:8080` în Safari.
 5. Safari -> Share -> **Add to Home Screen**.
 
-Notă: pe unele configurații iOS, geolocația pe HTTP poate fi restricționată. Dacă se întâmplă, activează `Mod Manual (fără GPS)` din aplicație.
+Notă: pe unele configurații iOS, geolocația pe HTTP poate fi restricționată. Dacă se întâmplă, activează `Test mode (fără deplasare)` din aplicație.
 
 ## Publicare pe GitHub Pages (HTTPS)
 
@@ -91,12 +91,12 @@ https://<user>.github.io/<repo>/
 ## Cum editezi traseul fără cod
 
 - Modifică doar `data/stops.json`:
-  - textul fiecărui capitol
-  - imaginea fiecărei opriri (`image.src`, `image.alt`, `image.caption`)
-  - coordonate
-  - provocări și hint-uri
-  - rază de deblocare (`unlockRadiusMeters`)
-  - lista `landmarks` pentru indexarea palatelor/clădirilor în Admin
+- textul fiecărui capitol informativ
+- imaginea fiecărei opriri (`image.src`, `image.alt`, `image.caption`)
+- coordonate
+- secțiunile informative (`contextIstoric`, `repereCheie`, `scriptGhid`, `observatieArhitecturala`, `tranzitieUrmatorulPunct`)
+- rază de deblocare (`unlockRadiusMeters`)
+- lista `landmarks` pentru indexarea palatelor/clădirilor în Admin
 - Modifică `data/config.json` pentru:
   - titlu/subtitlu
   - mesaj final
@@ -106,7 +106,7 @@ https://<user>.github.io/<repo>/
 ## Story / Admin
 
 - În interfață ai un meniu hamburger cu 4 secțiuni: `Story`, `Hartă`, `Setări`, `Admin`.
-- `Story` = experiența principală, cu pașii turului.
+- `Story` = experiența principală, cu pașii turului și secțiuni informative fixe.
 - `Hartă` = OpenStreetMap cu markere numerotate pentru toate opririle.
 - `Setări` = Date mode, Istorie+, Test mode, fullscreen, reset.
 - `Admin` = listare read-only date locale, fără editare din UI.
@@ -119,13 +119,12 @@ https://<user>.github.io/<repo>/
 
 ## Funcții incluse
 
-- Poveste pe capitole
+- Ghid istoric pe capitole (fără quiz/provocări)
 - Deblocare stop după proximitate GPS
 - Fallback complet manual
-- Challenge cu variante (quiz)
-- Butoane cerute: `Reveal story`, `I found it`, `Give me a hint`, `Next stop`
+- Butoane Story: `Reveal story`, `I found it`, `Next stop`
 - Mod `Date` + mod `Istorie+`
 - View `Admin` read-only (setări, locații, palate/clădiri deduplicate)
 - Progres salvat local
-- Ecran final la Cetățuie
+- Ecran final la Turnul Pompierilor
 - Service worker pentru funcționare offline după prima încărcare
