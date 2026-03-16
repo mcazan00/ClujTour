@@ -105,9 +105,17 @@ https://<user>.github.io/<repo>/
 
 ## Story / Admin
 
-- În interfață ai comutator vizibil `Story | Admin`.
-- `Story` = experiența de traseu.
-- `Admin` = doar listare date locale, fără editare din UI.
+- În interfață ai un meniu hamburger cu 4 secțiuni: `Story`, `Hartă`, `Setări`, `Admin`.
+- `Story` = experiența principală, cu pașii turului.
+- `Hartă` = OpenStreetMap cu markere numerotate pentru toate opririle.
+- `Setări` = Date mode, Istorie+, Test mode, fullscreen, reset.
+- `Admin` = listare read-only date locale, fără editare din UI.
+
+## Test mode
+
+- Activează `Test mode (fără deplasare)` din meniul `Setări`.
+- Când e activ, poți parcurge story fără validare GPS.
+- În secțiunea `Hartă`, popup-urile markerelor permit `Setează ca oprire curentă` doar în Test mode.
 
 ## Funcții incluse
 

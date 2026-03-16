@@ -7,6 +7,7 @@
     <title>Cluj cu Noi Doi</title>
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
@@ -16,41 +17,18 @@
     <main class="app-shell">
       <header class="top">
         <p class="eyebrow">Plimbare privată în Cluj-Napoca</p>
-        <h1 id="tourTitle">Cluj cu Noi Doi</h1>
+        <div class="top-row">
+          <h1 id="tourTitle">Cluj cu Noi Doi</h1>
+          <button id="menuToggleBtn" class="menu-btn" type="button" aria-label="Deschide meniul">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
         <p id="tourSubtitle" class="subtitle"></p>
       </header>
 
-      <section class="panel mode-switch">
-        <div class="segmented" role="tablist" aria-label="Comutare mod">
-          <button id="storyViewBtn" class="seg-btn active" type="button" role="tab" aria-selected="true">
-            Story
-          </button>
-          <button id="adminViewBtn" class="seg-btn" type="button" role="tab" aria-selected="false">
-            Admin
-          </button>
-        </div>
-      </section>
-
       <div id="storyView">
-        <section class="panel controls">
-          <label class="toggle-row" for="dateModeToggle">
-            <span>Mod Date</span>
-            <input id="dateModeToggle" type="checkbox" />
-          </label>
-          <label class="toggle-row" for="historyModeToggle">
-            <span>Mod Istorie+</span>
-            <input id="historyModeToggle" type="checkbox" />
-          </label>
-          <label class="toggle-row" for="manualModeToggle">
-            <span>Mod Manual (fără GPS)</span>
-            <input id="manualModeToggle" type="checkbox" />
-          </label>
-          <div class="button-row">
-            <button id="fullscreenBtn" class="ghost-btn" type="button">Ecran complet</button>
-            <button id="resetBtn" class="ghost-btn danger" type="button">Reset traseu</button>
-          </div>
-        </section>
-
         <section id="statusPanel" class="panel status">
           <div class="progress-head">
             <p id="chapterLabel">Capitol 1</p>
@@ -61,7 +39,6 @@
           </div>
           <p id="geoStatus" class="geo-status">Pornim detectarea locației...</p>
           <p id="distanceText" class="distance-text"></p>
-          <p id="scoreText" class="score-text"></p>
         </section>
 
         <section id="stopPanel" class="panel stop">
@@ -109,34 +86,91 @@
         </section>
       </div>
 
-      <section id="adminView" class="panel admin hidden">
-        <p class="eyebrow">Panou intern</p>
-        <h2 id="adminTitle">Admin local (read-only)</h2>
-        <p id="adminSubtitle" class="subtitle">
-          Aici vezi setările și datele traseului, fără editare din interfață.
-        </p>
-
-        <article class="admin-block">
-          <h3 id="adminSettingsTitle">Setări tur</h3>
-          <ul id="adminSettingsList" class="admin-list"></ul>
-        </article>
-
-        <article class="admin-block">
-          <h3 id="adminStopsTitle">Locații</h3>
-          <ul id="adminStopsList" class="admin-list"></ul>
-        </article>
-
-        <article class="admin-block">
-          <h3 id="adminLandmarksTitle">Palate / Clădiri indexate</h3>
-          <ul id="adminLandmarksList" class="admin-list"></ul>
-        </article>
-      </section>
-
       <footer class="footnote">
         <p id="authorNote"></p>
       </footer>
     </main>
 
+    <div id="menuBackdrop" class="menu-backdrop hidden"></div>
+    <aside id="menuDrawer" class="menu-drawer hidden" aria-hidden="true">
+      <div class="drawer-head">
+        <h2>Meniu</h2>
+        <button id="menuCloseBtn" class="ghost-btn" type="button">Închide</button>
+      </div>
+
+      <nav class="drawer-nav" aria-label="Secțiuni meniu">
+        <button id="menuStoryBtn" class="drawer-tab active" type="button">Story</button>
+        <button id="menuMapBtn" class="drawer-tab" type="button">Hartă</button>
+        <button id="menuSettingsBtn" class="drawer-tab" type="button">Setări</button>
+        <button id="menuAdminBtn" class="drawer-tab" type="button">Admin</button>
+      </nav>
+
+      <div class="drawer-content">
+        <section id="drawerStoryPanel" class="drawer-panel">
+          <p class="subtitle">
+            Story rămâne ecranul principal. Închide meniul și continuă traseul.
+          </p>
+          <button id="continueStoryBtn" type="button">Continuă Story</button>
+        </section>
+
+        <section id="drawerMapPanel" class="drawer-panel hidden">
+          <h3>Hartă traseu</h3>
+          <p id="mapStatus" class="subtitle">Încarc harta OpenStreetMap...</p>
+          <div id="mapContainer" class="map-container" aria-label="Hartă cu locații"></div>
+          <div id="mapFallback" class="map-fallback hidden">
+            <p class="subtitle">Harta nu poate fi încărcată acum. Folosește lista locațiilor:</p>
+            <ul id="mapFallbackList" class="admin-list"></ul>
+          </div>
+        </section>
+
+        <section id="drawerSettingsPanel" class="drawer-panel hidden">
+          <h3>Setări</h3>
+          <div class="controls">
+            <label class="toggle-row" for="dateModeToggle">
+              <span>Mod Date</span>
+              <input id="dateModeToggle" type="checkbox" />
+            </label>
+            <label class="toggle-row" for="historyModeToggle">
+              <span>Mod Istorie+</span>
+              <input id="historyModeToggle" type="checkbox" />
+            </label>
+            <label class="toggle-row" for="testModeToggle">
+              <span>Test mode (fără deplasare)</span>
+              <input id="testModeToggle" type="checkbox" />
+            </label>
+            <div class="button-row">
+              <button id="fullscreenBtn" class="ghost-btn" type="button">Ecran complet</button>
+              <button id="resetBtn" class="ghost-btn danger" type="button">Reset traseu</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="drawerAdminPanel" class="drawer-panel admin hidden">
+          <p class="eyebrow">Panou intern</p>
+          <h2 id="adminTitle">Admin local (read-only)</h2>
+          <p id="adminSubtitle" class="subtitle">
+            Aici vezi setările și datele traseului, fără editare din interfață.
+          </p>
+
+          <article class="admin-block">
+            <h3 id="adminSettingsTitle">Setări tur</h3>
+            <ul id="adminSettingsList" class="admin-list"></ul>
+          </article>
+
+          <article class="admin-block">
+            <h3 id="adminStopsTitle">Locații</h3>
+            <ul id="adminStopsList" class="admin-list"></ul>
+          </article>
+
+          <article class="admin-block">
+            <h3 id="adminLandmarksTitle">Palate / Clădiri indexate</h3>
+            <ul id="adminLandmarksList" class="admin-list"></ul>
+          </article>
+        </section>
+      </div>
+    </aside>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script type="module" src="src/app.js"></script>
   </body>
 </html>

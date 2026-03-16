@@ -11,8 +11,7 @@ const DEFAULT_STATE = {
   settings: {
     dateMode: true,
     historyMode: false,
-    manualMode: false,
-    viewMode: "story",
+    testMode: false,
   },
 };
 
@@ -27,6 +26,16 @@ const runtime = {
   },
   hintOpen: false,
   geoTimer: null,
+  ui: {
+    menuOpen: false,
+    activePanel: "story",
+  },
+  map: {
+    instance: null,
+    tileFailed: false,
+    unavailable: false,
+    markers: [],
+  },
 };
 
 function freshState() {
@@ -34,27 +43,19 @@ function freshState() {
 }
 
 const els = {
-  storyView: byId("storyView"),
-  adminView: byId("adminView"),
-  storyViewBtn: byId("storyViewBtn"),
-  adminViewBtn: byId("adminViewBtn"),
   tourTitle: byId("tourTitle"),
   tourSubtitle: byId("tourSubtitle"),
   authorNote: byId("authorNote"),
-  adminTitle: byId("adminTitle"),
-  adminSubtitle: byId("adminSubtitle"),
-  adminSettingsTitle: byId("adminSettingsTitle"),
-  adminStopsTitle: byId("adminStopsTitle"),
-  adminLandmarksTitle: byId("adminLandmarksTitle"),
-  adminSettingsList: byId("adminSettingsList"),
-  adminStopsList: byId("adminStopsList"),
-  adminLandmarksList: byId("adminLandmarksList"),
+  storyView: byId("storyView"),
+
+  statusPanel: byId("statusPanel"),
   chapterLabel: byId("chapterLabel"),
   progressText: byId("progressText"),
   progressFill: byId("progressFill"),
   geoStatus: byId("geoStatus"),
   distanceText: byId("distanceText"),
-  scoreText: byId("scoreText"),
+
+  stopPanel: byId("stopPanel"),
   chapterTitle: byId("chapterTitle"),
   stopTitle: byId("stopTitle"),
   lockedNotice: byId("lockedNotice"),
@@ -68,26 +69,57 @@ const els = {
   observationText: byId("observationText"),
   forUsText: byId("forUsText"),
   clueText: byId("clueText"),
+
   hintBox: byId("hintBox"),
   revealBtn: byId("revealBtn"),
   foundBtn: byId("foundBtn"),
   hintBtn: byId("hintBtn"),
   nextBtn: byId("nextBtn"),
+
   challengePanel: byId("challengePanel"),
   challengeQuestion: byId("challengeQuestion"),
   challengeOptions: byId("challengeOptions"),
   challengeFeedback: byId("challengeFeedback"),
+
   endingPanel: byId("endingPanel"),
   endingTitle: byId("endingTitle"),
   endingMessage: byId("endingMessage"),
-  stopPanel: byId("stopPanel"),
-  statusPanel: byId("statusPanel"),
+  restartBtn: byId("restartBtn"),
+
+  menuToggleBtn: byId("menuToggleBtn"),
+  menuCloseBtn: byId("menuCloseBtn"),
+  menuBackdrop: byId("menuBackdrop"),
+  menuDrawer: byId("menuDrawer"),
+  menuStoryBtn: byId("menuStoryBtn"),
+  menuMapBtn: byId("menuMapBtn"),
+  menuSettingsBtn: byId("menuSettingsBtn"),
+  menuAdminBtn: byId("menuAdminBtn"),
+
+  drawerStoryPanel: byId("drawerStoryPanel"),
+  drawerMapPanel: byId("drawerMapPanel"),
+  drawerSettingsPanel: byId("drawerSettingsPanel"),
+  drawerAdminPanel: byId("drawerAdminPanel"),
+  continueStoryBtn: byId("continueStoryBtn"),
+
+  mapContainer: byId("mapContainer"),
+  mapStatus: byId("mapStatus"),
+  mapFallback: byId("mapFallback"),
+  mapFallbackList: byId("mapFallbackList"),
+
   dateModeToggle: byId("dateModeToggle"),
   historyModeToggle: byId("historyModeToggle"),
-  manualModeToggle: byId("manualModeToggle"),
+  testModeToggle: byId("testModeToggle"),
   fullscreenBtn: byId("fullscreenBtn"),
   resetBtn: byId("resetBtn"),
-  restartBtn: byId("restartBtn"),
+
+  adminTitle: byId("adminTitle"),
+  adminSubtitle: byId("adminSubtitle"),
+  adminSettingsTitle: byId("adminSettingsTitle"),
+  adminStopsTitle: byId("adminStopsTitle"),
+  adminLandmarksTitle: byId("adminLandmarksTitle"),
+  adminSettingsList: byId("adminSettingsList"),
+  adminStopsList: byId("adminStopsList"),
+  adminLandmarksList: byId("adminLandmarksList"),
 };
 
 function sanitizeState() {
@@ -102,11 +134,19 @@ function sanitizeState() {
   state.foundStopIds = Array.isArray(state.foundStopIds) ? state.foundStopIds : [];
   state.answers = typeof state.answers === "object" && state.answers ? state.answers : {};
   state.score = Number.isFinite(state.score) ? state.score : 0;
+
+  const settings = typeof state.settings === "object" && state.settings ? state.settings : {};
+  const legacyManual = Boolean(settings.manualMode);
   state.settings = {
     ...DEFAULT_STATE.settings,
-    ...(state.settings || {}),
+    ...settings,
   };
-  state.settings.viewMode = state.settings.viewMode === "admin" ? "admin" : "story";
+  if (typeof settings.testMode !== "boolean") {
+    state.settings.testMode = legacyManual;
+  }
+  state.settings.testMode = Boolean(state.settings.testMode);
+  state.settings.dateMode = Boolean(state.settings.dateMode);
+  state.settings.historyMode = Boolean(state.settings.historyMode);
 }
 
 function getCurrentStop() {
@@ -131,7 +171,7 @@ function getDistanceToCurrentStop(stop) {
 }
 
 function isStopUnlocked(stop, distance) {
-  if (runtime.state.settings.manualMode) {
+  if (runtime.state.settings.testMode) {
     return true;
   }
   if (!runtime.geo.isAvailable || !Number.isFinite(distance)) {
@@ -145,28 +185,10 @@ function persist() {
   saveState(runtime.state);
 }
 
-function isAdminMode() {
-  return runtime.state.settings.viewMode === "admin";
-}
-
-function setViewMode(mode) {
-  runtime.state.settings.viewMode = mode === "admin" ? "admin" : "story";
-  persist();
-  render();
-}
-
-function renderViewMode() {
-  const admin = isAdminMode();
-  setVisible(els.storyView, !admin);
-  setVisible(els.adminView, admin);
-  els.storyViewBtn.classList.toggle("active", !admin);
-  els.adminViewBtn.classList.toggle("active", admin);
-  els.storyViewBtn.setAttribute("aria-selected", String(!admin));
-  els.adminViewBtn.setAttribute("aria-selected", String(admin));
-}
-
-function updateScoreUI() {
-  els.scoreText.textContent = `Scor explorare: ${runtime.state.score}`;
+function shortText(text, max = 180) {
+  const normalized = String(text || "").replace(/\s+/g, " ").trim();
+  if (normalized.length <= max) return normalized;
+  return `${normalized.slice(0, max - 1)}…`;
 }
 
 function renderAdminRows(listEl, rows) {
@@ -190,12 +212,6 @@ function renderAdminRows(listEl, rows) {
     li.appendChild(content);
     listEl.appendChild(li);
   });
-}
-
-function shortText(text, max = 180) {
-  const normalized = String(text || "").replace(/\s+/g, " ").trim();
-  if (normalized.length <= max) return normalized;
-  return `${normalized.slice(0, max - 1)}…`;
 }
 
 function collectLandmarks(stops) {
@@ -246,6 +262,7 @@ function renderAdmin() {
     },
     { label: "Epilog final", value: runtime.config.ending?.title || "-" },
     { label: "Număr locații", value: `${runtime.stops.length}` },
+    { label: "Test mode", value: runtime.state.settings.testMode ? "Activ" : "Inactiv" },
   ];
   renderAdminRows(els.adminSettingsList, settingsRows);
 
@@ -253,7 +270,7 @@ function renderAdmin() {
     const radius = stop.unlockRadiusMeters || runtime.config.defaultUnlockRadiusMeters || 85;
     const coordsText = `${stop.coords.lat.toFixed(5)}, ${stop.coords.lng.toFixed(5)}`;
     const hint = stop.hintToFind || "-";
-    const storyPreview = `Intro: ${shortText(stop.intro, 130)} | Istorie: ${shortText(stop.historyShort, 170)}`;
+    const storyPreview = `Intro: ${shortText(stop.intro, 120)} | Istorie: ${shortText(stop.historyShort, 150)}`;
     return {
       label: `${index + 1}. ${stop.title} (${stop.id})`,
       value: `Coordonate: ${coordsText} | Rază: ${radius} m | Capitol: ${stop.chapterTitle} | Hint: ${hint} | ${storyPreview}`,
@@ -271,6 +288,170 @@ function renderAdmin() {
     };
   });
   renderAdminRows(els.adminLandmarksList, landmarkRows);
+}
+
+function setDrawerPanel(panel) {
+  const valid = ["story", "map", "settings", "admin"];
+  const safe = valid.includes(panel) ? panel : "story";
+  runtime.ui.activePanel = safe;
+
+  setVisible(els.drawerStoryPanel, safe === "story");
+  setVisible(els.drawerMapPanel, safe === "map");
+  setVisible(els.drawerSettingsPanel, safe === "settings");
+  setVisible(els.drawerAdminPanel, safe === "admin");
+
+  els.menuStoryBtn.classList.toggle("active", safe === "story");
+  els.menuMapBtn.classList.toggle("active", safe === "map");
+  els.menuSettingsBtn.classList.toggle("active", safe === "settings");
+  els.menuAdminBtn.classList.toggle("active", safe === "admin");
+
+  if (safe === "map") {
+    renderMapPanel();
+  }
+  if (safe === "admin") {
+    renderAdmin();
+  }
+}
+
+function openDrawer(panel = runtime.ui.activePanel) {
+  runtime.ui.menuOpen = true;
+  setDrawerPanel(panel);
+  setVisible(els.menuBackdrop, true);
+  setVisible(els.menuDrawer, true);
+  els.menuDrawer.setAttribute("aria-hidden", "false");
+  document.body.classList.add("menu-open");
+}
+
+function closeDrawer() {
+  runtime.ui.menuOpen = false;
+  setVisible(els.menuBackdrop, false);
+  setVisible(els.menuDrawer, false);
+  els.menuDrawer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("menu-open");
+}
+
+function buildMapFallbackList() {
+  els.mapFallbackList.innerHTML = "";
+  runtime.stops.forEach((stop, index) => {
+    const li = document.createElement("li");
+    const current = !isFinished() && runtime.state.currentIndex === index ? " (curent)" : "";
+    li.textContent = `${index + 1}. ${stop.title}${current}`;
+    els.mapFallbackList.appendChild(li);
+  });
+}
+
+function createMarkerIcon(index, current) {
+  return window.L.divIcon({
+    className: "",
+    html: `<div class=\"map-marker${current ? " current" : ""}\">${index + 1}</div>`,
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -14],
+  });
+}
+
+function buildPopup(stop, index) {
+  const jump = runtime.state.settings.testMode
+    ? `<button type=\"button\" class=\"map-jump-btn\" data-map-jump=\"${index}\">Setează ca oprire curentă</button>`
+    : "<p class=\"map-jump-disabled\">Activează Test mode pentru salt rapid.</p>";
+
+  return `
+    <div class="map-popup">
+      <h4>${index + 1}. ${stop.title}</h4>
+      <p>${stop.chapterTitle}</p>
+      <p>${shortText(stop.hintToFind, 95)}</p>
+      ${jump}
+    </div>
+  `;
+}
+
+function ensureMapReady() {
+  buildMapFallbackList();
+
+  if (runtime.map.instance) {
+    return true;
+  }
+
+  if (runtime.map.unavailable) {
+    setVisible(els.mapFallback, true);
+    return false;
+  }
+
+  if (!window.L) {
+    runtime.map.unavailable = true;
+    els.mapStatus.textContent = "Biblioteca hărții nu a putut fi încărcată. Folosește lista locațiilor.";
+    setVisible(els.mapFallback, true);
+    return false;
+  }
+
+  const first = runtime.stops[0];
+  if (!first) {
+    runtime.map.unavailable = true;
+    els.mapStatus.textContent = "Nu există locații pentru hartă.";
+    setVisible(els.mapFallback, true);
+    return false;
+  }
+
+  const map = window.L.map(els.mapContainer, {
+    zoomControl: true,
+    attributionControl: true,
+  }).setView([first.coords.lat, first.coords.lng], 14);
+
+  const tileLayer = window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: "&copy; OpenStreetMap contributors",
+  });
+
+  tileLayer.on("load", () => {
+    if (!runtime.map.tileFailed) {
+      els.mapStatus.textContent = "Hartă OpenStreetMap activă.";
+      setVisible(els.mapFallback, false);
+    }
+  });
+
+  tileLayer.on("tileerror", () => {
+    runtime.map.tileFailed = true;
+    els.mapStatus.textContent = "Nu am putut încărca tile-urile hărții. Folosește lista locațiilor.";
+    setVisible(els.mapFallback, true);
+  });
+
+  tileLayer.addTo(map);
+  runtime.map.instance = map;
+  return true;
+}
+
+function renderMapMarkers() {
+  if (!ensureMapReady()) return;
+
+  const map = runtime.map.instance;
+  runtime.map.markers.forEach((marker) => marker.remove());
+  runtime.map.markers = [];
+
+  runtime.stops.forEach((stop, index) => {
+    const current = !isFinished() && runtime.state.currentIndex === index;
+    const marker = window.L.marker([stop.coords.lat, stop.coords.lng], {
+      icon: createMarkerIcon(index, current),
+    });
+    marker.bindPopup(buildPopup(stop, index));
+    marker.addTo(map);
+    runtime.map.markers.push(marker);
+  });
+
+  if (!isFinished()) {
+    const stop = getCurrentStop();
+    map.setView([stop.coords.lat, stop.coords.lng], 14, { animate: false });
+  }
+
+  setTimeout(() => map.invalidateSize(), 40);
+}
+
+function renderMapPanel() {
+  const ready = ensureMapReady();
+  if (ready) {
+    renderMapMarkers();
+  } else {
+    setVisible(els.mapFallback, true);
+  }
 }
 
 function renderChallenge(stop) {
@@ -331,14 +512,14 @@ function buildLockedNotice({ unlocked, revealed, distance, stop }) {
   if (revealed) {
     return "Capitol deschis. Continuați jocul împreună.";
   }
-  if (runtime.state.settings.manualMode) {
-    return "Mod Manual activ: puteți deschide capitolul fără GPS.";
+  if (runtime.state.settings.testMode) {
+    return "Test mode activ: poți deschide capitolul fără GPS.";
   }
   if (unlocked) {
     return "Sunteți suficient de aproape. E momentul pentru poveste.";
   }
   if (!runtime.geo.isAvailable) {
-    return "GPS indisponibil sau nepermis. Folosiți Mod Manual pentru a continua.";
+    return "GPS indisponibil. Activează Test mode din meniu pentru a continua.";
   }
   if (Number.isFinite(distance)) {
     return `Mai aveți ${formatDistance(distance)} până la acest capitol.`;
@@ -354,11 +535,11 @@ function buildHintText({ stop, unlocked, revealed, found, distance }) {
         distance <= nearThreshold ? stop.distanceNarrativeNear : stop.distanceNarrativeFar;
       return `${narrative} (${formatDistance(distance)})`;
     }
-    return `${stop.hintToFind} Dacă GPS-ul nu merge, porniți Mod Manual.`;
+    return `${stop.hintToFind} Dacă GPS-ul nu merge, activează Test mode din meniu.`;
   }
 
   if (!revealed) {
-    return `Ai ajuns. Apasă "Reveal story" ca să înceapă capitolul.`;
+    return 'Ai ajuns. Apasă "Reveal story" ca să înceapă capitolul.';
   }
 
   if (!found) {
@@ -422,7 +603,9 @@ function renderStop(stop) {
   els.foundBtn.disabled = !revealed || found;
   els.nextBtn.disabled = !found;
 
-  if (Number.isFinite(distance)) {
+  if (runtime.state.settings.testMode) {
+    els.distanceText.textContent = "Test mode activ: distanța este ignorată.";
+  } else if (Number.isFinite(distance)) {
     els.distanceText.textContent = `Distanță până la oprire: ${formatDistance(distance)}`;
   } else {
     els.distanceText.textContent = "Distanță până la oprire: indisponibilă";
@@ -444,38 +627,37 @@ function renderEnding() {
 }
 
 function render() {
-  renderViewMode();
-  if (isAdminMode()) {
-    renderAdmin();
-    return;
-  }
-
-  updateScoreUI();
-
   const total = runtime.stops.length;
   const currentDisplay = Math.min(runtime.state.currentIndex + 1, total);
   const completed = runtime.state.foundStopIds.length;
+
   els.progressText.textContent = `${currentDisplay}/${total}`;
   setProgress(els.progressFill, total > 0 ? completed / total : 0);
   els.chapterLabel.textContent = `Capitol ${Math.min(currentDisplay, total)}`;
 
   if (isFinished()) {
     renderEnding();
-    return;
+  } else {
+    setVisible(els.endingPanel, false);
+    setVisible(els.stopPanel, true);
+    setVisible(els.statusPanel, true);
+    renderStop(getCurrentStop());
   }
 
-  setVisible(els.endingPanel, false);
-  setVisible(els.stopPanel, true);
-  setVisible(els.statusPanel, true);
-  const stop = getCurrentStop();
-  renderStop(stop);
+  if (runtime.ui.activePanel === "admin") {
+    renderAdmin();
+  }
+  if (runtime.ui.activePanel === "map") {
+    renderMapPanel();
+  }
 }
 
 async function refreshLocation() {
-  if (runtime.state.settings.manualMode) {
+  if (runtime.state.settings.testMode) {
     runtime.geo.isAvailable = false;
     runtime.geo.error = "";
-    els.geoStatus.textContent = "Mod Manual activ. GPS-ul este ignorat.";
+    runtime.geo.coords = null;
+    els.geoStatus.textContent = "Test mode activ. GPS-ul este ignorat.";
     render();
     return;
   }
@@ -492,7 +674,7 @@ async function refreshLocation() {
   } catch (error) {
     runtime.geo.isAvailable = false;
     runtime.geo.error = error?.message || "Nu am putut citi locația.";
-    els.geoStatus.textContent = "GPS indisponibil. Poți continua cu Mod Manual.";
+    els.geoStatus.textContent = "GPS indisponibil. Activează Test mode din meniu pentru continuare.";
   } finally {
     render();
   }
@@ -522,12 +704,37 @@ function moveNext() {
 }
 
 function bindEvents() {
-  els.storyViewBtn.addEventListener("click", () => {
-    setViewMode("story");
+  els.menuToggleBtn.addEventListener("click", () => {
+    if (runtime.ui.menuOpen) {
+      closeDrawer();
+    } else {
+      openDrawer(runtime.ui.activePanel);
+    }
   });
 
-  els.adminViewBtn.addEventListener("click", () => {
-    setViewMode("admin");
+  els.menuCloseBtn.addEventListener("click", () => closeDrawer());
+  els.menuBackdrop.addEventListener("click", () => closeDrawer());
+
+  els.menuStoryBtn.addEventListener("click", () => {
+    setDrawerPanel("story");
+    closeDrawer();
+  });
+
+  els.continueStoryBtn.addEventListener("click", () => closeDrawer());
+
+  els.menuMapBtn.addEventListener("click", () => {
+    if (!runtime.ui.menuOpen) openDrawer("map");
+    setDrawerPanel("map");
+  });
+
+  els.menuSettingsBtn.addEventListener("click", () => {
+    if (!runtime.ui.menuOpen) openDrawer("settings");
+    setDrawerPanel("settings");
+  });
+
+  els.menuAdminBtn.addEventListener("click", () => {
+    if (!runtime.ui.menuOpen) openDrawer("admin");
+    setDrawerPanel("admin");
   });
 
   els.revealBtn.addEventListener("click", () => {
@@ -570,10 +777,11 @@ function bindEvents() {
     render();
   });
 
-  els.manualModeToggle.addEventListener("change", (event) => {
-    runtime.state.settings.manualMode = event.target.checked;
+  els.testModeToggle.addEventListener("change", (event) => {
+    runtime.state.settings.testMode = event.target.checked;
     persist();
     refreshLocation();
+    render();
   });
 
   els.fullscreenBtn.addEventListener("click", async () => {
@@ -592,6 +800,7 @@ function bindEvents() {
     clearState();
     runtime.state = freshState();
     runtime.hintOpen = false;
+    applyStaticContent();
     render();
     refreshLocation();
   });
@@ -601,8 +810,25 @@ function bindEvents() {
     runtime.state = freshState();
     runtime.hintOpen = false;
     setVisible(els.endingPanel, false);
+    applyStaticContent();
     render();
     refreshLocation();
+  });
+
+  document.addEventListener("click", (event) => {
+    const btn = event.target.closest("[data-map-jump]");
+    if (!btn) return;
+    if (!runtime.state.settings.testMode) return;
+
+    const index = Number(btn.dataset.mapJump);
+    if (!Number.isInteger(index)) return;
+    if (index < 0 || index >= runtime.stops.length) return;
+
+    runtime.state.currentIndex = index;
+    runtime.hintOpen = false;
+    persist();
+    closeDrawer();
+    render();
   });
 }
 
@@ -610,11 +836,9 @@ function applyStaticContent() {
   els.tourTitle.textContent = runtime.config.tourTitle;
   els.tourSubtitle.textContent = runtime.config.tourSubtitle;
   els.authorNote.textContent = runtime.config.authorNote;
-  els.storyViewBtn.textContent = runtime.config.admin?.storyTabLabel || "Story";
-  els.adminViewBtn.textContent = runtime.config.admin?.adminTabLabel || "Admin";
   els.dateModeToggle.checked = runtime.state.settings.dateMode;
   els.historyModeToggle.checked = runtime.state.settings.historyMode;
-  els.manualModeToggle.checked = runtime.state.settings.manualMode;
+  els.testModeToggle.checked = runtime.state.settings.testMode;
 }
 
 async function registerServiceWorker() {
