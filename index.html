@@ -16,7 +16,6 @@
 
     <main class="app-shell">
       <header class="top">
-        <p class="eyebrow">Ghid de teren în Cluj-Napoca</p>
         <div class="top-row">
           <h1 id="tourTitle">Tur istoric Cluj</h1>
           <button id="menuToggleBtn" class="menu-btn" type="button" aria-label="Deschide meniul">
@@ -25,18 +24,18 @@
             <span></span>
           </button>
         </div>
-        <p id="tourSubtitle" class="subtitle"></p>
       </header>
 
       <div id="storyView">
         <section id="statusPanel" class="panel status">
           <div class="progress-head">
-            <p id="chapterLabel">Capitol 1</p>
+            <p id="chapterLabel">Etape</p>
             <p id="progressText">0/0</p>
           </div>
           <div class="progress-track" aria-hidden="true">
             <div id="progressFill" class="progress-fill"></div>
           </div>
+          <div id="stageChips" class="stage-chips" aria-label="Etape traseu"></div>
           <p id="geoStatus" class="geo-status">Pornim detectarea locației...</p>
           <p id="distanceText" class="distance-text"></p>
         </section>
@@ -97,10 +96,6 @@
           <button id="restartBtn" type="button">Reîncepem traseul</button>
         </section>
       </div>
-
-      <footer class="footnote">
-        <p id="authorNote"></p>
-      </footer>
     </main>
 
     <div id="menuBackdrop" class="menu-backdrop hidden"></div>

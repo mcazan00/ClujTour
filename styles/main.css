@@ -245,12 +245,44 @@ button:disabled {
   transition: width 320ms ease;
 }
 
+.stage-chips {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stage-chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.73rem;
+  color: var(--soft-ink);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.stage-chip.current {
+  color: #fff;
+  background: #6f5139;
+  border-color: #6f5139;
+}
+
+.stage-chip.done {
+  color: #4f4339;
+  background: rgba(143, 108, 78, 0.2);
+}
+
 .geo-status,
 .distance-text,
 .locked-notice,
 .chapter-title {
   margin: 9px 0 0;
   color: var(--soft-ink);
+}
+
+.status .geo-status,
+.status .distance-text {
+  display: none;
 }
 
 .chapter-title {
