@@ -178,7 +178,22 @@ h3 {
 }
 
 .main-actions {
-  margin-top: 8px;
+  margin-top: 12px;
+}
+
+.actions-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.actions-stack button {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 button {

@@ -24,6 +24,7 @@ const runtime = {
   ui: {
     menuOpen: false,
     activePanel: "story",
+    navigationOpenedStops: new Set(),
   },
   map: {
     story: {
@@ -205,7 +206,7 @@ function buildNavigationLinks(stop) {
 function openExternalRoute() {
   const nextStop = getNextStop();
   const links = buildNavigationLinks(nextStop);
-  if (!links) return;
+  if (!links) return false;
 
   const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent || "");
   const primary = isiOS ? links.apple : links.google;
@@ -215,6 +216,7 @@ function openExternalRoute() {
   if (!openedWindow) {
     window.location.href = fallback;
   }
+  return true;
 }
 
 function openDrawer(panel = runtime.ui.activePanel) {
@@ -504,16 +506,23 @@ function renderStop(stop) {
     els.storyBlock.classList.add("fade-in");
   }
 
-  els.revealBtn.disabled = !unlocked || revealed;
-  els.foundBtn.disabled = !revealed || found;
-  els.nextBtn.disabled = !found;
-
   const nextStop = getNextStop();
   const hasNext = Boolean(nextStop);
-  setVisible(els.navigateBtn, hasNext);
-  if (hasNext) {
-    els.navigateBtn.disabled = !found;
-  }
+  const navigationOpened = runtime.ui.navigationOpenedStops.has(stop.id);
+  const showReveal = !revealed;
+  const showFound = revealed && !found;
+  const showNavigate = found && hasNext && !runtime.state.settings.testMode && !navigationOpened;
+  const showNext = found && (!hasNext || runtime.state.settings.testMode || navigationOpened);
+
+  setVisible(els.revealBtn, showReveal);
+  setVisible(els.foundBtn, showFound);
+  setVisible(els.navigateBtn, showNavigate);
+  setVisible(els.nextBtn, showNext);
+
+  els.revealBtn.disabled = !unlocked;
+  els.foundBtn.disabled = false;
+  els.navigateBtn.disabled = false;
+  els.nextBtn.disabled = false;
 
   if (runtime.state.settings.testMode) {
     els.distanceText.textContent = "Test mode activ: distanța este ignorată.";
@@ -663,7 +672,11 @@ function bindEvents() {
   els.navigateBtn.addEventListener("click", () => {
     const stop = getCurrentStop();
     if (!stop || !isFound(stop.id)) return;
-    openExternalRoute();
+    const opened = openExternalRoute();
+    if (opened) {
+      runtime.ui.navigationOpenedStops.add(stop.id);
+      render();
+    }
   });
 
   els.testModeToggle.addEventListener("change", (event) => {
@@ -678,6 +691,7 @@ function bindEvents() {
     if (!accepted) return;
     clearState();
     runtime.state = freshState();
+    runtime.ui.navigationOpenedStops = new Set();
     applyStaticContent();
     render();
     refreshLocation();
@@ -686,6 +700,7 @@ function bindEvents() {
   els.restartBtn.addEventListener("click", () => {
     clearState();
     runtime.state = freshState();
+    runtime.ui.navigationOpenedStops = new Set();
     setVisible(els.endingPanel, false);
     applyStaticContent();
     render();
