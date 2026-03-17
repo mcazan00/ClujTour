@@ -7,8 +7,6 @@ const DEFAULT_STATE = {
   revealedStopIds: [],
   foundStopIds: [],
   settings: {
-    dateMode: false,
-    historyMode: false,
     testMode: false,
   },
 };
@@ -49,8 +47,6 @@ function freshState() {
 
 const els = {
   tourTitle: byId("tourTitle"),
-  tourSubtitle: byId("tourSubtitle"),
-  authorNote: byId("authorNote"),
 
   statusPanel: byId("statusPanel"),
   chapterLabel: byId("chapterLabel"),
@@ -103,20 +99,8 @@ const els = {
   mapFallback: byId("mapFallback"),
   mapFallbackList: byId("mapFallbackList"),
 
-  dateModeToggle: byId("dateModeToggle"),
-  historyModeToggle: byId("historyModeToggle"),
   testModeToggle: byId("testModeToggle"),
-  fullscreenBtn: byId("fullscreenBtn"),
   resetBtn: byId("resetBtn"),
-
-  adminTitle: byId("adminTitle"),
-  adminSubtitle: byId("adminSubtitle"),
-  adminSettingsTitle: byId("adminSettingsTitle"),
-  adminStopsTitle: byId("adminStopsTitle"),
-  adminLandmarksTitle: byId("adminLandmarksTitle"),
-  adminSettingsList: byId("adminSettingsList"),
-  adminStopsList: byId("adminStopsList"),
-  adminLandmarksList: byId("adminLandmarksList"),
 };
 
 function sanitizeState() {
@@ -140,8 +124,6 @@ function sanitizeState() {
     state.settings.testMode = legacyManual;
   }
   state.settings.testMode = Boolean(state.settings.testMode);
-  state.settings.dateMode = Boolean(state.settings.dateMode);
-  state.settings.historyMode = Boolean(state.settings.historyMode);
 }
 
 function getCurrentStop() {
@@ -186,112 +168,6 @@ function shortText(text, max = 180) {
   return `${normalized.slice(0, max - 1)}…`;
 }
 
-function renderAdminRows(listEl, rows) {
-  listEl.innerHTML = "";
-  if (!rows.length) {
-    const empty = document.createElement("li");
-    empty.textContent = "Nicio intrare.";
-    listEl.appendChild(empty);
-    return;
-  }
-
-  rows.forEach((row) => {
-    const li = document.createElement("li");
-    const label = document.createElement("span");
-    label.className = "admin-label";
-    label.textContent = row.label;
-    li.appendChild(label);
-
-    const content = document.createElement("span");
-    content.textContent = row.value;
-    li.appendChild(content);
-    listEl.appendChild(li);
-  });
-}
-
-function collectLandmarks(stops) {
-  const map = new Map();
-
-  stops.forEach((stop) => {
-    const landmarks = Array.isArray(stop.landmarks) ? stop.landmarks : [];
-    landmarks.forEach((landmark) => {
-      const key = `${String(landmark.name || "").trim().toLowerCase()}`;
-      if (!key) return;
-      if (!map.has(key)) {
-        map.set(key, {
-          name: landmark.name,
-          category: landmark.category || "clădire",
-          areas: new Set(),
-          notes: new Set(),
-        });
-      }
-      const entry = map.get(key);
-      if (landmark.area) entry.areas.add(landmark.area);
-      if (landmark.noteShort) entry.notes.add(landmark.noteShort);
-    });
-  });
-
-  return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name, "ro"));
-}
-
-function renderAdmin() {
-  const adminCfg = runtime.config.admin || {};
-  const subtitleFallback = "Aici vezi setările și datele traseului, fără editare din interfață.";
-
-  els.adminTitle.textContent = adminCfg.title || "Admin local (read-only)";
-  els.adminSubtitle.textContent = adminCfg.subtitle || subtitleFallback;
-  els.adminSettingsTitle.textContent = adminCfg.settingsTitle || "Setări tur";
-  els.adminStopsTitle.textContent = adminCfg.stopsTitle || "Locații";
-  els.adminLandmarksTitle.textContent = adminCfg.landmarksTitle || "Palate / Clădiri indexate";
-
-  const settingsRows = [
-    { label: "Titlu tur", value: runtime.config.tourTitle || "-" },
-    { label: "Subtitlu", value: runtime.config.tourSubtitle || "-" },
-    {
-      label: "Rază implicită de unlock",
-      value: `${runtime.config.defaultUnlockRadiusMeters || 85} m`,
-    },
-    {
-      label: "Interval refresh GPS",
-      value: `${Math.round((runtime.config.distanceUpdateIntervalMs || 6000) / 1000)} sec`,
-    },
-    { label: "Epilog final", value: runtime.config.ending?.title || "-" },
-    { label: "Număr locații", value: `${runtime.stops.length}` },
-    { label: "Test mode", value: runtime.state.settings.testMode ? "Activ" : "Inactiv" },
-  ];
-  renderAdminRows(els.adminSettingsList, settingsRows);
-
-  const stopRows = runtime.stops.map((stop, index) => {
-    const radius = stop.unlockRadiusMeters || runtime.config.defaultUnlockRadiusMeters || 85;
-    const coordsText = `${stop.coords.lat.toFixed(5)}, ${stop.coords.lng.toFixed(5)}`;
-    const hint = stop.hintToFind || "-";
-    const povestePreview = shortText(
-      stop.povesteScurta || stop.contextIstoric || stop.historyShort || "",
-      130
-    );
-    const firPreview = shortText(
-      stop.firCronologic || stop.tranzitieUrmatorulPunct || stop.nextStopHint || "",
-      130
-    );
-    return {
-      label: `${index + 1}. ${stop.title} (${stop.id})`,
-      value: `Coordonate: ${coordsText} | Rază: ${radius} m | Capitol: ${stop.chapterTitle} | Hint: ${hint} | Poveste: ${povestePreview} | Fir: ${firPreview}`,
-    };
-  });
-  renderAdminRows(els.adminStopsList, stopRows);
-
-  const landmarks = collectLandmarks(runtime.stops);
-  const landmarkRows = landmarks.map((landmark) => {
-    const areas = Array.from(landmark.areas).join(", ") || "zonă nespecificată";
-    const firstNote = Array.from(landmark.notes)[0] || "fără notă";
-    return {
-      label: `${landmark.name} (${landmark.category})`,
-      value: `Zonă: ${areas} | Notă: ${firstNote}`,
-    };
-  });
-  renderAdminRows(els.adminLandmarksList, landmarkRows);
-}
-
 function setDrawerPanel(panel) {
   const valid = ["story", "map", "settings"];
   const safe = valid.includes(panel) ? panel : "story";
@@ -307,9 +183,6 @@ function setDrawerPanel(panel) {
 
   if (safe === "map") {
     renderMapPanel();
-  }
-  if (safe === "settings") {
-    renderAdmin();
   }
 }
 
@@ -618,12 +491,7 @@ function renderStop(stop) {
     .filter(Boolean)
     .join(" ");
   const povesteBase = stop.povesteScurta || legacyStory || stop.intro || "";
-  const storyExtra = runtime.state.settings.historyMode ? stop.historyExtra || "" : "";
-  const fullPoveste = storyExtra ? `${povesteBase} ${storyExtra}` : povesteBase;
-
-  els.povesteText.textContent = runtime.state.settings.dateMode
-    ? shortText(fullPoveste, 430)
-    : fullPoveste;
+  els.povesteText.textContent = povesteBase;
   els.ceVeziText.textContent =
     stop.ceVeziAici || stop.observatieArhitecturala || stop.observationPrompt || "";
   els.firCronologicText.textContent =
@@ -685,9 +553,6 @@ function render() {
     renderStop(getCurrentStop());
   }
 
-  if (runtime.ui.activePanel === "settings") {
-    renderAdmin();
-  }
   if (runtime.ui.activePanel === "map") {
     renderMapPanel();
   }
@@ -801,33 +666,11 @@ function bindEvents() {
     openExternalRoute();
   });
 
-  els.dateModeToggle.addEventListener("change", (event) => {
-    runtime.state.settings.dateMode = event.target.checked;
-    persist();
-    render();
-  });
-
-  els.historyModeToggle.addEventListener("change", (event) => {
-    runtime.state.settings.historyMode = event.target.checked;
-    persist();
-    render();
-  });
-
   els.testModeToggle.addEventListener("change", (event) => {
     runtime.state.settings.testMode = event.target.checked;
     persist();
     refreshLocation();
     render();
-  });
-
-  els.fullscreenBtn.addEventListener("click", async () => {
-    if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-      await document.documentElement.requestFullscreen();
-      return;
-    }
-    if (document.fullscreenElement) {
-      await document.exitFullscreen();
-    }
   });
 
   els.resetBtn.addEventListener("click", () => {
@@ -869,14 +712,6 @@ function applyStaticContent() {
   if (els.tourTitle) {
     els.tourTitle.textContent = runtime.config.tourTitle;
   }
-  if (els.tourSubtitle) {
-    els.tourSubtitle.textContent = runtime.config.tourSubtitle;
-  }
-  if (els.authorNote) {
-    els.authorNote.textContent = runtime.config.authorNote;
-  }
-  els.dateModeToggle.checked = runtime.state.settings.dateMode;
-  els.historyModeToggle.checked = runtime.state.settings.historyMode;
   els.testModeToggle.checked = runtime.state.settings.testMode;
 }
 

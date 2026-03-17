@@ -104,10 +104,10 @@
         <button id="menuCloseBtn" class="ghost-btn" type="button">Închide</button>
       </div>
 
-      <nav class="drawer-nav" aria-label="Secțiuni meniu">
-        <button id="menuStoryBtn" class="drawer-tab active" type="button">Story</button>
-        <button id="menuMapBtn" class="drawer-tab" type="button">Hartă</button>
-        <button id="menuSettingsBtn" class="drawer-tab" type="button">Setări</button>
+      <nav class="drawer-links" aria-label="Secțiuni meniu">
+        <button id="menuStoryBtn" class="drawer-link active" type="button">Story</button>
+        <button id="menuMapBtn" class="drawer-link" type="button">Hartă</button>
+        <button id="menuSettingsBtn" class="drawer-link" type="button">Setări</button>
       </nav>
 
       <div class="drawer-content">
@@ -131,48 +131,14 @@
         <section id="drawerSettingsPanel" class="drawer-panel hidden">
           <h3>Setări</h3>
           <div class="controls">
-            <label class="toggle-row" for="dateModeToggle">
-              <span>Mod Date (explicații compacte)</span>
-              <input id="dateModeToggle" type="checkbox" />
-            </label>
-            <label class="toggle-row" for="historyModeToggle">
-              <span>Mod Istorie+</span>
-              <input id="historyModeToggle" type="checkbox" />
-            </label>
             <label class="toggle-row" for="testModeToggle">
               <span>Test mode (fără deplasare)</span>
               <input id="testModeToggle" type="checkbox" />
             </label>
-            <div class="button-row">
-              <button id="fullscreenBtn" class="ghost-btn" type="button">Ecran complet</button>
+            <div class="button-row settings-actions">
               <button id="resetBtn" class="ghost-btn danger" type="button">Reset traseu</button>
             </div>
           </div>
-          <details class="admin-inline" id="adminSection">
-            <summary>Date tehnice (Admin)</summary>
-            <div class="admin-inline-content">
-              <p class="eyebrow">Panou intern</p>
-              <h2 id="adminTitle">Admin local (read-only)</h2>
-              <p id="adminSubtitle" class="subtitle">
-                Aici vezi setările și datele traseului, fără editare din interfață.
-              </p>
-
-              <article class="admin-block">
-                <h3 id="adminSettingsTitle">Setări tur</h3>
-                <ul id="adminSettingsList" class="admin-list"></ul>
-              </article>
-
-              <article class="admin-block">
-                <h3 id="adminStopsTitle">Locații</h3>
-                <ul id="adminStopsList" class="admin-list"></ul>
-              </article>
-
-              <article class="admin-block">
-                <h3 id="adminLandmarksTitle">Palate / Clădiri indexate</h3>
-                <ul id="adminLandmarksList" class="admin-list"></ul>
-              </article>
-            </div>
-          </details>
         </section>
       </div>
     </aside>

@@ -96,20 +96,18 @@ https://<user>.github.io/<repo>/
   - coordonate
   - micro-povestea fiecărei opriri (`povesteScurta`, `ceVeziAici`, `firCronologic`)
   - rază de deblocare (`unlockRadiusMeters`)
-  - lista `landmarks` pentru indexarea palatelor/clădirilor în Admin
+  - lista `landmarks` pentru indexarea palatelor/clădirilor în datele traseului
 - Modifică `data/config.json` pentru:
-  - titlu/subtitlu
+  - titlu
   - mesaj final
   - interval refresh GPS
-  - etichete pentru view-ul Admin (`config.admin`)
 
-## Story / Admin
+## Story / Meniu
 
 - În interfață ai un meniu hamburger cu 3 secțiuni: `Story`, `Hartă`, `Setări`.
 - `Story` = experiența principală, cu hartă compactă fixă pe oprirea curentă + 3 blocuri narative: `Povestea locului`, `Ce vezi aici`, `Cum continuă povestea`.
 - `Hartă` = OpenStreetMap overview cu markere numerotate pentru toate opririle.
-- `Setări` = Date mode, Istorie+, Test mode, fullscreen, reset + secțiune internă `Date tehnice (Admin)`.
-- `Date tehnice (Admin)` = listare read-only date locale, fără editare din UI.
+- `Setări` = `Test mode (fără deplasare)` + `Reset traseu`.
 
 ## Test mode
 
@@ -123,8 +121,7 @@ https://<user>.github.io/<repo>/
 - Deblocare stop după proximitate GPS
 - Fallback complet manual
 - Butoane Story: `Reveal story`, `I found it`, `Navighează la următorul punct`, `Next stop`
-- Mod `Date` + mod `Istorie+`
-- View `Date tehnice (Admin)` read-only (setări, locații, palate/clădiri deduplicate)
+- Meniu hamburger vertical simplu (`Story`, `Hartă`, `Setări`)
 - Progres salvat local
 - Ecran final la Cetățuia
 - Service worker pentru funcționare offline după prima încărcare

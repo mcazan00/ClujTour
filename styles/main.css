@@ -402,23 +402,30 @@ button:disabled {
   gap: 12px;
 }
 
-.drawer-nav {
+.drawer-links {
   margin-top: 12px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.drawer-tab {
-  min-height: 40px;
-  background: #fff;
+.drawer-link {
+  display: block;
+  width: 100%;
+  min-height: 38px;
+  justify-content: flex-start;
+  text-align: left;
+  background: transparent;
   color: var(--ink);
-  border-color: var(--line);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 6px 8px;
+  font-weight: 600;
 }
 
-.drawer-tab.active {
-  color: #fff;
-  background: linear-gradient(130deg, var(--accent), var(--accent-strong));
+.drawer-link.active {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .drawer-content {
@@ -429,28 +436,8 @@ button:disabled {
   margin-bottom: 8px;
 }
 
-.admin-inline {
-  margin-top: 14px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.72);
-  overflow: hidden;
-}
-
-.admin-inline summary {
-  cursor: pointer;
-  padding: 12px;
-  font-weight: 700;
-  list-style: none;
-}
-
-.admin-inline summary::-webkit-details-marker {
-  display: none;
-}
-
-.admin-inline-content {
-  border-top: 1px solid var(--line);
-  padding: 12px;
+.settings-actions {
+  grid-template-columns: 1fr;
 }
 
 .map-container {
