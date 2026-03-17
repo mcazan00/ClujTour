@@ -28,10 +28,18 @@ const runtime = {
     activePanel: "story",
   },
   map: {
-    instance: null,
-    tileFailed: false,
-    unavailable: false,
-    markers: [],
+    story: {
+      instance: null,
+      marker: null,
+      tileFailed: false,
+      unavailable: false,
+    },
+    overview: {
+      instance: null,
+      tileFailed: false,
+      unavailable: false,
+      markers: [],
+    },
   },
 };
 
@@ -55,6 +63,10 @@ const els = {
   chapterTitle: byId("chapterTitle"),
   stopTitle: byId("stopTitle"),
   lockedNotice: byId("lockedNotice"),
+  storyMapStatus: byId("storyMapStatus"),
+  storyMapContainer: byId("storyMapContainer"),
+  storyMapFallback: byId("storyMapFallback"),
+  storyMapFallbackText: byId("storyMapFallbackText"),
   storyBlock: byId("storyBlock"),
   stopFigure: byId("stopFigure"),
   stopImage: byId("stopImage"),
@@ -86,7 +98,7 @@ const els = {
   drawerSettingsPanel: byId("drawerSettingsPanel"),
   continueStoryBtn: byId("continueStoryBtn"),
 
-  mapContainer: byId("mapContainer"),
+  overviewMapContainer: byId("mapContainer"),
   mapStatus: byId("mapStatus"),
   mapFallback: byId("mapFallback"),
   mapFallbackList: byId("mapFallbackList"),
@@ -384,20 +396,36 @@ function buildPopup(stop, index) {
   `;
 }
 
-function ensureMapReady() {
+function attachOsmTileLayer(map, onLoad, onError) {
+  const tileLayer = window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: "&copy; OpenStreetMap contributors",
+  });
+
+  tileLayer.on("load", onLoad);
+  tileLayer.on("tileerror", onError);
+  tileLayer.addTo(map);
+}
+
+function setStoryMapFallback(message) {
+  els.storyMapFallbackText.textContent = message;
+  setVisible(els.storyMapFallback, true);
+}
+
+function ensureOverviewMapReady() {
   buildMapFallbackList();
 
-  if (runtime.map.instance) {
+  if (runtime.map.overview.instance) {
     return true;
   }
 
-  if (runtime.map.unavailable) {
+  if (runtime.map.overview.unavailable) {
     setVisible(els.mapFallback, true);
     return false;
   }
 
   if (!window.L) {
-    runtime.map.unavailable = true;
+    runtime.map.overview.unavailable = true;
     els.mapStatus.textContent = "Biblioteca hărții nu a putut fi încărcată. Folosește lista locațiilor.";
     setVisible(els.mapFallback, true);
     return false;
@@ -405,46 +433,42 @@ function ensureMapReady() {
 
   const first = runtime.stops[0];
   if (!first) {
-    runtime.map.unavailable = true;
+    runtime.map.overview.unavailable = true;
     els.mapStatus.textContent = "Nu există locații pentru hartă.";
     setVisible(els.mapFallback, true);
     return false;
   }
 
-  const map = window.L.map(els.mapContainer, {
+  const map = window.L.map(els.overviewMapContainer, {
     zoomControl: true,
     attributionControl: true,
   }).setView([first.coords.lat, first.coords.lng], 14);
 
-  const tileLayer = window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: "&copy; OpenStreetMap contributors",
-  });
-
-  tileLayer.on("load", () => {
-    if (!runtime.map.tileFailed) {
-      els.mapStatus.textContent = "Hartă OpenStreetMap activă.";
-      setVisible(els.mapFallback, false);
+  attachOsmTileLayer(
+    map,
+    () => {
+      if (!runtime.map.overview.tileFailed) {
+        els.mapStatus.textContent = "Hartă OpenStreetMap activă.";
+        setVisible(els.mapFallback, false);
+      }
+    },
+    () => {
+      runtime.map.overview.tileFailed = true;
+      els.mapStatus.textContent = "Nu am putut încărca tile-urile hărții. Folosește lista locațiilor.";
+      setVisible(els.mapFallback, true);
     }
-  });
+  );
 
-  tileLayer.on("tileerror", () => {
-    runtime.map.tileFailed = true;
-    els.mapStatus.textContent = "Nu am putut încărca tile-urile hărții. Folosește lista locațiilor.";
-    setVisible(els.mapFallback, true);
-  });
-
-  tileLayer.addTo(map);
-  runtime.map.instance = map;
+  runtime.map.overview.instance = map;
   return true;
 }
 
-function renderMapMarkers() {
-  if (!ensureMapReady()) return;
+function renderOverviewMapMarkers() {
+  if (!ensureOverviewMapReady()) return;
 
-  const map = runtime.map.instance;
-  runtime.map.markers.forEach((marker) => marker.remove());
-  runtime.map.markers = [];
+  const map = runtime.map.overview.instance;
+  runtime.map.overview.markers.forEach((marker) => marker.remove());
+  runtime.map.overview.markers = [];
 
   runtime.stops.forEach((stop, index) => {
     const current = !isFinished() && runtime.state.currentIndex === index;
@@ -453,7 +477,7 @@ function renderMapMarkers() {
     });
     marker.bindPopup(buildPopup(stop, index));
     marker.addTo(map);
-    runtime.map.markers.push(marker);
+    runtime.map.overview.markers.push(marker);
   });
 
   if (!isFinished()) {
@@ -465,12 +489,86 @@ function renderMapMarkers() {
 }
 
 function renderMapPanel() {
-  const ready = ensureMapReady();
+  const ready = ensureOverviewMapReady();
   if (ready) {
-    renderMapMarkers();
+    renderOverviewMapMarkers();
   } else {
     setVisible(els.mapFallback, true);
   }
+}
+
+function ensureStoryMapReady(stop) {
+  if (runtime.map.story.instance) {
+    return true;
+  }
+
+  if (runtime.map.story.unavailable) {
+    setVisible(els.storyMapFallback, true);
+    return false;
+  }
+
+  if (!window.L) {
+    runtime.map.story.unavailable = true;
+    els.storyMapStatus.textContent = "Biblioteca hărții nu a putut fi încărcată.";
+    setStoryMapFallback("Harta punctului curent nu este disponibilă acum.");
+    return false;
+  }
+
+  const initial = stop || runtime.stops[0];
+  if (!initial) {
+    runtime.map.story.unavailable = true;
+    els.storyMapStatus.textContent = "Nu există locații pentru hartă.";
+    setStoryMapFallback("Nu există date de traseu pentru hartă.");
+    return false;
+  }
+
+  const map = window.L.map(els.storyMapContainer, {
+    zoomControl: false,
+    attributionControl: true,
+  }).setView([initial.coords.lat, initial.coords.lng], 15);
+
+  attachOsmTileLayer(
+    map,
+    () => {
+      if (!runtime.map.story.tileFailed) {
+        els.storyMapStatus.textContent = "Hartă focalizată pe oprirea curentă.";
+        setVisible(els.storyMapFallback, false);
+      }
+    },
+    () => {
+      runtime.map.story.tileFailed = true;
+      els.storyMapStatus.textContent = "Tile-urile nu au putut fi încărcate.";
+      setStoryMapFallback("Harta punctului curent nu poate afișa tile-uri momentan.");
+    }
+  );
+
+  runtime.map.story.instance = map;
+  return true;
+}
+
+function renderStoryMap(stop) {
+  if (!stop) return;
+  if (!ensureStoryMapReady(stop)) return;
+
+  const map = runtime.map.story.instance;
+  const latLng = [stop.coords.lat, stop.coords.lng];
+  const currentMarkerIndex = Math.min(runtime.state.currentIndex, runtime.stops.length - 1);
+
+  if (runtime.map.story.marker) {
+    runtime.map.story.marker.setLatLng(latLng);
+    runtime.map.story.marker.setIcon(createMarkerIcon(currentMarkerIndex, true));
+  } else {
+    runtime.map.story.marker = window.L.marker(latLng, {
+      icon: createMarkerIcon(currentMarkerIndex, true),
+    }).addTo(map);
+  }
+
+  map.setView(latLng, 15, { animate: false });
+  if (!runtime.map.story.tileFailed) {
+    els.storyMapStatus.textContent = "Hartă focalizată pe oprirea curentă.";
+    setVisible(els.storyMapFallback, false);
+  }
+  setTimeout(() => map.invalidateSize(), 40);
 }
 
 function buildLockedNotice({ unlocked, revealed, distance }) {
@@ -501,6 +599,7 @@ function renderStop(stop) {
   els.chapterTitle.textContent = stop.chapterTitle;
   els.stopTitle.textContent = stop.title;
   els.lockedNotice.textContent = buildLockedNotice({ unlocked, revealed, distance });
+  renderStoryMap(stop);
 
   const image = stop.image || null;
   if (image?.src) {

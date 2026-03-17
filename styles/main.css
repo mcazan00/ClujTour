@@ -259,6 +259,23 @@ button:disabled {
   font-size: 0.78rem;
 }
 
+.story-map-card {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.62);
+  padding: 10px;
+}
+
+.story-map-head h3 {
+  font-size: 0.98rem;
+}
+
+.story-map-head .subtitle {
+  margin-top: 4px;
+  font-size: 0.82rem;
+}
+
 .story-block p {
   margin: 10px 0 0;
   line-height: 1.52;
@@ -434,6 +451,10 @@ button:disabled {
   border: 1px solid var(--line);
   overflow: hidden;
   background: #f7f1e6;
+}
+
+.story-map {
+  height: 210px;
 }
 
 .map-fallback {

@@ -46,6 +46,19 @@
           <h2 id="stopTitle"></h2>
           <p id="lockedNotice" class="locked-notice"></p>
 
+          <section class="story-map-card" aria-label="Hartă punct curent">
+            <div class="story-map-head">
+              <h3>Hartă punct curent</h3>
+              <p id="storyMapStatus" class="subtitle">Încarc harta pentru oprirea curentă...</p>
+            </div>
+            <div id="storyMapContainer" class="map-container story-map" aria-label="Hartă stop curent"></div>
+            <div id="storyMapFallback" class="map-fallback hidden">
+              <p id="storyMapFallbackText" class="subtitle">
+                Harta nu poate fi încărcată acum. Continuă folosind indiciile text.
+              </p>
+            </div>
+          </section>
+
           <div id="storyBlock" class="story-block hidden" aria-live="polite">
             <figure id="stopFigure" class="stop-figure hidden">
               <img id="stopImage" class="stop-image" alt="" loading="lazy" />

@@ -106,8 +106,8 @@ https://<user>.github.io/<repo>/
 ## Story / Admin
 
 - În interfață ai un meniu hamburger cu 3 secțiuni: `Story`, `Hartă`, `Setări`.
-- `Story` = experiența principală, cu 3 blocuri narative: `Povestea locului`, `Ce vezi aici`, `Cum continuă povestea`.
-- `Hartă` = OpenStreetMap cu markere numerotate pentru toate opririle.
+- `Story` = experiența principală, cu hartă compactă fixă pe oprirea curentă + 3 blocuri narative: `Povestea locului`, `Ce vezi aici`, `Cum continuă povestea`.
+- `Hartă` = OpenStreetMap overview cu markere numerotate pentru toate opririle.
 - `Setări` = Date mode, Istorie+, Test mode, fullscreen, reset + secțiune internă `Date tehnice (Admin)`.
 - `Date tehnice (Admin)` = listare read-only date locale, fără editare din UI.
 
