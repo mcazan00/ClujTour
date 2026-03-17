@@ -120,8 +120,14 @@ https://<user>.github.io/<repo>/
 - Ghid istoric pe capitole (fără quiz/provocări)
 - Deblocare stop după proximitate GPS
 - Fallback complet manual
-- Butoane Story: `Reveal story`, `I found it`, `Navighează la următorul punct`, `Next stop`
+- Butoane Story în flux strict: `Deschide povestea` -> `Am citit` -> `Navighează la următorul punct` -> `Pasul următor`
 - Meniu hamburger vertical simplu (`Story`, `Hartă`, `Setări`)
 - Progres salvat local
 - Ecran final la Cetățuia
 - Service worker pentru funcționare offline după prima încărcare
+
+## Dacă vezi încă UI vechi după deploy
+
+1. Fă refresh hard (`Cmd + Shift + R`) pe pagina GitHub Pages.
+2. În Safari: `Settings for This Website` -> `Clear Website Data` pentru domeniul site-ului.
+3. Redeschide aplicația din Home Screen după ce confirmi că pagina web are noul UI.

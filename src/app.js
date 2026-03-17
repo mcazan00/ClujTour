@@ -509,20 +509,42 @@ function renderStop(stop) {
   const nextStop = getNextStop();
   const hasNext = Boolean(nextStop);
   const navigationOpened = runtime.ui.navigationOpenedStops.has(stop.id);
-  const showReveal = !revealed;
-  const showFound = revealed && !found;
-  const showNavigate = found && hasNext && !runtime.state.settings.testMode && !navigationOpened;
-  const showNext = found && (!hasNext || runtime.state.settings.testMode || navigationOpened);
+  const testMode = runtime.state.settings.testMode;
 
-  setVisible(els.revealBtn, showReveal);
-  setVisible(els.foundBtn, showFound);
-  setVisible(els.navigateBtn, showNavigate);
-  setVisible(els.nextBtn, showNext);
+  // Reset action visibility first so only one relevant action can be shown.
+  setVisible(els.revealBtn, false);
+  setVisible(els.foundBtn, false);
+  setVisible(els.navigateBtn, false);
+  setVisible(els.nextBtn, false);
+  els.revealBtn.disabled = true;
+  els.foundBtn.disabled = true;
+  els.navigateBtn.disabled = true;
+  els.nextBtn.disabled = true;
 
-  els.revealBtn.disabled = !unlocked;
-  els.foundBtn.disabled = false;
-  els.navigateBtn.disabled = false;
-  els.nextBtn.disabled = false;
+  let actionState = "initial";
+  if (revealed && !found) {
+    actionState = "revealed";
+  } else if (revealed && found) {
+    if (!hasNext || testMode || navigationOpened) {
+      actionState = "readyNext";
+    } else {
+      actionState = "readConfirmed";
+    }
+  }
+
+  if (actionState === "initial") {
+    setVisible(els.revealBtn, true);
+    els.revealBtn.disabled = !unlocked;
+  } else if (actionState === "revealed") {
+    setVisible(els.foundBtn, true);
+    els.foundBtn.disabled = false;
+  } else if (actionState === "readConfirmed") {
+    setVisible(els.navigateBtn, true);
+    els.navigateBtn.disabled = false;
+  } else if (actionState === "readyNext") {
+    setVisible(els.nextBtn, true);
+    els.nextBtn.disabled = false;
+  }
 
   if (runtime.state.settings.testMode) {
     els.distanceText.textContent = "Test mode activ: distanța este ignorată.";
@@ -611,6 +633,10 @@ function markFound(stop) {
 
 function moveNext() {
   if (runtime.state.currentIndex < runtime.stops.length) {
+    const currentStop = getCurrentStop();
+    if (currentStop) {
+      runtime.ui.navigationOpenedStops.delete(currentStop.id);
+    }
     runtime.state.currentIndex += 1;
     persist();
     vibrate([18, 20, 18]);
