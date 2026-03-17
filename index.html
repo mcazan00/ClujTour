@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#d6c9b2" />
-    <title>Tur istoric Cluj</title>
+    <title>ClujTour</title>
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -17,7 +17,7 @@
     <main class="app-shell">
       <header class="top">
         <div class="top-row">
-          <h1 id="tourTitle">Tur istoric Cluj</h1>
+          <h1 id="tourTitle">ClujTour</h1>
           <button id="menuToggleBtn" class="menu-btn" type="button" aria-label="Deschide meniul">
             <span></span>
             <span></span>
@@ -29,13 +29,12 @@
       <div id="storyView">
         <section id="statusPanel" class="panel status">
           <div class="progress-head">
-            <p id="chapterLabel">Etape</p>
+            <p id="chapterLabel">Progres</p>
             <p id="progressText">0/0</p>
           </div>
           <div class="progress-track" aria-hidden="true">
             <div id="progressFill" class="progress-fill"></div>
           </div>
-          <div id="stageChips" class="stage-chips" aria-label="Etape traseu"></div>
           <p id="geoStatus" class="geo-status">Pornim detectarea locației...</p>
           <p id="distanceText" class="distance-text"></p>
         </section>

@@ -16,7 +16,6 @@ const DEFAULT_STATE = {
 const runtime = {
   config: null,
   stops: [],
-  stages: [],
   state: loadState(DEFAULT_STATE),
   geo: {
     coords: null,
@@ -57,7 +56,6 @@ const els = {
   chapterLabel: byId("chapterLabel"),
   progressText: byId("progressText"),
   progressFill: byId("progressFill"),
-  stageChips: byId("stageChips"),
   geoStatus: byId("geoStatus"),
   distanceText: byId("distanceText"),
 
@@ -186,48 +184,6 @@ function shortText(text, max = 180) {
   const normalized = String(text || "").replace(/\s+/g, " ").trim();
   if (normalized.length <= max) return normalized;
   return `${normalized.slice(0, max - 1)}…`;
-}
-
-function buildStages(stops) {
-  const stages = [];
-  const byLabel = new Map();
-
-  stops.forEach((stop, index) => {
-    const chapterTitle = String(stop.chapterTitle || "").trim();
-    const label = chapterTitle.includes(":") ? chapterTitle.split(":")[0].trim() : chapterTitle;
-    if (!label) return;
-    if (!byLabel.has(label)) {
-      const stage = { label, startIndex: index, endIndex: index };
-      byLabel.set(label, stage);
-      stages.push(stage);
-      return;
-    }
-    byLabel.get(label).endIndex = index;
-  });
-
-  return stages;
-}
-
-function renderStageChips() {
-  if (!els.stageChips) return;
-  els.stageChips.innerHTML = "";
-  if (!runtime.stages.length) return;
-
-  const focusIndex = isFinished()
-    ? Math.max(0, runtime.stops.length - 1)
-    : Math.max(0, runtime.state.currentIndex);
-
-  runtime.stages.forEach((stage) => {
-    const chip = document.createElement("span");
-    chip.className = "stage-chip";
-    if (focusIndex >= stage.startIndex && focusIndex <= stage.endIndex) {
-      chip.classList.add("current");
-    } else if (focusIndex > stage.endIndex) {
-      chip.classList.add("done");
-    }
-    chip.textContent = stage.label;
-    els.stageChips.appendChild(chip);
-  });
 }
 
 function renderAdminRows(listEl, rows) {
@@ -707,7 +663,7 @@ function renderEnding() {
   els.endingMessage.textContent = runtime.config.ending.message;
   els.progressText.textContent = `${runtime.stops.length}/${runtime.stops.length}`;
   setProgress(els.progressFill, 1);
-  els.chapterLabel.textContent = "Etape";
+  els.chapterLabel.textContent = "Progres";
   els.distanceText.textContent = "Traseu complet.";
 }
 
@@ -718,8 +674,7 @@ function render() {
 
   els.progressText.textContent = `${currentDisplay}/${total}`;
   setProgress(els.progressFill, total > 0 ? completed / total : 0);
-  els.chapterLabel.textContent = "Etape";
-  renderStageChips();
+  els.chapterLabel.textContent = "Progres";
 
   if (isFinished()) {
     renderEnding();
@@ -951,7 +906,6 @@ async function init() {
     ]);
     runtime.config = config;
     runtime.stops = stops;
-    runtime.stages = buildStages(stops);
     sanitizeState();
     bindEvents();
     applyStaticContent();
