@@ -85,6 +85,12 @@ body {
   gap: 12px;
 }
 
+.top-copy {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
 .menu-btn {
   width: 44px;
   min-width: 44px;
@@ -127,6 +133,20 @@ h3 {
 
 h1 {
   font-size: clamp(2rem, 8vw, 2.6rem);
+}
+
+.top-subtitle {
+  margin: 0;
+  color: var(--soft-ink);
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.top-note {
+  margin: 0;
+  color: color-mix(in srgb, var(--soft-ink) 88%, #ffffff 12%);
+  line-height: 1.35;
+  font-size: 0.86rem;
 }
 
 h2 {

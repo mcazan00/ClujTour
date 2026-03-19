@@ -1,7 +1,7 @@
 {
-  "tourTitle": "ClujTour",
-  "tourSubtitle": "Un singur traseu cronologic, în 27 opriri: cetatea medievală, palatele baroce, extinderea sec. XIX-XX, modernismul anilor 1960 și final panoramic la Cetățuia.",
-  "authorNote": "Aplicație local-first pentru explicarea istoriei orașului direct pe teren.",
+  "tourTitle": "Povestea Clujului",
+  "tourSubtitle": "Un traseu cronologic în 27 de opriri, dedicat turiștilor și localnicilor curioși: de la cetatea medievală și palatele baroce la modernism și panorama Cetățuii.",
+  "authorNote": "Aplicație local-first pentru descoperirea istoriei Clujului direct pe teren, cu o dedicație discretă pentru Denise.",
   "defaultUnlockRadiusMeters": 100,
   "distanceUpdateIntervalMs": 6000,
   "admin": {
@@ -15,6 +15,6 @@
   },
   "ending": {
     "title": "Final la Cetățuia",
-    "message": "Ai parcurs traseul unificat al Clujului, de la bastioanele medievale și piețele baroce până la bulevardele moderne, palatele secession și clădirile moderniste. Din acest punct panoramic poți reciti orașul ca un singur fir istoric."
+    "message": "Ai parcurs Povestea Clujului, de la bastioanele medievale și piețele baroce până la bulevardele moderne, palatele secession și clădirile moderniste. Din acest punct panoramic poți reciti orașul ca un singur fir istoric. Mulțumim că ai mers pas cu pas alături de noi."
   }
 }

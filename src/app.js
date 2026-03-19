@@ -48,6 +48,8 @@ function freshState() {
 
 const els = {
   tourTitle: byId("tourTitle"),
+  tourSubtitle: byId("tourSubtitle"),
+  authorNote: byId("authorNote"),
 
   statusPanel: byId("statusPanel"),
   chapterLabel: byId("chapterLabel"),
@@ -752,6 +754,12 @@ function bindEvents() {
 function applyStaticContent() {
   if (els.tourTitle) {
     els.tourTitle.textContent = runtime.config.tourTitle;
+  }
+  if (els.tourSubtitle) {
+    els.tourSubtitle.textContent = runtime.config.tourSubtitle || "";
+  }
+  if (els.authorNote) {
+    els.authorNote.textContent = runtime.config.authorNote || "";
   }
   els.testModeToggle.checked = runtime.state.settings.testMode;
 }

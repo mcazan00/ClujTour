@@ -1,6 +1,8 @@
-# Tur istoric Cluj (Local-first PWA)
+# Povestea Clujului (Local-first PWA)
 
-Aplicație mobilă statică pentru un traseu istoric informativ în Cluj-Napoca, cu progres local și deblocare pe bază de proximitate GPS.
+Aplicație mobilă statică pentru un traseu istoric în Cluj-Napoca, cu progres local și deblocare pe bază de proximitate GPS.
+
+Poziționare: public larg (turiști + localnici curioși), cu o dedicație discretă pentru Denise.
 
 ## Tehnologii
 
@@ -75,7 +77,7 @@ Notă: pe unele configurații iOS, geolocația pe HTTP poate fi restricționată
 git init
 git checkout -b main
 git add .
-git commit -m "Initial ClujTour PWA"
+git commit -m "Initial Povestea Clujului PWA"
 git remote add origin https://github.com/<user>/<repo>.git
 git push -u origin main
 ```
@@ -125,6 +127,15 @@ https://<user>.github.io/<repo>/
 - Progres salvat local
 - Ecran final la Cetățuia
 - Service worker pentru funcționare offline după prima încărcare
+
+## Checklist final înainte de deploy
+
+1. Confirmă că numele afișat în aplicație este `Povestea Clujului`.
+2. Confirmă că iconul instalat folosește brandingul și descrierea noi din `manifest.webmanifest`.
+3. Verifică fluxul de bază: `Deschide povestea` -> `Am citit` -> `Navighează la următorul punct` -> `Pasul următor`.
+4. Verifică funcționarea secțiunilor `Story`, `Hartă`, `Setări` și fallback-ul pentru hărți/geolocație.
+5. Verifică funcționarea offline după prima încărcare.
+6. Publică pe `main` și confirmă rularea workflow-ului `Deploy Static Site to GitHub Pages`.
 
 ## Dacă vezi încă UI vechi după deploy
 

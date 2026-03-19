@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#d6c9b2" />
-    <title>ClujTour</title>
+    <title>Povestea Clujului</title>
+    <meta
+      name="description"
+      content="Povestea Clujului este un tur istoric local-first, în 27 de opriri, dedicat turiștilor și localnicilor curioși."
+    />
+    <meta property="og:title" content="Povestea Clujului" />
+    <meta
+      property="og:description"
+      content="Explorează Clujul pas cu pas, printr-un traseu cronologic cu 27 de opriri istorice."
+    />
+    <meta property="og:type" content="website" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -17,7 +27,15 @@
     <main class="app-shell">
       <header class="top">
         <div class="top-row">
-          <h1 id="tourTitle">ClujTour</h1>
+          <div class="top-copy">
+            <h1 id="tourTitle">Povestea Clujului</h1>
+            <p id="tourSubtitle" class="top-subtitle">
+              Tur istoric local-first, în 27 de opriri, pentru turiști și localnici curioși.
+            </p>
+            <p id="authorNote" class="top-note">
+              O dedicație discretă pentru Denise.
+            </p>
+          </div>
           <button id="menuToggleBtn" class="menu-btn" type="button" aria-label="Deschide meniul">
             <span></span>
             <span></span>
